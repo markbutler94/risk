@@ -1,0 +1,4 @@
+"Infantry",14
+"Cavalry",14
+"Artillery",14
+"Wildcard",2

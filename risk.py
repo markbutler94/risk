@@ -1,11 +1,6 @@
-# rewrite print staements without +
-
 #rewrite default values (eg Highlights) - THEY WILL NOT WORK
-#SEE THIS: http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html#other-languages-have-variables
+# SEE THIS: http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html#other-languages-have-variables
 # Use more listcomps?
-# try using just fnames as paths?
-
-
 
 import os
 import ast
@@ -39,10 +34,14 @@ class Player:
         self.index = 0
         self.color = color
 
+class Card:
+    def __init__(self,type):
+        self.type = type
+
 #LOADING DATA
 
 #territories
-with open(os.path.join(os.path.dirname(__file__), "territories.txt")) as f:
+with open("territories.txt") as f:
     content = f.readlines()
     
 territories = {} 
@@ -52,7 +51,7 @@ for line in content:
     territories[lst[0]] = Territory(lst[1],lst[2],lst[3])
 
 #continents
-with open(os.path.join(os.path.dirname(__file__), "continents.txt")) as f:
+with open("continents.txt") as f:
     content = f.readlines()
 
 continents = {}
@@ -62,7 +61,7 @@ for line in content:
     continents[lst[0]] = Continent(lst[1])
 
 #players
-with open(os.path.join(os.path.dirname(__file__), "players.txt")) as f:
+with open("players.txt") as f:
     content = f.readlines()
 
 players = {}
@@ -77,19 +76,33 @@ random.shuffle(playerList)
 for i in range(0,len(playerList)):
     players[playerList[i]].index = i
 
+#deck
+with open("cards.txt") as f:
+    content = f.readlines()
+    
+deck = []
+    
+for line in content:
+    lst = ast.literal_eval(line)
+    for i in range(int(lst[1])):
+        deck.append(Card(lst[0]))
+        
+#randomise order
+random.shuffle(deck)
+
 #USEFUL FUNCTIONS
     
 def adjacentTerritories(user_tname):
     for t in territories[user_tname].edges:
-        print("> " + t)
+        print(">", t)
 
 def continentTerritories(user_cname):
     for t in territories:
         if territories[t].continent == user_cname:
-            print("> " + t)
+            print(">", t)
 
 def territoryInfo(user_tname):
-    print("Continent: " + territories[user_tname].continent)
+    print("Continent:", territories[user_tname].continent)
     print("Adjacent to:")
     adjacentTerritories(user_tname)
 
@@ -170,7 +183,7 @@ def selectTerritoriesRandom():
             players[p].armies -= 1
             territories[t].armies += 1
             remainingTerritories.remove(t)
-            logging.info(p + " gets " + t)
+            logging.info(p, "gets", t)
 
 def placeArmiesRandom():
     while any(players[p].armies > 0 for p in players):
@@ -183,7 +196,7 @@ def placeArmiesRandom():
                 t = random.sample(ownedTerritories,1)[0]
                 territories[t].armies += 1
                 players[p].armies -= 1
-                logging.info(p + " fortifies " + t + " (" + str(territories[t].armies) + ")")
+                logging.info(p, "fortifies", t, "(" + str(territories[t].armies) + ")")
 
 logging.info("GAME STARTED")
 selectTerritoriesRandom()
@@ -199,27 +212,27 @@ def placeReinforcements(p):     #random
         territories[t].armies += 1
         players[p].armies -= 1
         updatedTerritories.add(t)
-        logging.info(p + " fortifies " + t + " (" + str(territories[t].armies) + ")")
+        logging.info(p, "fortifies", t, "(" + str(territories[t].armies) + ")")
     #updateMap([p],updatedTerritories,[],0)
 
 def attackTerritories(p):       #random
-    logging.info(p + " ATTACKING")  
+    logging.info(p, "ATTACKING")  
     canAttackTerritories = set()
     for t in ownedTerritories:
         if territories[t].armies > 1 and any(territories[edge].player != p for edge in territories[t].edges):
             canAttackTerritories.add(t)
     while len(canAttackTerritories) > 0:                    # If we have a territory we can attack from
         if random.random() < 0.9:                          # Chance of attacking
-            logging.info(p + " can attack from: " + str(canAttackTerritories))
+            logging.info(p, "can attack from:", str(canAttackTerritories))
             t = random.sample(canAttackTerritories,1)[0]    # Choose one territory to attack from, t
             possibleTargets = set()                         # Generate set of targets which can be attacked from t
             for edge in territories[t].edges:
                 if territories[edge].player!= p:
                     possibleTargets.add(edge)
-            logging.info("> Chosen: " + t)
-            logging.info("Possible targets: " + str(possibleTargets))
+            logging.info("> Chosen:", t)
+            logging.info("Possible targets:", str(possibleTargets))
             tDefend = random.sample(possibleTargets,1)[0]  # Choose attack target, tDefend
-            logging.info("> Chosen: " + tDefend)
+            logging.info("> Chosen:", tDefend)
             diceAttack = random.randint(1,min(3,territories[t].armies - 1))     # Choose number of dice
             diceDefend = min(defendTerritory(),territories[tDefend].armies)
             diceRollsAttack = []
@@ -230,7 +243,7 @@ def attackTerritories(p):       #random
                 diceRollsDefend.append(random.randint(1,6))
             diceRollsAttack.sort(reverse = True)
             diceRollsDefend.sort(reverse = True)
-            logging.info("Dice rolls: A" + str(diceRollsAttack) + " D" + str(diceRollsDefend))
+            logging.info("Dice rolls: A", str(diceRollsAttack), "; D", str(diceRollsDefend))
             lossesAttack = 0
             lossesDefend = 0
             compares = min(diceAttack,diceDefend)           # Number of dice to compare
@@ -239,7 +252,7 @@ def attackTerritories(p):       #random
                     lossesDefend += 1
                 else:
                     lossesAttack += 1
-            logging.info("Losses: A" + str(lossesAttack) + " D" + str(lossesDefend))
+            logging.info("Losses: A", str(lossesAttack), "; D", str(lossesDefend))
                     
             #updateMap([p],[t],[tDefend],0)
             
@@ -252,7 +265,7 @@ def attackTerritories(p):       #random
                 territories[tDefend].armies += occupyingArmies
                 territories[tDefend].player = p
                 territories[t].armies -= occupyingArmies
-                logging.info(p + " has OCCUPIED " + tDefend)
+                logging.info(p, "has OCCUPIED", tDefend)
             
             #updateMap([p],[t],[tDefend],0)            
             
@@ -263,7 +276,7 @@ def attackTerritories(p):       #random
             
         else:  
             # If we have decided not to attack
-            logging.info(p + " has decided to cease attacking")
+            logging.info(p, "has decided to cease attacking")
             break
             
 def defendTerritory():          #random
@@ -293,7 +306,7 @@ while len(playerList) > 1 and move < 500:
             if all((not(territories[t].continent == c) or territories[t].player == p) for t in territories):
                 reinforcements += continents[c].bonus
         players[p].armies += reinforcements
-        logging.info(p + " receives " + str(reinforcements) + " armies")
+        logging.info(p, "receives", str(reinforcements), "armies")
 
         #placing armies (randomly)
         placeReinforcements(p)
@@ -308,11 +321,11 @@ while len(playerList) > 1 and move < 500:
         #wiping out
         for pEnemy in playerList:
             if not(any(territories[t].player == pEnemy for t in territories)):
-                logging.info(p + " has ELIMINATED " + pEnemy + " on move " + str(move))
+                logging.info(p, "has ELIMINATED", pEnemy, "on move", str(move))
                 playerList.remove(pEnemy)
                 
         if len(playerList) == 1:
-            logging.info(p + " WINS on move " + str(move))
+            logging.info(p, "WINS on move", str(move))
 
     #updateMap([],[],[],0)
     move += 1

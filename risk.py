@@ -5,6 +5,7 @@
 import os
 import ast
 import math
+import itertools
 import random
 import time
 import logging
@@ -33,6 +34,7 @@ class Player:
         self.armies = 35
         self.index = 0
         self.color = color
+        self.cards = []
 
 class Card:
     def __init__(self,type):
@@ -105,6 +107,16 @@ def territoryInfo(user_tname):
     print("Continent:", territories[user_tname].continent)
     print("Adjacent to:")
     adjacentTerritories(user_tname)
+
+def cardSets(playerCards):
+    cardTriples = itertools.combinations(playerCards,3)
+    cardSets = []
+    for cardTriple in cardTriples:
+        if cardTriple[0].type == cardTriple[1].type and cardTriple[0].type == cardTriple[2].type:
+            cardSets.append(cardTriple)
+        if cardTriple[0].type != cardTriple[1].type and cardTriple[0].type != cardTriple[2].type and cardTriple[1].type != cardTriple[2].type:
+            cardSets.append(cardTriple)
+    return cardSets
 
 #DRAWING FUNCTIONS
 
@@ -290,7 +302,7 @@ def defendTerritory():          #random
 #initMap()
 move = 0
 
-while len(playerList) > 1 and move < 500:
+while len(playerList) > 1 and move < 10:
     print("Move:", str(move))
     logging.info("Move: " + str(move))
     for p in playerList:
@@ -304,12 +316,18 @@ while len(playerList) > 1 and move < 500:
         ownedTerritoriesCount = len(ownedTerritories)
         
         reinforcements += max(3,math.floor(len(ownedTerritories) / 3))
-                #--reinforcements from cards
+        
         for c in continents:
             if all((not(territories[t].continent == c) or territories[t].player == p) for t in territories):
                 reinforcements += continents[c].bonus
         players[p].armies += reinforcements
         logging.info(p + " receives " + str(reinforcements) + " armies")
+
+        print(list(cardSet[i].type for i in range(3) for cardSet in cardSets(players[p].cards)))
+        print(str(len(cardSets(players[p].cards))))
+
+        if len(players[p].cards) > 4:
+            #must redeem
 
         #placing armies (randomly)
         placeReinforcements(p)
@@ -324,7 +342,9 @@ while len(playerList) > 1 and move < 500:
                 ownedTerritories.add(t)
                 
         if len(ownedTerritories) > ownedTerritoriesCount:
-            
+            if len(deck) > 0:
+                players[p].cards.append(deck.pop(0))
+                print(p + " gets  a card: " + players[p].cards[-1].type)
 
         #fortifying
 

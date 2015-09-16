@@ -10,7 +10,7 @@ import time
 import logging
 from graphics import *
 
-open(os.path.join(os.path.dirname(__file__), "moves.log"),"w").close()
+open("moves.log","w").close()
 
 logging.basicConfig(filename = os.path.join(os.path.dirname(__file__), "moves.log"),level=logging.INFO)
 
@@ -183,7 +183,7 @@ def selectTerritoriesRandom():
             players[p].armies -= 1
             territories[t].armies += 1
             remainingTerritories.remove(t)
-            logging.info(p, "gets", t)
+            logging.info(p + " gets " + t)
 
 def placeArmiesRandom():
     while any(players[p].armies > 0 for p in players):
@@ -196,7 +196,7 @@ def placeArmiesRandom():
                 t = random.sample(ownedTerritories,1)[0]
                 territories[t].armies += 1
                 players[p].armies -= 1
-                logging.info(p, "fortifies", t, "(" + str(territories[t].armies) + ")")
+                logging.info(p + " fortifies " + t + " (" + str(territories[t].armies) + ") ")
 
 logging.info("GAME STARTED")
 selectTerritoriesRandom()
@@ -212,27 +212,27 @@ def placeReinforcements(p):     #random
         territories[t].armies += 1
         players[p].armies -= 1
         updatedTerritories.add(t)
-        logging.info(p, "fortifies", t, "(" + str(territories[t].armies) + ")")
+        logging.info(p + " fortifies " + t + " (" + str(territories[t].armies) + ")")
     #updateMap([p],updatedTerritories,[],0)
 
 def attackTerritories(p):       #random
-    logging.info(p, "ATTACKING")  
+    logging.info(p + " is attacking")  
     canAttackTerritories = set()
     for t in ownedTerritories:
         if territories[t].armies > 1 and any(territories[edge].player != p for edge in territories[t].edges):
             canAttackTerritories.add(t)
     while len(canAttackTerritories) > 0:                    # If we have a territory we can attack from
         if random.random() < 0.9:                          # Chance of attacking
-            logging.info(p, "can attack from:", str(canAttackTerritories))
+            logging.info(p + " can attack from: " + str(canAttackTerritories))
             t = random.sample(canAttackTerritories,1)[0]    # Choose one territory to attack from, t
             possibleTargets = set()                         # Generate set of targets which can be attacked from t
             for edge in territories[t].edges:
                 if territories[edge].player!= p:
                     possibleTargets.add(edge)
-            logging.info("> Chosen:", t)
-            logging.info("Possible targets:", str(possibleTargets))
+            logging.info("> Chosen: " + t)
+            logging.info("Possible targets: " + str(possibleTargets))
             tDefend = random.sample(possibleTargets,1)[0]  # Choose attack target, tDefend
-            logging.info("> Chosen:", tDefend)
+            logging.info("> Chosen: " + tDefend)
             diceAttack = random.randint(1,min(3,territories[t].armies - 1))     # Choose number of dice
             diceDefend = min(defendTerritory(),territories[tDefend].armies)
             diceRollsAttack = []
@@ -243,7 +243,7 @@ def attackTerritories(p):       #random
                 diceRollsDefend.append(random.randint(1,6))
             diceRollsAttack.sort(reverse = True)
             diceRollsDefend.sort(reverse = True)
-            logging.info("Dice rolls: A", str(diceRollsAttack), "; D", str(diceRollsDefend))
+            logging.info("Dice rolls: A" + str(diceRollsAttack) + "; D" + str(diceRollsDefend))
             lossesAttack = 0
             lossesDefend = 0
             compares = min(diceAttack,diceDefend)           # Number of dice to compare
@@ -252,7 +252,7 @@ def attackTerritories(p):       #random
                     lossesDefend += 1
                 else:
                     lossesAttack += 1
-            logging.info("Losses: A", str(lossesAttack), "; D", str(lossesDefend))
+            logging.info("Losses: A" + str(lossesAttack) + "; D" + str(lossesDefend))
                     
             #updateMap([p],[t],[tDefend],0)
             
@@ -265,7 +265,7 @@ def attackTerritories(p):       #random
                 territories[tDefend].armies += occupyingArmies
                 territories[tDefend].player = p
                 territories[t].armies -= occupyingArmies
-                logging.info(p, "has OCCUPIED", tDefend)
+                logging.info(p + " has occupied " + tDefend)
             
             #updateMap([p],[t],[tDefend],0)            
             
@@ -276,7 +276,7 @@ def attackTerritories(p):       #random
             
         else:  
             # If we have decided not to attack
-            logging.info(p, "has decided to cease attacking")
+            logging.info(p + " has decided to cease attacking")
             break
             
 def defendTerritory():          #random
@@ -291,22 +291,25 @@ def defendTerritory():          #random
 move = 0
 
 while len(playerList) > 1 and move < 500:
-    print("Move: " + str(move))
+    print("Move:", str(move))
     logging.info("Move: " + str(move))
     for p in playerList:
         #reinforcements
         reinforcements = 0
+        
         ownedTerritories = set()
         for t in territories:
             if territories[t].player == p:
                 ownedTerritories.add(t)
+        ownedTerritoriesCount = len(ownedTerritories)
+        
         reinforcements += max(3,math.floor(len(ownedTerritories) / 3))
                 #--reinforcements from cards
         for c in continents:
             if all((not(territories[t].continent == c) or territories[t].player == p) for t in territories):
                 reinforcements += continents[c].bonus
         players[p].armies += reinforcements
-        logging.info(p, "receives", str(reinforcements), "armies")
+        logging.info(p + " receives " + str(reinforcements) + " armies")
 
         #placing armies (randomly)
         placeReinforcements(p)
@@ -314,18 +317,25 @@ while len(playerList) > 1 and move < 500:
         #attacking
         attackTerritories(p)
 
-        #--later, getting cards
+        #see if any territories have been occupied (will use a bool flag eventually - this is a temporary measure)
+        ownedTerritories = set()
+        for t in territories:
+            if territories[t].player == p:
+                ownedTerritories.add(t)
+                
+        if len(ownedTerritories) > ownedTerritoriesCount:
+            
 
         #fortifying
 
         #wiping out
         for pEnemy in playerList:
             if not(any(territories[t].player == pEnemy for t in territories)):
-                logging.info(p, "has ELIMINATED", pEnemy, "on move", str(move))
+                logging.info(p + " has ELIMINATED " + pEnemy + " on move " + str(move))
                 playerList.remove(pEnemy)
                 
         if len(playerList) == 1:
-            logging.info(p, "WINS on move", str(move))
+            logging.info(p + " WINS on move " + str(move))
 
     #updateMap([],[],[],0)
     move += 1

@@ -9,7 +9,7 @@ import pickle
 import operator
 from graphics import *
 
-displayMap = False
+displayMap = True
 
 import ai_basic
 import ai_improved
@@ -129,60 +129,107 @@ for line in content:
 
 points = {t: Circle(Point(*territories[t].pos), 5) for t in territories}
 captions = {t: Text(Point(territories[t].pos[0], territories[t].pos[1] + 20), "") for t in territories}
-playerData = {p: Text(Point(70, 530 + (30 * players[p].index)),"") for p in players}
+playerNames = {p: Text(Point(70, 530 + (30 * players[p].index)),"") for p in players}
+playerTerritories = {p: Text(Point(140, 530 + (30 * players[p].index)),"") for p in players}
+playerCards = {p: Text(Point(180, 530 + (30 * players[p].index)),"") for p in players}
+playerStrikethroughs = {p: Line(Point(45, 530 + (30 * players[p].index)), Point(195, 530 + (30 * players[p].index))) for p in players}
 lines = {(t,edge): Line(Point(*territories[t].pos),Point(*territories[edge].pos)) for t in territories for edge in territories[t].edges}
-
-for k in captions:
-    captions[k].setSize(8)
+messageText = Text(Point(500,730),"")
+moveText = Text(Point(930,730),"")
+lossLabels = {t: Text(Point(territories[t].pos[0],territories[t].pos[1]-20), "") for t in territories}
     
 def initMap():
-    i = Image(Point(500,669/2),os.path.join(os.path.dirname("__file__"), "map.gif"))
+    i = Image(Point(500,680/2),os.path.join(os.path.dirname("__file__"), "map.gif"))
     i.draw(win)
-    box = Rectangle(Point(20,510),Point(120,520 + (30*len(players))))
-    box.setFill('grey')
+    box = Rectangle(Point(30,510),Point(210,520 + (30*len(players))))
+    box.setFill("grey")
     box.draw(win)
     for p in players:
-        playerData[p].draw(win)
-    for p in points:
-        points[p].draw(win)
+        playerNames[p].setText(p)
+        playerNames[p].setTextColor(players[p].color)
+        playerNames[p].draw(win)
+        playerTerritories[p].draw(win)
+        playerTerritories[p].setTextColor(players[p].color)
+        playerCards[p].draw(win)
+        playerCards[p].setTextColor(players[p].color)
+        playerStrikethroughs[p].setFill(players[p].color)
+    for t in territories:
+        points[t].draw(win)
+        lossLabels[t].setTextColor("red")
+        lossLabels[t].setSize(8)
+        captions[t].setSize(8)
+        captions[t].draw(win)
     for l in lines:
         lines[l].draw(win)
-    for c in captions:
-        captions[c].draw(win)
 
-def updateMap(highlightPlayers=[],highlightTerritories=[],highlightDefending=[]):
+    infoBox = Rectangle(Point(0,680),Point(1000,780))
+    infoBox.setFill("black")
+    infoBox.draw(win)
+    messageText.setTextColor("yellow")
+    messageText.draw(win)
+    moveText.setTextColor("white")
+    moveText.draw(win)
+
+def updateMap(highlightPlayers=[], highlightTerritories=[], highlightDefending=[], attackLoss = "", defendLoss = "", message=""):
+
+    pause = False
+
     for t in territories:
-        points[t].setFill(players[territories[t].player].color)
+        p = territories[t].player
+        if p != "":
+            points[t].setFill(players[p].color)
             
         if t in highlightTerritories:
-            points[t].setOutline('yellow')
+            points[t].setOutline("yellow")
             points[t].setWidth(2)
         else:
-            points[t].setOutline('black')
+            points[t].setOutline("black")
             points[t].setWidth(1)
             
         captions[t].setText(t + " (" + str(territories[t].armies) + ")")
  
     for p in players:
-        playerData[p].setText(p + ": " + str(players[p].armies))
-        
+        playerTerritories[p].setText(str(players[p].armies))
+        playerCards[p].setText(str(len(players[p].cards)))
+
         if p in highlightPlayers:
-            playerData[p].setTextColor('yellow')
+            playerNames[p].setStyle("bold")
+            playerTerritories[p].setStyle("bold")
+            playerCards[p].setStyle("bold")
         else:
-            playerData[p].setTextColor(players[p].color)
+            playerNames[p].setStyle("normal")
+            playerTerritories[p].setStyle("normal")
+            playerCards[p].setStyle("normal")
+
+        if p not in playerList:
+            playerStrikethroughs[p].draw(win)
 
     for l in lines:
-        lines[l].setFill('black')
+        lines[l].setFill("black")
         lines[l].setWidth(1)
-        lines[l].setArrow('none')
+        lines[l].setArrow("none")
     if len(highlightDefending) > 0:
-        lines[(highlightTerritories[0],highlightDefending[0])].setFill('yellow')
+        lines[(highlightTerritories[0],highlightDefending[0])].setFill("yellow")
         lines[(highlightTerritories[0],highlightDefending[0])].setWidth(2)
-        lines[(highlightDefending[0],highlightTerritories[0])].setFill('yellow')
+        lines[(highlightDefending[0],highlightTerritories[0])].setFill("yellow")
         lines[(highlightDefending[0],highlightTerritories[0])].setWidth(2)
-        lines[(highlightTerritories[0],highlightDefending[0])].setArrow('last')
+        lines[(highlightTerritories[0],highlightDefending[0])].setArrow("last")
 
+    for l in lossLabels:
+        lossLabels[l].undraw()
+    if attackLoss != "":
+        lossLabels[highlightTerritories[0]].setText(attackLoss)
+        lossLabels[highlightTerritories[0]].draw(win)
+    if defendLoss != "":
+        lossLabels[highlightDefending[0]].setText(defendLoss)
+        lossLabels[highlightDefending[0]].draw(win)
+        #pause = True
 
+    messageText.setText(message)
+    moveText.setText("Move: " + str(move))
+
+    if pause:
+        win.getMouse()
 
 
 
@@ -193,8 +240,13 @@ def updateMap(highlightPlayers=[],highlightTerritories=[],highlightDefending=[])
 # GAME SETUP
 
 logging.info("GAME STARTED")
+move = 0
 
-#Select territories
+if displayMap:    
+    win = GraphWin("RISK", 1000, 780)
+    initMap()
+
+# Select territories
 remainingTerritories = set()
 for t in territories:
     remainingTerritories.add(t)
@@ -207,22 +259,21 @@ while len(remainingTerritories) > 0:
             territories[t].armies += 1
             remainingTerritories.remove(t)
             logging.info(p + " gets " + t)
+            #if displayMap:    
+                #updateMap(highlightPlayers=[p], highlightTerritories=[t], message=p + " gets " + t)
 
-#Place armies
+# Place armies
 while any(players[p].armies > 0 for p in players):
     for p in playerList:
         if players[p].armies > 0:
             t = aiCall(p, "placeArmies") # Should probably check that this string is acceptable?
             territories[t].armies += 1
             players[p].armies -= 1
-            logging.info(p + " fortifies " + t + " (" + str(territories[t].armies) + ") ")
+            logging.info(p + " fortifies " + t + " (" + str(territories[t].armies) + ")")
+            #if displayMap:    
+                #updateMap(highlightPlayers=[p], highlightTerritories=[t], message=p + " fortifies " + t + " (" + str(territories[t].armies) + ")")
 
-if displayMap:    
-    win = GraphWin("RISK", 1000, 680)
-    initMap()
 
-move = 0
-setsTradedIn = 0
 
 
 
@@ -234,7 +285,10 @@ setsTradedIn = 0
 
 # MAIN LOOP
 
-while len(playerList) > 1 and move < 15:
+move = 1
+setsTradedIn = 0
+
+while len(playerList) > 1:
 
     print("Move:", str(move))
     logging.info("Move: " + str(move))
@@ -254,6 +308,9 @@ while len(playerList) > 1 and move < 15:
                 reinforcements += continents[c].bonus
         players[p].armies += reinforcements
         logging.info(p + " receives " + str(reinforcements) + " armies")
+
+        if displayMap:
+            updateMap(highlightPlayers=[p], message=p + " receives " + str(reinforcements) + " armies")
         
         tradeInBonusReceived = False
         tradeIn = aiCall(p, "redeemCards") # Should probably check that this string is acceptable?
@@ -266,12 +323,18 @@ while len(playerList) > 1 and move < 15:
             players[p].armies += cardBonuses[setsTradedIn]
             logging.info(p + " receives " + str(cardBonuses[setsTradedIn]) + " armies by trading a set")         
             
+            if displayMap:
+                updateMap(highlightPlayers=[p], message=p + " receives " + str(cardBonuses[setsTradedIn]) + " armies by trading a set")
+
             for card in tradeIn:
                 if not(card.territory == "") and tradeInBonusReceived == False:     # Can only receive the extra bonus once per turn
                     if territories[card.territory].armies == p:
                         players[p].armies += 2
                         logging.info(p + " receives 2 extra armies on " + card.territory)
                         tradeInBonusReceived = True
+
+                        if displayMap:
+                            updateMap(highlightPlayers=[p], highlightTerritories=[card.territory], message=p + " receives 2 extra armies on " + card.territory)
                         
             setsTradedIn +=1
             tradeIn = aiCall(p, "redeemCards") # Should probably check that this string is acceptable?
@@ -283,11 +346,15 @@ while len(playerList) > 1 and move < 15:
             players[p].armies -= 1
             logging.info(p + " fortifies " + t + " (" + str(territories[t].armies) + ")")
 
+            if displayMap:
+                updateMap(highlightPlayers=[p], highlightTerritories=[t], message=p + " fortifies " + t + " (" + str(territories[t].armies) + ")")
+
         # Attacking
         capturedTerritory = False
         attackData = aiCall(p, "attackTerritory") # Should probably check that this string is acceptable?
         while attackData != False:
             attackingTerritory, defendingTerritory, attackDice = attackData
+
             logging.info(p + " attacks " + defendingTerritory + " (" + territories[defendingTerritory].player + ", " + str(territories[defendingTerritory].armies) + ") from " + attackingTerritory + " (" + str(territories[attackingTerritory].armies) + ")")
             pickle.dump(attackData,open("attackdata.p","wb"))
             defendDice = aiCall(p,"defendTerritory") # Should probably check that this string is acceptable?
@@ -308,18 +375,27 @@ while len(playerList) > 1 and move < 15:
                     lossesDefender += 1
                 else:
                     lossesAttacker += 1
-            logging.info("Losses: Attacker " + str(lossesAttacker) + " (" + attackingTerritory + " " + str(territories[attackingTerritory].armies) + "); Defender " + str(lossesDefender) + " (" + defendingTerritory + " " + str(territories[defendingTerritory].armies) + ")")
 
             territories[attackingTerritory].armies -= lossesAttacker
             territories[defendingTerritory].armies -= lossesDefender
-   
+
+            logging.info("Losses: Attacker " + str(lossesAttacker) + " (" + attackingTerritory + " " + str(territories[attackingTerritory].armies) + "); Defender " + str(lossesDefender) + " (" + defendingTerritory + " " + str(territories[defendingTerritory].armies) + ")")
+
+            if displayMap:
+                updateMap(highlightPlayers=[p], highlightTerritories=[attackingTerritory], highlightDefending=[defendingTerritory], 
+                          attackLoss = str(lossesAttacker), defendLoss = str(lossesDefender),
+                          message=p + " attacks " + defendingTerritory + " from " + attackingTerritory)
+
             if territories[defendingTerritory].armies == 0:
                 territories[defendingTerritory].player = p
-                #occupyingArmies = diceAttack                                            #(add potential to move more with an aiCall...)
+                #occupyingArmies = diceAttack                                                               #(add potential to move more with an aiCall...)
                 territories[defendingTerritory].armies += territories[attackingTerritory].armies - 1
                 territories[attackingTerritory].armies = 1
                 capturedTerritory = True
                 logging.info(p + " has occupied " + defendingTerritory)
+
+            if displayMap:
+                updateMap() 
 
             attackData = aiCall(p, "attackTerritory") # Should probably check that this string is acceptable?
         

@@ -1,1982 +1,385 @@
 INFO:root:GAME STARTED
-INFO:root:P2 gets Madagascar
-INFO:root:P4 gets Western United States
-INFO:root:P3 gets Greenland
-INFO:root:P1 gets East Africa
-INFO:root:P2 gets Yakutsk
-INFO:root:P4 gets Alberta
-INFO:root:P3 gets Eastern Australia
-INFO:root:P1 gets Ukraine
-INFO:root:P2 gets Eastern United States
-INFO:root:P4 gets Ontario
-INFO:root:P3 gets Congo
-INFO:root:P1 gets Peru
-INFO:root:P2 gets Northwest Territory
-INFO:root:P4 gets Quebec
-INFO:root:P3 gets Alaska
-INFO:root:P1 gets Irkutsk
-INFO:root:P2 gets Central America
-INFO:root:P4 gets Venezuela
-INFO:root:P3 gets Iceland
-INFO:root:P1 gets Northern Europe
-INFO:root:P2 gets Ural
-INFO:root:P4 gets Brazil
-INFO:root:P3 gets North Africa
-INFO:root:P1 gets New Guinea
-INFO:root:P2 gets India
-INFO:root:P4 gets Argentina
-INFO:root:P3 gets Western Europe
-INFO:root:P1 gets Kamchatka
-INFO:root:P2 gets Indonesia
-INFO:root:P4 gets Afghanistan
-INFO:root:P3 gets South Africa
-INFO:root:P1 gets Great Britain
-INFO:root:P2 gets Japan
-INFO:root:P4 gets China
-INFO:root:P3 gets Western Australia
-INFO:root:P1 gets Egypt
-INFO:root:P2 gets Scandinavia
-INFO:root:P4 gets Middle East
-INFO:root:P3 gets Mongolia
-INFO:root:P1 gets Siam
-INFO:root:P2 gets Siberia
-INFO:root:P4 gets Southern Europe
-INFO:root:P2 fortifies Scandinavia (2) 
-INFO:root:P4 fortifies Brazil (2) 
-INFO:root:P3 fortifies Greenland (2) 
-INFO:root:P1 fortifies New Guinea (2) 
-INFO:root:P2 fortifies Ural (2) 
-INFO:root:P4 fortifies Alberta (2) 
-INFO:root:P3 fortifies Congo (2) 
-INFO:root:P1 fortifies Irkutsk (2) 
-INFO:root:P2 fortifies Siberia (2) 
-INFO:root:P4 fortifies Ontario (2) 
-INFO:root:P3 fortifies South Africa (2) 
-INFO:root:P1 fortifies Northern Europe (2) 
-INFO:root:P2 fortifies Central America (2) 
-INFO:root:P4 fortifies Southern Europe (2) 
-INFO:root:P3 fortifies Greenland (3) 
-INFO:root:P1 fortifies Northern Europe (3) 
-INFO:root:P2 fortifies Northwest Territory (2) 
-INFO:root:P4 fortifies Afghanistan (2) 
-INFO:root:P3 fortifies Mongolia (2) 
-INFO:root:P1 fortifies Kamchatka (2) 
-INFO:root:P2 fortifies Indonesia (2) 
-INFO:root:P4 fortifies China (2) 
-INFO:root:P3 fortifies Iceland (2) 
-INFO:root:P1 fortifies Ukraine (2) 
-INFO:root:P2 fortifies Eastern United States (2) 
-INFO:root:P4 fortifies Afghanistan (3) 
-INFO:root:P3 fortifies Western Europe (2) 
-INFO:root:P1 fortifies Ukraine (3) 
-INFO:root:P2 fortifies Ural (3) 
-INFO:root:P4 fortifies Argentina (2) 
-INFO:root:P3 fortifies Mongolia (3) 
-INFO:root:P1 fortifies Egypt (2) 
-INFO:root:P2 fortifies Siberia (3) 
-INFO:root:P4 fortifies Venezuela (2) 
-INFO:root:P3 fortifies Greenland (4) 
-INFO:root:P1 fortifies Northern Europe (4) 
-INFO:root:P2 fortifies Yakutsk (2) 
-INFO:root:P4 fortifies Brazil (3) 
-INFO:root:P3 fortifies Western Europe (3) 
-INFO:root:P1 fortifies Northern Europe (5) 
-INFO:root:P2 fortifies Ural (4) 
-INFO:root:P4 fortifies Argentina (3) 
-INFO:root:P3 fortifies Greenland (5) 
-INFO:root:P1 fortifies Northern Europe (6) 
-INFO:root:P2 fortifies Yakutsk (3) 
-INFO:root:P4 fortifies Afghanistan (4) 
-INFO:root:P3 fortifies Western Australia (2) 
-INFO:root:P1 fortifies Great Britain (2) 
-INFO:root:P2 fortifies India (2) 
-INFO:root:P4 fortifies Western United States (2) 
-INFO:root:P3 fortifies Western Europe (4) 
-INFO:root:P1 fortifies Siam (2) 
-INFO:root:P2 fortifies Indonesia (3) 
-INFO:root:P4 fortifies Brazil (4) 
-INFO:root:P3 fortifies Congo (3) 
-INFO:root:P1 fortifies New Guinea (3) 
-INFO:root:P2 fortifies Japan (2) 
-INFO:root:P4 fortifies Alberta (3) 
-INFO:root:P3 fortifies South Africa (3) 
-INFO:root:P1 fortifies Peru (2) 
-INFO:root:P2 fortifies Scandinavia (3) 
-INFO:root:P4 fortifies Alberta (4) 
-INFO:root:P3 fortifies North Africa (2) 
-INFO:root:P1 fortifies East Africa (2) 
-INFO:root:P2 fortifies Yakutsk (4) 
-INFO:root:P4 fortifies Venezuela (3) 
-INFO:root:P3 fortifies Iceland (3) 
-INFO:root:P1 fortifies Ukraine (4) 
-INFO:root:P2 fortifies Madagascar (2) 
-INFO:root:P4 fortifies Venezuela (4) 
-INFO:root:P3 fortifies Western Europe (5) 
-INFO:root:P1 fortifies East Africa (3) 
-INFO:root:P2 fortifies Ural (5) 
-INFO:root:P4 fortifies Western United States (3) 
-INFO:root:P3 fortifies South Africa (4) 
-INFO:root:P1 fortifies Peru (3) 
-INFO:root:P3 fortifies Western Europe (6) 
-INFO:root:P1 fortifies Northern Europe (7) 
-INFO:root:Move: 0
-INFO:root:P2 receives 3 armies
-INFO:root:P2 fortifies Indonesia (4)
-INFO:root:P2 fortifies Scandinavia (4)
-INFO:root:P2 fortifies Indonesia (5)
-INFO:root:P2 attacks Ontario (P4, 2) from Eastern United States (2)
-INFO:root:Dice rolls: A[4]; D[5]
-INFO:root:Losses: Attacker 1 (Eastern United States 2); Defender 0 (Ontario 2)
-INFO:root:P2 attacks Kamchatka (P1, 2) from Japan (2)
-INFO:root:Dice rolls: A[2]; D[1]
-INFO:root:Losses: Attacker 0 (Japan 2); Defender 1 (Kamchatka 2)
-INFO:root:P2 attacks China (P4, 2) from Siberia (3)
-INFO:root:Dice rolls: A[3]; D[5, 3]
-INFO:root:Losses: Attacker 1 (Siberia 3); Defender 0 (China 2)
-INFO:root:P2 attacks South Africa (P3, 4) from Madagascar (2)
-INFO:root:Dice rolls: A[1]; D[5, 1]
-INFO:root:Losses: Attacker 1 (Madagascar 2); Defender 0 (South Africa 4)
-INFO:root:P2 attacks Venezuela (P4, 4) from Central America (2)
-INFO:root:Dice rolls: A[2]; D[1]
-INFO:root:Losses: Attacker 0 (Central America 2); Defender 1 (Venezuela 4)
-INFO:root:P2 attacks Afghanistan (P4, 4) from Ural (5)
-INFO:root:Dice rolls: A[6, 6, 4]; D[5, 1]
-INFO:root:Losses: Attacker 0 (Ural 5); Defender 2 (Afghanistan 4)
-INFO:root:P2 attacks Siam (P1, 2) from Indonesia (5)
-INFO:root:Dice rolls: A[5, 3, 2]; D[2, 1]
-INFO:root:Losses: Attacker 0 (Indonesia 5); Defender 2 (Siam 2)
-INFO:root:P2 has occupied Siam
-INFO:root:P2 attacks China (P4, 2) from Ural (5)
-INFO:root:Dice rolls: A[5, 3, 1]; D[5, 1]
-INFO:root:Losses: Attacker 1 (Ural 5); Defender 1 (China 2)
-INFO:root:P2 attacks Irkutsk (P1, 2) from Siberia (2)
-INFO:root:Dice rolls: A[6]; D[2]
-INFO:root:Losses: Attacker 0 (Siberia 2); Defender 1 (Irkutsk 2)
-INFO:root:P2 attacks Western United States (P4, 3) from Central America (2)
-INFO:root:Dice rolls: A[2]; D[5, 4]
-INFO:root:Losses: Attacker 1 (Central America 2); Defender 0 (Western United States 3)
-INFO:root:P2 attacks Northern Europe (P1, 7) from Scandinavia (4)
-INFO:root:Dice rolls: A[1, 1, 1]; D[5, 1]
-INFO:root:Losses: Attacker 2 (Scandinavia 4); Defender 0 (Northern Europe 7)
-INFO:root:P2 attacks Irkutsk (P1, 1) from Siberia (2)
-INFO:root:Dice rolls: A[2]; D[5]
-INFO:root:Losses: Attacker 1 (Siberia 2); Defender 0 (Irkutsk 1)
-INFO:root:P2 attacks Afghanistan (P4, 2) from India (2)
-INFO:root:Dice rolls: A[3]; D[3, 3]
-INFO:root:Losses: Attacker 1 (India 2); Defender 0 (Afghanistan 2)
-INFO:root:P2 attacks Kamchatka (P1, 1) from Yakutsk (4)
-INFO:root:Dice rolls: A[5, 4]; D[3]
-INFO:root:Losses: Attacker 0 (Yakutsk 4); Defender 1 (Kamchatka 1)
-INFO:root:P2 has occupied Kamchatka
-INFO:root:P2 attacks Iceland (P3, 3) from Scandinavia (2)
-INFO:root:Dice rolls: A[6]; D[6, 4]
-INFO:root:Losses: Attacker 1 (Scandinavia 2); Defender 0 (Iceland 3)
-INFO:root:P2 attacks Mongolia (P3, 3) from Japan (2)
-INFO:root:Dice rolls: A[2]; D[3]
-INFO:root:Losses: Attacker 1 (Japan 2); Defender 0 (Mongolia 3)
-INFO:root:P2 attacks Ontario (P4, 2) from Northwest Territory (2)
-INFO:root:Dice rolls: A[6]; D[1]
-INFO:root:Losses: Attacker 0 (Northwest Territory 2); Defender 1 (Ontario 2)
-INFO:root:P2 attacks China (P4, 1) from Siam (4)
-INFO:root:Dice rolls: A[6, 4, 1]; D[6]
-INFO:root:Losses: Attacker 1 (Siam 4); Defender 0 (China 1)
-INFO:root:P2 attacks China (P4, 1) from Ural (4)
-INFO:root:Dice rolls: A[3]; D[4]
-INFO:root:Losses: Attacker 1 (Ural 4); Defender 0 (China 1)
-INFO:root:P2 attacks Alberta (P4, 4) from Northwest Territory (2)
-INFO:root:Dice rolls: A[1]; D[4]
-INFO:root:Losses: Attacker 1 (Northwest Territory 2); Defender 0 (Alberta 4)
-INFO:root:P2 attacks China (P4, 1) from Ural (3)
-INFO:root:Dice rolls: A[6]; D[6]
-INFO:root:Losses: Attacker 1 (Ural 3); Defender 0 (China 1)
-INFO:root:P2 attacks China (P4, 1) from Siam (3)
-INFO:root:Dice rolls: A[5, 4]; D[2]
-INFO:root:Losses: Attacker 0 (Siam 3); Defender 1 (China 1)
-INFO:root:P2 has occupied China
-INFO:root:P2 attacks Ukraine (P1, 4) from Ural (2)
-INFO:root:Dice rolls: A[6]; D[6, 3]
-INFO:root:Losses: Attacker 1 (Ural 2); Defender 0 (Ukraine 4)
-INFO:root:P2 attacks Mongolia (P3, 3) from China (2)
-INFO:root:Dice rolls: A[1]; D[2]
-INFO:root:Losses: Attacker 1 (China 2); Defender 0 (Mongolia 3)
-INFO:root:P2 attacks Mongolia (P3, 3) from Kamchatka (3)
-INFO:root:Dice rolls: A[6, 3]; D[3]
-INFO:root:Losses: Attacker 0 (Kamchatka 3); Defender 1 (Mongolia 3)
-INFO:root:P2 attacks Alaska (P3, 1) from Kamchatka (3)
-INFO:root:Dice rolls: A[3]; D[5]
-INFO:root:Losses: Attacker 1 (Kamchatka 3); Defender 0 (Alaska 1)
-INFO:root:P2 attacks Irkutsk (P1, 1) from Kamchatka (2)
-INFO:root:Dice rolls: A[6]; D[5]
-INFO:root:Losses: Attacker 0 (Kamchatka 2); Defender 1 (Irkutsk 1)
-INFO:root:P2 has occupied Irkutsk
-INFO:root:P4 receives 3 armies
-INFO:root:P4 fortifies Venezuela (4)
-INFO:root:P4 fortifies Western United States (4)
-INFO:root:P4 fortifies Quebec (2)
-INFO:root:P4 attacks Central America (P2, 1) from Venezuela (4)
-INFO:root:Dice rolls: A[6, 3]; D[1]
-INFO:root:Losses: Attacker 0 (Venezuela 4); Defender 1 (Central America 1)
-INFO:root:P4 has occupied Central America
-INFO:root:P4 attacks Eastern United States (P2, 1) from Western United States (4)
-INFO:root:Dice rolls: A[6, 2, 1]; D[3]
-INFO:root:Losses: Attacker 0 (Western United States 4); Defender 1 (Eastern United States 1)
-INFO:root:P4 has occupied Eastern United States
-INFO:root:P4 attacks Greenland (P3, 5) from Quebec (2)
-INFO:root:Dice rolls: A[5]; D[1, 1]
-INFO:root:Losses: Attacker 0 (Quebec 2); Defender 1 (Greenland 5)
-INFO:root:P4 attacks Northwest Territory (P2, 1) from Alberta (4)
-INFO:root:Dice rolls: A[4, 2]; D[2]
-INFO:root:Losses: Attacker 0 (Alberta 4); Defender 1 (Northwest Territory 1)
-INFO:root:P4 has occupied Northwest Territory
-INFO:root:P4 attacks Greenland (P3, 4) from Quebec (2)
-INFO:root:Dice rolls: A[4]; D[6, 3]
-INFO:root:Losses: Attacker 1 (Quebec 2); Defender 0 (Greenland 4)
-INFO:root:P4 attacks North Africa (P3, 2) from Southern Europe (2)
-INFO:root:Dice rolls: A[3]; D[5, 1]
-INFO:root:Losses: Attacker 1 (Southern Europe 2); Defender 0 (North Africa 2)
-INFO:root:P4 attacks Ural (P2, 1) from Afghanistan (2)
-INFO:root:Dice rolls: A[2]; D[3]
-INFO:root:Losses: Attacker 1 (Afghanistan 2); Defender 0 (Ural 1)
-INFO:root:P4 attacks Greenland (P3, 4) from Northwest Territory (3)
-INFO:root:Dice rolls: A[5, 2]; D[6, 6]
-INFO:root:Losses: Attacker 2 (Northwest Territory 3); Defender 0 (Greenland 4)
-INFO:root:P4 attacks North Africa (P3, 2) from Brazil (4)
-INFO:root:Dice rolls: A[6, 3, 3]; D[4, 1]
-INFO:root:Losses: Attacker 0 (Brazil 4); Defender 2 (North Africa 2)
-INFO:root:P4 has occupied North Africa
-INFO:root:P4 attacks East Africa (P1, 3) from North Africa (3)
-INFO:root:Dice rolls: A[4]; D[4, 3]
-INFO:root:Losses: Attacker 1 (North Africa 3); Defender 0 (East Africa 3)
-INFO:root:P4 attacks Peru (P1, 3) from Argentina (3)
-INFO:root:Dice rolls: A[3, 1]; D[4, 4]
-INFO:root:Losses: Attacker 2 (Argentina 3); Defender 0 (Peru 3)
-INFO:root:P4 attacks Congo (P3, 3) from North Africa (2)
-INFO:root:Dice rolls: A[2]; D[5, 1]
-INFO:root:Losses: Attacker 1 (North Africa 2); Defender 0 (Congo 3)
-INFO:root:P3 receives 3 armies
-INFO:root:P3 fortifies Greenland (5)
-INFO:root:P3 fortifies Western Europe (7)
-INFO:root:P3 fortifies Western Australia (3)
-INFO:root:P3 attacks Indonesia (P2, 1) from Western Australia (3)
-INFO:root:Dice rolls: A[2]; D[2]
-INFO:root:Losses: Attacker 1 (Western Australia 3); Defender 0 (Indonesia 1)
-INFO:root:P3 attacks Northern Europe (P1, 7) from Western Europe (7)
-INFO:root:Dice rolls: A[4, 2]; D[6, 5]
-INFO:root:Losses: Attacker 2 (Western Europe 7); Defender 0 (Northern Europe 7)
-INFO:root:P3 attacks Scandinavia (P2, 1) from Iceland (3)
-INFO:root:Dice rolls: A[6, 3]; D[2]
-INFO:root:Losses: Attacker 0 (Iceland 3); Defender 1 (Scandinavia 1)
-INFO:root:P3 has occupied Scandinavia
-INFO:root:P3 attacks Japan (P2, 1) from Mongolia (2)
-INFO:root:Dice rolls: A[1]; D[4]
-INFO:root:Losses: Attacker 1 (Mongolia 2); Defender 0 (Japan 1)
-INFO:root:P3 attacks North Africa (P4, 1) from Western Europe (5)
-INFO:root:Dice rolls: A[6, 4, 1]; D[1]
-INFO:root:Losses: Attacker 0 (Western Europe 5); Defender 1 (North Africa 1)
-INFO:root:P3 has occupied North Africa
-INFO:root:P3 attacks East Africa (P1, 3) from Congo (3)
-INFO:root:Dice rolls: A[2]; D[4, 3]
-INFO:root:Losses: Attacker 1 (Congo 3); Defender 0 (East Africa 3)
-INFO:root:P3 attacks Northern Europe (P1, 7) from Scandinavia (2)
-INFO:root:Dice rolls: A[1]; D[5]
-INFO:root:Losses: Attacker 1 (Scandinavia 2); Defender 0 (Northern Europe 7)
-INFO:root:P3 attacks East Africa (P1, 3) from North Africa (4)
-INFO:root:Dice rolls: A[2]; D[4]
-INFO:root:Losses: Attacker 1 (North Africa 4); Defender 0 (East Africa 3)
-INFO:root:P3 attacks Ontario (P4, 1) from Greenland (5)
-INFO:root:Dice rolls: A[6, 5]; D[3]
-INFO:root:Losses: Attacker 0 (Greenland 5); Defender 1 (Ontario 1)
-INFO:root:P3 has occupied Ontario
-INFO:root:P3 attacks East Africa (P1, 3) from Congo (2)
-INFO:root:Dice rolls: A[5]; D[6, 4]
-INFO:root:Losses: Attacker 1 (Congo 2); Defender 0 (East Africa 3)
-INFO:root:P3 attacks Indonesia (P2, 1) from Western Australia (2)
-INFO:root:Dice rolls: A[3]; D[1]
-INFO:root:Losses: Attacker 0 (Western Australia 2); Defender 1 (Indonesia 1)
-INFO:root:P3 has occupied Indonesia
-INFO:root:P3 attacks Northwest Territory (P4, 1) from Ontario (4)
-INFO:root:Dice rolls: A[3, 2, 1]; D[3]
-INFO:root:Losses: Attacker 1 (Ontario 4); Defender 0 (Northwest Territory 1)
-INFO:root:P3 attacks Madagascar (P2, 1) from South Africa (4)
-INFO:root:Dice rolls: A[6, 4, 3]; D[4]
-INFO:root:Losses: Attacker 0 (South Africa 4); Defender 1 (Madagascar 1)
-INFO:root:P3 has occupied Madagascar
-INFO:root:P3 attacks Egypt (P1, 2) from North Africa (3)
-INFO:root:Dice rolls: A[3]; D[4, 4]
-INFO:root:Losses: Attacker 1 (North Africa 3); Defender 0 (Egypt 2)
-INFO:root:P3 attacks Western United States (P4, 1) from Ontario (3)
-INFO:root:Dice rolls: A[6, 4]; D[4]
-INFO:root:Losses: Attacker 0 (Ontario 3); Defender 1 (Western United States 1)
-INFO:root:P3 has occupied Western United States
-INFO:root:P3 attacks East Africa (P1, 3) from Madagascar (3)
-INFO:root:Dice rolls: A[5]; D[6, 1]
-INFO:root:Losses: Attacker 1 (Madagascar 3); Defender 0 (East Africa 3)
-INFO:root:P3 attacks East Africa (P1, 3) from Madagascar (2)
-INFO:root:Dice rolls: A[6]; D[1]
-INFO:root:Losses: Attacker 0 (Madagascar 2); Defender 1 (East Africa 3)
-INFO:root:P3 attacks East Africa (P1, 2) from Madagascar (2)
-INFO:root:Dice rolls: A[1]; D[1, 1]
-INFO:root:Losses: Attacker 1 (Madagascar 2); Defender 0 (East Africa 2)
-INFO:root:P3 attacks Egypt (P1, 2) from North Africa (2)
-INFO:root:Dice rolls: A[5]; D[4]
-INFO:root:Losses: Attacker 0 (North Africa 2); Defender 1 (Egypt 2)
-INFO:root:P3 attacks Alberta (P4, 1) from Western United States (2)
-INFO:root:Dice rolls: A[4]; D[2]
-INFO:root:Losses: Attacker 0 (Western United States 2); Defender 1 (Alberta 1)
-INFO:root:P3 has occupied Alberta
-INFO:root:P3 attacks East Africa (P1, 2) from North Africa (2)
-INFO:root:Dice rolls: A[1]; D[6, 1]
-INFO:root:Losses: Attacker 1 (North Africa 2); Defender 0 (East Africa 2)
-INFO:root:P1 receives 3 armies
-INFO:root:P1 fortifies Northern Europe (8)
-INFO:root:P1 fortifies New Guinea (4)
-INFO:root:P1 fortifies Great Britain (3)
-INFO:root:P1 attacks Western Australia (P3, 1) from New Guinea (4)
-INFO:root:Dice rolls: A[6, 6, 3]; D[6]
-INFO:root:Losses: Attacker 1 (New Guinea 4); Defender 0 (Western Australia 1)
-INFO:root:P1 attacks Scandinavia (P3, 1) from Northern Europe (8)
-INFO:root:Dice rolls: A[5, 4]; D[2]
-INFO:root:Losses: Attacker 0 (Northern Europe 8); Defender 1 (Scandinavia 1)
-INFO:root:P1 has occupied Scandinavia
-INFO:root:P1 attacks Iceland (P3, 1) from Scandinavia (7)
-INFO:root:Dice rolls: A[5, 4]; D[5]
-INFO:root:Losses: Attacker 1 (Scandinavia 7); Defender 0 (Iceland 1)
-INFO:root:P1 attacks Iceland (P3, 1) from Scandinavia (6)
-INFO:root:Dice rolls: A[5, 4, 1]; D[4]
-INFO:root:Losses: Attacker 0 (Scandinavia 6); Defender 1 (Iceland 1)
-INFO:root:P1 has occupied Iceland
-INFO:root:P1 attacks Western Europe (P3, 1) from Great Britain (3)
-INFO:root:Dice rolls: A[2]; D[2]
-INFO:root:Losses: Attacker 1 (Great Britain 3); Defender 0 (Western Europe 1)
-INFO:root:P1 attacks Southern Europe (P4, 1) from Ukraine (4)
-INFO:root:Dice rolls: A[3]; D[4]
-INFO:root:Losses: Attacker 1 (Ukraine 4); Defender 0 (Southern Europe 1)
-INFO:root:P1 attacks Middle East (P4, 1) from Ukraine (3)
-INFO:root:Dice rolls: A[3, 1]; D[1]
-INFO:root:Losses: Attacker 0 (Ukraine 3); Defender 1 (Middle East 1)
-INFO:root:P1 has occupied Middle East
-INFO:root:P1 attacks Western Europe (P3, 1) from Great Britain (2)
-INFO:root:Dice rolls: A[4]; D[1]
-INFO:root:Losses: Attacker 0 (Great Britain 2); Defender 1 (Western Europe 1)
-INFO:root:P1 has occupied Western Europe
-INFO:root:P1 attacks Western Australia (P3, 1) from New Guinea (3)
-INFO:root:Dice rolls: A[4, 2]; D[6]
-INFO:root:Losses: Attacker 1 (New Guinea 3); Defender 0 (Western Australia 1)
-INFO:root:P1 attacks Greenland (P3, 1) from Iceland (5)
-INFO:root:Dice rolls: A[5, 3]; D[4]
-INFO:root:Losses: Attacker 0 (Iceland 5); Defender 1 (Greenland 1)
-INFO:root:P1 has occupied Greenland
-INFO:root:P1 attacks Southern Europe (P4, 1) from Middle East (2)
-INFO:root:Dice rolls: A[4]; D[2]
-INFO:root:Losses: Attacker 0 (Middle East 2); Defender 1 (Southern Europe 1)
-INFO:root:P1 has occupied Southern Europe
-INFO:root:P1 attacks Ontario (P3, 1) from Greenland (4)
-INFO:root:Dice rolls: A[6, 3, 2]; D[1]
-INFO:root:Losses: Attacker 0 (Greenland 4); Defender 1 (Ontario 1)
-INFO:root:P1 has occupied Ontario
-INFO:root:P1 attacks Eastern Australia (P3, 1) from New Guinea (2)
-INFO:root:Dice rolls: A[3]; D[4]
-INFO:root:Losses: Attacker 1 (New Guinea 2); Defender 0 (Eastern Australia 1)
-INFO:root:P1 attacks North Africa (P3, 1) from East Africa (2)
-INFO:root:Dice rolls: A[5]; D[5]
-INFO:root:Losses: Attacker 1 (East Africa 2); Defender 0 (North Africa 1)
-INFO:root:P1 attacks Alberta (P3, 1) from Ontario (3)
-INFO:root:Dice rolls: A[4]; D[1]
-INFO:root:Losses: Attacker 0 (Ontario 3); Defender 1 (Alberta 1)
-INFO:root:P1 has occupied Alberta
-INFO:root:P1 attacks Argentina (P4, 1) from Peru (3)
-INFO:root:Dice rolls: A[3]; D[3]
-INFO:root:Losses: Attacker 1 (Peru 3); Defender 0 (Argentina 1)
-INFO:root:P1 attacks Argentina (P4, 1) from Peru (2)
-INFO:root:Dice rolls: A[5]; D[1]
-INFO:root:Losses: Attacker 0 (Peru 2); Defender 1 (Argentina 1)
-INFO:root:P1 has occupied Argentina
-INFO:root:P1 attacks Northwest Territory (P4, 1) from Alberta (2)
-INFO:root:Dice rolls: A[3]; D[2]
-INFO:root:Losses: Attacker 0 (Alberta 2); Defender 1 (Northwest Territory 1)
-INFO:root:P1 has occupied Northwest Territory
+INFO:root:Joe gets Ontario
+INFO:root:Steve gets Ukraine
+INFO:root:Steph gets India
+INFO:root:Kelly gets Northern Europe
+INFO:root:Mark gets Irkutsk
+INFO:root:Joe gets North Africa
+INFO:root:Steve gets Peru
+INFO:root:Steph gets China
+INFO:root:Kelly gets Great Britain
+INFO:root:Mark gets Siberia
+INFO:root:Joe gets Northwest Territory
+INFO:root:Steve gets Egypt
+INFO:root:Steph gets Mongolia
+INFO:root:Kelly gets Scandinavia
+INFO:root:Mark gets Yakutsk
+INFO:root:Joe gets Western United States
+INFO:root:Steve gets Central America
+INFO:root:Steph gets Ural
+INFO:root:Kelly gets Southern Europe
+INFO:root:Mark gets Kamchatka
+INFO:root:Joe gets Venezuela
+INFO:root:Steve gets South Africa
+INFO:root:Steph gets Japan
+INFO:root:Kelly gets Western Europe
+INFO:root:Mark gets Alaska
+INFO:root:Joe gets East Africa
+INFO:root:Steve gets Eastern United States
+INFO:root:Steph gets Afghanistan
+INFO:root:Kelly gets Iceland
+INFO:root:Mark gets Alberta
+INFO:root:Joe gets Quebec
+INFO:root:Steve gets Greenland
+INFO:root:Steph gets Siam
+INFO:root:Kelly gets Middle East
+INFO:root:Mark gets Madagascar
+INFO:root:Joe gets Brazil
+INFO:root:Steve gets Eastern Australia
+INFO:root:Steph gets Indonesia
+INFO:root:Kelly gets Western Australia
+INFO:root:Mark gets Argentina
+INFO:root:Joe gets New Guinea
+INFO:root:Steve gets Congo
+INFO:root:Joe fortifies Quebec (2)
+INFO:root:Steve fortifies Egypt (2)
+INFO:root:Steph fortifies India (2)
+INFO:root:Kelly fortifies Southern Europe (2)
+INFO:root:Mark fortifies Alaska (2)
+INFO:root:Joe fortifies Ontario (2)
+INFO:root:Steve fortifies Greenland (2)
+INFO:root:Steph fortifies India (3)
+INFO:root:Kelly fortifies Iceland (2)
+INFO:root:Mark fortifies Alaska (3)
+INFO:root:Joe fortifies Western United States (2)
+INFO:root:Steve fortifies Greenland (3)
+INFO:root:Steph fortifies Mongolia (2)
+INFO:root:Kelly fortifies Scandinavia (2)
+INFO:root:Mark fortifies Alaska (4)
+INFO:root:Joe fortifies New Guinea (2)
+INFO:root:Steve fortifies Ukraine (2)
+INFO:root:Steph fortifies Afghanistan (2)
+INFO:root:Kelly fortifies Southern Europe (3)
+INFO:root:Mark fortifies Kamchatka (2)
+INFO:root:Joe fortifies Western United States (3)
+INFO:root:Steve fortifies Congo (2)
+INFO:root:Steph fortifies China (2)
+INFO:root:Kelly fortifies Western Europe (2)
+INFO:root:Mark fortifies Kamchatka (3)
+INFO:root:Joe fortifies East Africa (2)
+INFO:root:Steve fortifies Congo (3)
+INFO:root:Steph fortifies Ural (2)
+INFO:root:Kelly fortifies Middle East (2)
+INFO:root:Mark fortifies Alberta (2)
+INFO:root:Joe fortifies North Africa (2)
+INFO:root:Steve fortifies Congo (4)
+INFO:root:Steph fortifies Afghanistan (3)
+INFO:root:Kelly fortifies Iceland (3)
+INFO:root:Mark fortifies Alaska (5)
+INFO:root:Joe fortifies Ontario (3)
+INFO:root:Steve fortifies Greenland (4)
+INFO:root:Steph fortifies China (3)
+INFO:root:Kelly fortifies Scandinavia (3)
+INFO:root:Mark fortifies Kamchatka (4)
+INFO:root:Joe fortifies Brazil (2)
+INFO:root:Steve fortifies South Africa (2)
+INFO:root:Steph fortifies Mongolia (3)
+INFO:root:Kelly fortifies Iceland (4)
+INFO:root:Mark fortifies Argentina (2)
+INFO:root:Joe fortifies Northwest Territory (2)
+INFO:root:Steve fortifies South Africa (3)
+INFO:root:Steph fortifies Japan (2)
+INFO:root:Kelly fortifies Scandinavia (4)
+INFO:root:Mark fortifies Alberta (3)
+INFO:root:Joe fortifies Venezuela (2)
+INFO:root:Steve fortifies Ukraine (3)
+INFO:root:Steph fortifies Afghanistan (4)
+INFO:root:Kelly fortifies Southern Europe (4)
+INFO:root:Mark fortifies Kamchatka (5)
+INFO:root:Joe fortifies New Guinea (3)
+INFO:root:Steve fortifies Peru (2)
+INFO:root:Steph fortifies India (4)
+INFO:root:Kelly fortifies Western Europe (3)
+INFO:root:Mark fortifies Siberia (2)
+INFO:root:Joe fortifies East Africa (3)
+INFO:root:Steve fortifies South Africa (4)
+INFO:root:Steph fortifies Mongolia (4)
+INFO:root:Kelly fortifies Northern Europe (2)
+INFO:root:Mark fortifies Argentina (3)
+INFO:root:Joe fortifies Brazil (3)
+INFO:root:Steve fortifies Congo (5)
+INFO:root:Steph fortifies India (5)
+INFO:root:Kelly fortifies Western Australia (2)
+INFO:root:Mark fortifies Irkutsk (2)
+INFO:root:Joe fortifies Quebec (3)
+INFO:root:Steve fortifies Congo (6)
+INFO:root:Steph fortifies Japan (3)
+INFO:root:Kelly fortifies Western Australia (3)
+INFO:root:Mark fortifies Irkutsk (3)
+INFO:root:Joe fortifies Brazil (4)
+INFO:root:Steve fortifies Peru (3)
+INFO:root:Steph fortifies Japan (4)
+INFO:root:Kelly fortifies Western Europe (4)
+INFO:root:Mark fortifies Argentina (4)
+INFO:root:Steph fortifies China (4)
+INFO:root:Kelly fortifies Western Europe (5)
+INFO:root:Mark fortifies Irkutsk (4)
 INFO:root:Move: 1
-INFO:root:P2 receives 3 armies
-INFO:root:P2 fortifies Yakutsk (2)
-INFO:root:P2 fortifies Siberia (2)
-INFO:root:P2 fortifies China (2)
-INFO:root:P2 attacks Mongolia (P3, 1) from Siberia (2)
-INFO:root:Dice rolls: A[2]; D[5]
-INFO:root:Losses: Attacker 1 (Siberia 2); Defender 0 (Mongolia 1)
-INFO:root:P2 attacks Afghanistan (P4, 1) from China (2)
-INFO:root:Dice rolls: A[6]; D[1]
-INFO:root:Losses: Attacker 0 (China 2); Defender 1 (Afghanistan 1)
-INFO:root:P2 has occupied Afghanistan
-INFO:root:P4 receives 3 armies
-INFO:root:P4 fortifies Quebec (2)
-INFO:root:P4 fortifies Quebec (3)
-INFO:root:P4 fortifies Quebec (4)
-INFO:root:P4 attacks Ontario (P1, 1) from Quebec (4)
-INFO:root:Dice rolls: A[6, 2]; D[6]
-INFO:root:Losses: Attacker 1 (Quebec 4); Defender 0 (Ontario 1)
-INFO:root:P4 attacks Western United States (P3, 1) from Central America (3)
-INFO:root:Dice rolls: A[3]; D[6]
-INFO:root:Losses: Attacker 1 (Central America 3); Defender 0 (Western United States 1)
-INFO:root:P4 attacks Greenland (P1, 1) from Quebec (3)
-INFO:root:Dice rolls: A[6, 1]; D[3]
-INFO:root:Losses: Attacker 0 (Quebec 3); Defender 1 (Greenland 1)
-INFO:root:P4 has occupied Greenland
-INFO:root:P4 attacks Western United States (P3, 1) from Central America (2)
-INFO:root:Dice rolls: A[2]; D[5]
-INFO:root:Losses: Attacker 1 (Central America 2); Defender 0 (Western United States 1)
-INFO:root:P4 attacks Western United States (P3, 1) from Eastern United States (3)
-INFO:root:Dice rolls: A[2]; D[4]
-INFO:root:Losses: Attacker 1 (Eastern United States 3); Defender 0 (Western United States 1)
-INFO:root:P4 attacks Ontario (P1, 1) from Eastern United States (2)
-INFO:root:Dice rolls: A[6]; D[3]
-INFO:root:Losses: Attacker 0 (Eastern United States 2); Defender 1 (Ontario 1)
-INFO:root:P4 has occupied Ontario
-INFO:root:P4 attacks Iceland (P1, 1) from Greenland (2)
-INFO:root:Dice rolls: A[5]; D[2]
-INFO:root:Losses: Attacker 0 (Greenland 2); Defender 1 (Iceland 1)
-INFO:root:P4 has occupied Iceland
-INFO:root:P3 receives 3 armies
-INFO:root:P3 fortifies Congo (2)
-INFO:root:P3 fortifies Western Australia (2)
-INFO:root:P3 fortifies Western Australia (3)
-INFO:root:P3 attacks New Guinea (P1, 1) from Western Australia (3)
-INFO:root:Dice rolls: A[4, 3]; D[2]
-INFO:root:Losses: Attacker 0 (Western Australia 3); Defender 1 (New Guinea 1)
-INFO:root:P3 has occupied New Guinea
-INFO:root:P3 attacks East Africa (P1, 1) from Congo (2)
-INFO:root:Dice rolls: A[6]; D[1]
-INFO:root:Losses: Attacker 0 (Congo 2); Defender 1 (East Africa 1)
-INFO:root:P3 has occupied East Africa
-INFO:root:P1 receives 4 armies
-INFO:root:P1 fortifies Peru (2)
-INFO:root:P1 fortifies Southern Europe (2)
-INFO:root:P1 fortifies Northern Europe (2)
-INFO:root:P1 fortifies Argentina (2)
-INFO:root:P1 attacks North Africa (P3, 1) from Southern Europe (2)
-INFO:root:Dice rolls: A[1]; D[2]
-INFO:root:Losses: Attacker 1 (Southern Europe 2); Defender 0 (North Africa 1)
-INFO:root:P1 attacks Brazil (P4, 1) from Peru (2)
-INFO:root:Dice rolls: A[2]; D[5]
-INFO:root:Losses: Attacker 1 (Peru 2); Defender 0 (Brazil 1)
-INFO:root:P1 attacks Brazil (P4, 1) from Argentina (2)
-INFO:root:Dice rolls: A[1]; D[4]
-INFO:root:Losses: Attacker 1 (Argentina 2); Defender 0 (Brazil 1)
-INFO:root:Move: 2
-INFO:root:P2 receives 3 armies
-INFO:root:P2 fortifies Afghanistan (2)
-INFO:root:P2 fortifies Irkutsk (2)
-INFO:root:P2 fortifies Afghanistan (3)
-INFO:root:P2 attacks Middle East (P1, 1) from Afghanistan (3)
-INFO:root:Dice rolls: A[5, 1]; D[3]
-INFO:root:Losses: Attacker 0 (Afghanistan 3); Defender 1 (Middle East 1)
-INFO:root:P2 has occupied Middle East
-INFO:root:P2 attacks Mongolia (P3, 1) from Irkutsk (2)
-INFO:root:Dice rolls: A[1]; D[4]
-INFO:root:Losses: Attacker 1 (Irkutsk 2); Defender 0 (Mongolia 1)
-INFO:root:P2 attacks Egypt (P1, 1) from Middle East (2)
-INFO:root:Dice rolls: A[1]; D[1]
-INFO:root:Losses: Attacker 1 (Middle East 2); Defender 0 (Egypt 1)
-INFO:root:P4 receives 3 armies
-INFO:root:P4 fortifies Brazil (2)
-INFO:root:P4 fortifies Greenland (2)
-INFO:root:P4 fortifies Central America (2)
-INFO:root:P4 attacks Northwest Territory (P1, 1) from Greenland (2)
-INFO:root:Dice rolls: A[6]; D[2]
-INFO:root:Losses: Attacker 0 (Greenland 2); Defender 1 (Northwest Territory 1)
-INFO:root:P4 has occupied Northwest Territory
-INFO:root:P4 attacks Western United States (P3, 1) from Central America (2)
-INFO:root:Dice rolls: A[4]; D[5]
-INFO:root:Losses: Attacker 1 (Central America 2); Defender 0 (Western United States 1)
-INFO:root:P4 attacks Argentina (P1, 1) from Brazil (2)
-INFO:root:Dice rolls: A[1]; D[1]
-INFO:root:Losses: Attacker 1 (Brazil 2); Defender 0 (Argentina 1)
-INFO:root:P3 receives 6 armies
-INFO:root:P3 fortifies Madagascar (2)
-INFO:root:P3 fortifies Western United States (2)
-INFO:root:P3 fortifies Congo (2)
-INFO:root:P3 fortifies Alaska (2)
-INFO:root:P3 fortifies Indonesia (2)
-INFO:root:P3 fortifies Alaska (3)
-INFO:root:P3 attacks Siam (P2, 1) from Indonesia (2)
-INFO:root:Dice rolls: A[3]; D[4]
-INFO:root:Losses: Attacker 1 (Indonesia 2); Defender 0 (Siam 1)
-INFO:root:P3 attacks Kamchatka (P2, 1) from Alaska (3)
-INFO:root:Dice rolls: A[6]; D[4]
-INFO:root:Losses: Attacker 0 (Alaska 3); Defender 1 (Kamchatka 1)
-INFO:root:P3 has occupied Kamchatka
-INFO:root:P3 attacks Alberta (P1, 1) from Western United States (2)
-INFO:root:Dice rolls: A[4]; D[4]
-INFO:root:Losses: Attacker 1 (Western United States 2); Defender 0 (Alberta 1)
-INFO:root:P3 attacks Irkutsk (P2, 1) from Kamchatka (2)
-INFO:root:Dice rolls: A[5]; D[1]
-INFO:root:Losses: Attacker 0 (Kamchatka 2); Defender 1 (Irkutsk 1)
-INFO:root:P3 has occupied Irkutsk
-INFO:root:P1 receives 3 armies
-INFO:root:P1 fortifies Southern Europe (2)
-INFO:root:P1 fortifies Peru (2)
-INFO:root:P1 fortifies Northern Europe (3)
-INFO:root:P1 attacks North Africa (P3, 1) from Southern Europe (2)
-INFO:root:Dice rolls: A[4]; D[1]
-INFO:root:Losses: Attacker 0 (Southern Europe 2); Defender 1 (North Africa 1)
-INFO:root:P1 has occupied North Africa
-INFO:root:P1 attacks Brazil (P4, 1) from Peru (2)
-INFO:root:Dice rolls: A[2]; D[2]
-INFO:root:Losses: Attacker 1 (Peru 2); Defender 0 (Brazil 1)
-INFO:root:Move: 3
-INFO:root:P2 receives 3 armies
-INFO:root:P2 fortifies Afghanistan (2)
-INFO:root:P2 fortifies Middle East (2)
-INFO:root:P2 fortifies Middle East (3)
-INFO:root:P2 attacks Irkutsk (P3, 1) from Yakutsk (2)
-INFO:root:Dice rolls: A[6]; D[5]
-INFO:root:Losses: Attacker 0 (Yakutsk 2); Defender 1 (Irkutsk 1)
-INFO:root:P2 has occupied Irkutsk
-INFO:root:P2 attacks Egypt (P1, 1) from Middle East (3)
-INFO:root:Dice rolls: A[4, 2]; D[1]
-INFO:root:Losses: Attacker 0 (Middle East 3); Defender 1 (Egypt 1)
-INFO:root:P2 has occupied Egypt
-INFO:root:P2 attacks Ukraine (P1, 1) from Afghanistan (2)
-INFO:root:Dice rolls: A[4]; D[4]
-INFO:root:Losses: Attacker 1 (Afghanistan 2); Defender 0 (Ukraine 1)
-INFO:root:P2 attacks East Africa (P3, 1) from Egypt (2)
-INFO:root:Dice rolls: A[4]; D[1]
-INFO:root:Losses: Attacker 0 (Egypt 2); Defender 1 (East Africa 1)
-INFO:root:P2 has occupied East Africa
-INFO:root:P4 receives 3 armies
-INFO:root:P4 fortifies Central America (2)
-INFO:root:P4 fortifies Eastern United States (2)
-INFO:root:P4 fortifies Eastern United States (3)
-INFO:root:P4 attacks Western United States (P3, 1) from Central America (2)
-INFO:root:Dice rolls: A[5]; D[2]
-INFO:root:Losses: Attacker 0 (Central America 2); Defender 1 (Western United States 1)
-INFO:root:P4 has occupied Western United States
-INFO:root:P3 receives 5 armies
-INFO:root:P3 fortifies Western Australia (2)
-INFO:root:P3 fortifies Alaska (2)
-INFO:root:P3 fortifies Alaska (3)
-INFO:root:P3 fortifies Madagascar (3)
-INFO:root:P3 fortifies Mongolia (2)
-INFO:root:P3 attacks East Africa (P2, 1) from Madagascar (3)
-INFO:root:Dice rolls: A[2, 1]; D[2]
-INFO:root:Losses: Attacker 1 (Madagascar 3); Defender 0 (East Africa 1)
-INFO:root:P3 attacks East Africa (P2, 1) from Madagascar (2)
-INFO:root:Dice rolls: A[6]; D[1]
-INFO:root:Losses: Attacker 0 (Madagascar 2); Defender 1 (East Africa 1)
-INFO:root:P3 has occupied East Africa
-INFO:root:P3 attacks Northwest Territory (P4, 1) from Alaska (3)
-INFO:root:Dice rolls: A[4, 4]; D[3]
-INFO:root:Losses: Attacker 0 (Alaska 3); Defender 1 (Northwest Territory 1)
-INFO:root:P3 has occupied Northwest Territory
-INFO:root:P3 attacks Alberta (P1, 1) from Northwest Territory (2)
-INFO:root:Dice rolls: A[6]; D[4]
-INFO:root:Losses: Attacker 0 (Northwest Territory 2); Defender 1 (Alberta 1)
-INFO:root:P3 has occupied Alberta
-INFO:root:P3 attacks Siberia (P2, 1) from Mongolia (2)
-INFO:root:Dice rolls: A[2]; D[2]
-INFO:root:Losses: Attacker 1 (Mongolia 2); Defender 0 (Siberia 1)
-INFO:root:P3 attacks North Africa (P1, 1) from Congo (2)
-INFO:root:Dice rolls: A[3]; D[5]
-INFO:root:Losses: Attacker 1 (Congo 2); Defender 0 (North Africa 1)
-INFO:root:P1 receives 3 armies
-INFO:root:P1 fortifies Southern Europe (2)
-INFO:root:P1 fortifies Southern Europe (3)
-INFO:root:P1 fortifies Western Europe (2)
-INFO:root:P1 attacks Middle East (P2, 1) from Southern Europe (3)
-INFO:root:Dice rolls: A[4, 1]; D[1]
-INFO:root:Losses: Attacker 0 (Southern Europe 3); Defender 1 (Middle East 1)
-INFO:root:P1 has occupied Middle East
-INFO:root:P1 attacks Afghanistan (P2, 1) from Middle East (2)
-INFO:root:Dice rolls: A[5]; D[2]
-INFO:root:Losses: Attacker 0 (Middle East 2); Defender 1 (Afghanistan 1)
-INFO:root:P1 has occupied Afghanistan
-INFO:root:Move: 4
-INFO:root:P2 receives 3 armies
-INFO:root:P2 fortifies China (2)
-INFO:root:P2 fortifies Siberia (2)
-INFO:root:P2 fortifies Irkutsk (2)
-INFO:root:P2 attacks Kamchatka (P3, 1) from Irkutsk (2)
-INFO:root:Dice rolls: A[6]; D[3]
-INFO:root:Losses: Attacker 0 (Irkutsk 2); Defender 1 (Kamchatka 1)
-INFO:root:P2 has occupied Kamchatka
-INFO:root:P2 attacks Mongolia (P3, 1) from Siberia (2)
-INFO:root:Dice rolls: A[4]; D[1]
-INFO:root:Losses: Attacker 0 (Siberia 2); Defender 1 (Mongolia 1)
-INFO:root:P2 has occupied Mongolia
-INFO:root:P2 attacks Afghanistan (P1, 1) from China (2)
-INFO:root:Dice rolls: A[3]; D[3]
-INFO:root:Losses: Attacker 1 (China 2); Defender 0 (Afghanistan 1)
-INFO:root:P4 receives 3 armies
-INFO:root:P4 receives 4 armies by trading a set
-INFO:root:P4 fortifies Greenland (2)
-INFO:root:P4 fortifies Central America (2)
-INFO:root:P4 fortifies Eastern United States (4)
-INFO:root:P4 fortifies Venezuela (2)
-INFO:root:P4 fortifies Venezuela (3)
-INFO:root:P4 fortifies Iceland (2)
-INFO:root:P4 fortifies Quebec (2)
-INFO:root:P4 attacks Peru (P1, 1) from Venezuela (3)
-INFO:root:Dice rolls: A[3]; D[4]
-INFO:root:Losses: Attacker 1 (Venezuela 3); Defender 0 (Peru 1)
-INFO:root:P4 attacks Scandinavia (P1, 1) from Iceland (2)
-INFO:root:Dice rolls: A[4]; D[5]
-INFO:root:Losses: Attacker 1 (Iceland 2); Defender 0 (Scandinavia 1)
-INFO:root:P4 attacks Northwest Territory (P3, 1) from Greenland (2)
-INFO:root:Dice rolls: A[1]; D[3]
-INFO:root:Losses: Attacker 1 (Greenland 2); Defender 0 (Northwest Territory 1)
-INFO:root:P4 attacks Peru (P1, 1) from Venezuela (2)
-INFO:root:Dice rolls: A[5]; D[6]
-INFO:root:Losses: Attacker 1 (Venezuela 2); Defender 0 (Peru 1)
-INFO:root:P3 receives 5 armies
-INFO:root:P3 fortifies Indonesia (2)
-INFO:root:P3 fortifies Indonesia (3)
-INFO:root:P3 fortifies Congo (2)
-INFO:root:P3 fortifies Indonesia (4)
-INFO:root:P3 fortifies East Africa (2)
-INFO:root:P3 attacks North Africa (P1, 1) from East Africa (2)
-INFO:root:Dice rolls: A[6]; D[2]
-INFO:root:Losses: Attacker 0 (East Africa 2); Defender 1 (North Africa 1)
-INFO:root:P3 has occupied North Africa
-INFO:root:P3 attacks Siam (P2, 1) from Indonesia (4)
-INFO:root:Dice rolls: A[6, 1]; D[2]
-INFO:root:Losses: Attacker 0 (Indonesia 4); Defender 1 (Siam 1)
-INFO:root:P3 has occupied Siam
-INFO:root:P3 attacks India (P2, 1) from Siam (3)
-INFO:root:Dice rolls: A[5, 2]; D[2]
-INFO:root:Losses: Attacker 0 (Siam 3); Defender 1 (India 1)
-INFO:root:P3 has occupied India
-INFO:root:P3 attacks China (P2, 1) from India (2)
-INFO:root:Dice rolls: A[5]; D[5]
-INFO:root:Losses: Attacker 1 (India 2); Defender 0 (China 1)
-INFO:root:P1 receives 3 armies
-INFO:root:P1 fortifies Scandinavia (2)
-INFO:root:P1 fortifies Scandinavia (3)
-INFO:root:P1 fortifies Northern Europe (4)
-INFO:root:P1 attacks North Africa (P3, 1) from Western Europe (2)
-INFO:root:Dice rolls: A[5]; D[1]
-INFO:root:Losses: Attacker 0 (Western Europe 2); Defender 1 (North Africa 1)
-INFO:root:P1 has occupied North Africa
-INFO:root:P1 attacks Iceland (P4, 1) from Scandinavia (3)
-INFO:root:Dice rolls: A[2, 1]; D[1]
-INFO:root:Losses: Attacker 0 (Scandinavia 3); Defender 1 (Iceland 1)
-INFO:root:P1 has occupied Iceland
-INFO:root:P1 attacks Greenland (P4, 1) from Iceland (2)
-INFO:root:Dice rolls: A[1]; D[5]
-INFO:root:Losses: Attacker 1 (Iceland 2); Defender 0 (Greenland 1)
-INFO:root:Move: 5
-INFO:root:P2 receives 3 armies
-INFO:root:P2 receives 6 armies by trading a set
-INFO:root:P2 fortifies Siberia (2)
-INFO:root:P2 fortifies Japan (2)
-INFO:root:P2 fortifies Mongolia (2)
-INFO:root:P2 fortifies China (2)
-INFO:root:P2 fortifies Siberia (3)
-INFO:root:P2 fortifies Japan (3)
-INFO:root:P2 fortifies Irkutsk (2)
-INFO:root:P2 fortifies Siberia (4)
-INFO:root:P2 fortifies Japan (4)
-INFO:root:P2 attacks India (P3, 1) from China (2)
-INFO:root:Dice rolls: A[4]; D[5]
-INFO:root:Losses: Attacker 1 (China 2); Defender 0 (India 1)
-INFO:root:P4 receives 3 armies
-INFO:root:P4 fortifies Central America (3)
-INFO:root:P4 fortifies Western United States (2)
-INFO:root:P4 fortifies Eastern United States (5)
-INFO:root:P4 attacks Alberta (P3, 1) from Western United States (2)
-INFO:root:Dice rolls: A[1]; D[5]
-INFO:root:Losses: Attacker 1 (Western United States 2); Defender 0 (Alberta 1)
-INFO:root:P3 receives 6 armies
-INFO:root:P3 receives 8 armies by trading a set
-INFO:root:P3 fortifies Northwest Territory (2)
-INFO:root:P3 fortifies New Guinea (3)
-INFO:root:P3 fortifies Western Australia (3)
-INFO:root:P3 fortifies Madagascar (2)
-INFO:root:P3 fortifies East Africa (2)
-INFO:root:P3 fortifies New Guinea (4)
-INFO:root:P3 fortifies Alaska (2)
-INFO:root:P3 fortifies Siam (2)
-INFO:root:P3 fortifies India (2)
-INFO:root:P3 fortifies Indonesia (2)
-INFO:root:P3 fortifies Madagascar (3)
-INFO:root:P3 fortifies Alaska (3)
-INFO:root:P3 fortifies Eastern Australia (2)
-INFO:root:P3 fortifies Eastern Australia (3)
-INFO:root:P3 attacks Kamchatka (P2, 1) from Alaska (3)
-INFO:root:Dice rolls: A[6, 3]; D[3]
-INFO:root:Losses: Attacker 0 (Alaska 3); Defender 1 (Kamchatka 1)
-INFO:root:P3 has occupied Kamchatka
-INFO:root:P3 attacks Greenland (P4, 1) from Northwest Territory (2)
-INFO:root:Dice rolls: A[5]; D[4]
-INFO:root:Losses: Attacker 0 (Northwest Territory 2); Defender 1 (Greenland 1)
-INFO:root:P3 has occupied Greenland
-INFO:root:P3 attacks Egypt (P2, 1) from East Africa (2)
-INFO:root:Dice rolls: A[4]; D[2]
-INFO:root:Losses: Attacker 0 (East Africa 2); Defender 1 (Egypt 1)
-INFO:root:P3 has occupied Egypt
-INFO:root:P3 attacks Japan (P2, 4) from Kamchatka (2)
-INFO:root:Dice rolls: A[6]; D[5, 2]
-INFO:root:Losses: Attacker 0 (Kamchatka 2); Defender 1 (Japan 4)
-INFO:root:P3 attacks North Africa (P1, 1) from Congo (2)
-INFO:root:Dice rolls: A[6]; D[3]
-INFO:root:Losses: Attacker 0 (Congo 2); Defender 1 (North Africa 1)
-INFO:root:P3 has occupied North Africa
-INFO:root:P3 attacks Afghanistan (P1, 1) from India (2)
-INFO:root:Dice rolls: A[4]; D[5]
-INFO:root:Losses: Attacker 1 (India 2); Defender 0 (Afghanistan 1)
-INFO:root:P3 attacks Japan (P2, 3) from Kamchatka (2)
-INFO:root:Dice rolls: A[2]; D[3]
-INFO:root:Losses: Attacker 1 (Kamchatka 2); Defender 0 (Japan 3)
-INFO:root:P3 attacks China (P2, 1) from Siam (2)
-INFO:root:Dice rolls: A[3]; D[1]
-INFO:root:Losses: Attacker 0 (Siam 2); Defender 1 (China 1)
-INFO:root:P3 has occupied China
-INFO:root:P1 receives 8 armies
-INFO:root:P1 fortifies Peru (2)
-INFO:root:P1 fortifies Argentina (2)
-INFO:root:P1 fortifies Southern Europe (2)
-INFO:root:P1 fortifies Argentina (3)
-INFO:root:P1 fortifies Iceland (2)
-INFO:root:P1 fortifies Southern Europe (3)
-INFO:root:P1 fortifies Southern Europe (4)
-INFO:root:P1 fortifies Northern Europe (5)
-INFO:root:P1 attacks Brazil (P4, 1) from Peru (2)
-INFO:root:Dice rolls: A[3]; D[3]
-INFO:root:Losses: Attacker 1 (Peru 2); Defender 0 (Brazil 1)
-INFO:root:P1 attacks Greenland (P3, 1) from Iceland (2)
-INFO:root:Dice rolls: A[6]; D[1]
-INFO:root:Losses: Attacker 0 (Iceland 2); Defender 1 (Greenland 1)
-INFO:root:P1 has occupied Greenland
-INFO:root:P1 attacks Brazil (P4, 1) from Argentina (3)
-INFO:root:Dice rolls: A[3]; D[1]
-INFO:root:Losses: Attacker 0 (Argentina 3); Defender 1 (Brazil 1)
-INFO:root:P1 has occupied Brazil
-INFO:root:P1 attacks Venezuela (P4, 1) from Brazil (2)
-INFO:root:Dice rolls: A[1]; D[5]
-INFO:root:Losses: Attacker 1 (Brazil 2); Defender 0 (Venezuela 1)
-INFO:root:P1 attacks Egypt (P3, 1) from Southern Europe (4)
-INFO:root:Dice rolls: A[3, 1, 1]; D[1]
-INFO:root:Losses: Attacker 0 (Southern Europe 4); Defender 1 (Egypt 1)
-INFO:root:P1 has occupied Egypt
-INFO:root:P1 attacks East Africa (P3, 1) from Egypt (3)
-INFO:root:Dice rolls: A[4]; D[5]
-INFO:root:Losses: Attacker 1 (Egypt 3); Defender 0 (East Africa 1)
-INFO:root:P1 attacks North Africa (P3, 1) from Egypt (2)
-INFO:root:Dice rolls: A[3]; D[4]
-INFO:root:Losses: Attacker 1 (Egypt 2); Defender 0 (North Africa 1)
-INFO:root:Move: 6
-INFO:root:P2 receives 3 armies
-INFO:root:P2 fortifies Mongolia (3)
-INFO:root:P2 fortifies Mongolia (4)
-INFO:root:P2 fortifies Yakutsk (2)
-INFO:root:P2 attacks Kamchatka (P3, 1) from Japan (3)
-INFO:root:Dice rolls: A[3]; D[6]
-INFO:root:Losses: Attacker 1 (Japan 3); Defender 0 (Kamchatka 1)
-INFO:root:P2 attacks Kamchatka (P3, 1) from Japan (2)
-INFO:root:Dice rolls: A[1]; D[1]
-INFO:root:Losses: Attacker 1 (Japan 2); Defender 0 (Kamchatka 1)
-INFO:root:P2 attacks China (P3, 1) from Siberia (4)
-INFO:root:Dice rolls: A[4]; D[5]
-INFO:root:Losses: Attacker 1 (Siberia 4); Defender 0 (China 1)
-INFO:root:P2 attacks Kamchatka (P3, 1) from Yakutsk (2)
-INFO:root:Dice rolls: A[1]; D[6]
-INFO:root:Losses: Attacker 1 (Yakutsk 2); Defender 0 (Kamchatka 1)
-INFO:root:P2 attacks China (P3, 1) from Siberia (3)
-INFO:root:Dice rolls: A[3, 1]; D[2]
-INFO:root:Losses: Attacker 0 (Siberia 3); Defender 1 (China 1)
-INFO:root:P2 has occupied China
-INFO:root:P2 attacks Kamchatka (P3, 1) from Mongolia (4)
-INFO:root:Dice rolls: A[3]; D[5]
-INFO:root:Losses: Attacker 1 (Mongolia 4); Defender 0 (Kamchatka 1)
-INFO:root:P2 attacks Siam (P3, 1) from China (2)
-INFO:root:Dice rolls: A[1]; D[6]
-INFO:root:Losses: Attacker 1 (China 2); Defender 0 (Siam 1)
-INFO:root:P2 attacks Kamchatka (P3, 1) from Irkutsk (2)
-INFO:root:Dice rolls: A[1]; D[3]
-INFO:root:Losses: Attacker 1 (Irkutsk 2); Defender 0 (Kamchatka 1)
-INFO:root:P2 attacks Kamchatka (P3, 1) from Mongolia (3)
-INFO:root:Dice rolls: A[6, 1]; D[5]
-INFO:root:Losses: Attacker 0 (Mongolia 3); Defender 1 (Kamchatka 1)
-INFO:root:P2 has occupied Kamchatka
-INFO:root:P2 attacks Alaska (P3, 1) from Kamchatka (2)
-INFO:root:Dice rolls: A[1]; D[1]
-INFO:root:Losses: Attacker 1 (Kamchatka 2); Defender 0 (Alaska 1)
-INFO:root:P4 receives 3 armies
-INFO:root:P4 fortifies Western United States (2)
-INFO:root:P4 fortifies Ontario (2)
-INFO:root:P4 fortifies Quebec (3)
-INFO:root:P4 attacks Greenland (P1, 1) from Ontario (2)
-INFO:root:Dice rolls: A[4]; D[3]
-INFO:root:Losses: Attacker 0 (Ontario 2); Defender 1 (Greenland 1)
-INFO:root:P4 has occupied Greenland
-INFO:root:P4 attacks Alberta (P3, 1) from Western United States (2)
-INFO:root:Dice rolls: A[3]; D[3]
-INFO:root:Losses: Attacker 1 (Western United States 2); Defender 0 (Alberta 1)
-INFO:root:P3 receives 6 armies
-INFO:root:P3 fortifies Madagascar (4)
-INFO:root:P3 fortifies Western Australia (4)
-INFO:root:P3 fortifies South Africa (2)
-INFO:root:P3 fortifies New Guinea (5)
-INFO:root:P3 fortifies East Africa (2)
-INFO:root:P3 fortifies North Africa (2)
-INFO:root:P3 attacks Egypt (P1, 1) from East Africa (2)
-INFO:root:Dice rolls: A[4]; D[4]
-INFO:root:Losses: Attacker 1 (East Africa 2); Defender 0 (Egypt 1)
-INFO:root:P3 attacks Egypt (P1, 1) from North Africa (2)
-INFO:root:Dice rolls: A[4]; D[5]
-INFO:root:Losses: Attacker 1 (North Africa 2); Defender 0 (Egypt 1)
-INFO:root:P1 receives 9 armies
-INFO:root:P1 receives 10 armies by trading a set
-INFO:root:P1 fortifies Western Europe (2)
-INFO:root:P1 fortifies Great Britain (2)
-INFO:root:P1 fortifies Western Europe (3)
-INFO:root:P1 fortifies Middle East (2)
-INFO:root:P1 fortifies Peru (2)
-INFO:root:P1 fortifies Great Britain (3)
-INFO:root:P1 fortifies Afghanistan (2)
-INFO:root:P1 fortifies Egypt (2)
-INFO:root:P1 fortifies Southern Europe (2)
-INFO:root:P1 fortifies Egypt (3)
-INFO:root:P1 fortifies Great Britain (4)
-INFO:root:P1 fortifies Southern Europe (3)
-INFO:root:P1 fortifies Northern Europe (6)
-INFO:root:P1 fortifies Scandinavia (2)
-INFO:root:P1 fortifies Middle East (3)
-INFO:root:P1 fortifies Afghanistan (3)
-INFO:root:P1 fortifies Iceland (2)
-INFO:root:P1 fortifies Iceland (3)
-INFO:root:P1 fortifies Scandinavia (3)
-INFO:root:P1 attacks India (P3, 1) from Afghanistan (3)
-INFO:root:Dice rolls: A[5, 5]; D[6]
-INFO:root:Losses: Attacker 1 (Afghanistan 3); Defender 0 (India 1)
-INFO:root:P1 attacks Venezuela (P4, 1) from Peru (2)
-INFO:root:Dice rolls: A[4]; D[6]
-INFO:root:Losses: Attacker 1 (Peru 2); Defender 0 (Venezuela 1)
-INFO:root:P1 attacks North Africa (P3, 1) from Egypt (3)
-INFO:root:Dice rolls: A[4, 4]; D[4]
-INFO:root:Losses: Attacker 1 (Egypt 3); Defender 0 (North Africa 1)
-INFO:root:P1 attacks North Africa (P3, 1) from Southern Europe (3)
-INFO:root:Dice rolls: A[5, 1]; D[3]
-INFO:root:Losses: Attacker 0 (Southern Europe 3); Defender 1 (North Africa 1)
-INFO:root:P1 has occupied North Africa
-INFO:root:P1 attacks East Africa (P3, 1) from Egypt (2)
-INFO:root:Dice rolls: A[4]; D[4]
-INFO:root:Losses: Attacker 1 (Egypt 2); Defender 0 (East Africa 1)
-INFO:root:P1 attacks Ural (P2, 1) from Afghanistan (2)
-INFO:root:Dice rolls: A[5]; D[6]
-INFO:root:Losses: Attacker 1 (Afghanistan 2); Defender 0 (Ural 1)
-INFO:root:P1 attacks India (P3, 1) from Middle East (3)
-INFO:root:Dice rolls: A[5, 1]; D[3]
-INFO:root:Losses: Attacker 0 (Middle East 3); Defender 1 (India 1)
-INFO:root:P1 has occupied India
-INFO:root:P1 attacks China (P2, 1) from India (2)
-INFO:root:Dice rolls: A[2]; D[2]
-INFO:root:Losses: Attacker 1 (India 2); Defender 0 (China 1)
-INFO:root:P1 attacks Greenland (P4, 1) from Iceland (3)
-INFO:root:Dice rolls: A[5, 5]; D[1]
-INFO:root:Losses: Attacker 0 (Iceland 3); Defender 1 (Greenland 1)
-INFO:root:P1 has occupied Greenland
-INFO:root:P1 attacks Ontario (P4, 1) from Greenland (2)
-INFO:root:Dice rolls: A[6]; D[1]
-INFO:root:Losses: Attacker 0 (Greenland 2); Defender 1 (Ontario 1)
-INFO:root:P1 has occupied Ontario
-INFO:root:P1 attacks Congo (P3, 1) from North Africa (2)
-INFO:root:Dice rolls: A[6]; D[3]
-INFO:root:Losses: Attacker 0 (North Africa 2); Defender 1 (Congo 1)
-INFO:root:P1 has occupied Congo
-INFO:root:Move: 7
-INFO:root:P2 receives 3 armies
-INFO:root:P2 fortifies Japan (2)
-INFO:root:P2 fortifies Siberia (2)
-INFO:root:P2 fortifies Mongolia (2)
-INFO:root:P4 receives 3 armies
-INFO:root:P4 fortifies Quebec (4)
-INFO:root:P4 fortifies Central America (4)
-INFO:root:P4 fortifies Venezuela (2)
-INFO:root:P4 attacks Brazil (P1, 1) from Venezuela (2)
-INFO:root:Dice rolls: A[3]; D[1]
-INFO:root:Losses: Attacker 0 (Venezuela 2); Defender 1 (Brazil 1)
-INFO:root:P4 has occupied Brazil
-INFO:root:P4 attacks Ontario (P1, 1) from Eastern United States (5)
-INFO:root:Dice rolls: A[6, 1]; D[6]
-INFO:root:Losses: Attacker 1 (Eastern United States 5); Defender 0 (Ontario 1)
-INFO:root:P4 attacks Ontario (P1, 1) from Eastern United States (4)
-INFO:root:Dice rolls: A[3]; D[1]
-INFO:root:Losses: Attacker 0 (Eastern United States 4); Defender 1 (Ontario 1)
-INFO:root:P4 has occupied Ontario
-INFO:root:P4 attacks Northwest Territory (P3, 1) from Ontario (3)
-INFO:root:Dice rolls: A[6, 3]; D[6]
-INFO:root:Losses: Attacker 1 (Ontario 3); Defender 0 (Northwest Territory 1)
-INFO:root:P4 attacks Northwest Territory (P3, 1) from Ontario (2)
+INFO:root:Joe receives 3 armies
+INFO:root:Joe fortifies North Africa (3)
+INFO:root:Joe fortifies Venezuela (3)
+INFO:root:Joe fortifies East Africa (4)
+INFO:root:Joe attacks Argentina (Mark, 4) from Brazil (4)
+INFO:root:Dice rolls: A[6, 3, 2]; D[6]
+INFO:root:Losses: Attacker 1 (Brazil 3); Defender 0 (Argentina 4)
+INFO:root:Joe attacks Central America (Steve, 1) from Venezuela (3)
 INFO:root:Dice rolls: A[3]; D[2]
-INFO:root:Losses: Attacker 0 (Ontario 2); Defender 1 (Northwest Territory 1)
-INFO:root:P4 has occupied Northwest Territory
-INFO:root:P4 attacks Greenland (P1, 1) from Quebec (4)
-INFO:root:Dice rolls: A[6, 5, 2]; D[1]
-INFO:root:Losses: Attacker 0 (Quebec 4); Defender 1 (Greenland 1)
-INFO:root:P4 has occupied Greenland
-INFO:root:P4 attacks Iceland (P1, 1) from Greenland (3)
-INFO:root:Dice rolls: A[4]; D[3]
-INFO:root:Losses: Attacker 0 (Greenland 3); Defender 1 (Iceland 1)
-INFO:root:P4 has occupied Iceland
-INFO:root:P4 attacks Scandinavia (P1, 3) from Iceland (2)
-INFO:root:Dice rolls: A[1]; D[6, 5]
-INFO:root:Losses: Attacker 1 (Iceland 2); Defender 0 (Scandinavia 3)
-INFO:root:P3 receives 5 armies
-INFO:root:P3 fortifies East Africa (2)
-INFO:root:P3 fortifies East Africa (3)
-INFO:root:P3 fortifies Indonesia (3)
-INFO:root:P3 fortifies South Africa (3)
-INFO:root:P3 fortifies New Guinea (6)
-INFO:root:P3 attacks North Africa (P1, 1) from East Africa (3)
-INFO:root:Dice rolls: A[5, 1]; D[4]
-INFO:root:Losses: Attacker 0 (East Africa 3); Defender 1 (North Africa 1)
-INFO:root:P3 has occupied North Africa
-INFO:root:P3 attacks Southern Europe (P1, 1) from North Africa (2)
-INFO:root:Dice rolls: A[5]; D[6]
-INFO:root:Losses: Attacker 1 (North Africa 2); Defender 0 (Southern Europe 1)
-INFO:root:P3 attacks Congo (P1, 1) from South Africa (3)
-INFO:root:Dice rolls: A[1]; D[3]
-INFO:root:Losses: Attacker 1 (South Africa 3); Defender 0 (Congo 1)
-INFO:root:P3 attacks Congo (P1, 1) from South Africa (2)
-INFO:root:Dice rolls: A[4]; D[4]
-INFO:root:Losses: Attacker 1 (South Africa 2); Defender 0 (Congo 1)
-INFO:root:P1 receives 4 armies
-INFO:root:P1 fortifies Northern Europe (7)
-INFO:root:P1 fortifies Egypt (2)
-INFO:root:P1 fortifies Ukraine (2)
-INFO:root:P1 fortifies Ukraine (3)
-INFO:root:P1 attacks North Africa (P3, 1) from Western Europe (3)
-INFO:root:Dice rolls: A[5]; D[6]
-INFO:root:Losses: Attacker 1 (Western Europe 3); Defender 0 (North Africa 1)
-INFO:root:P1 attacks Iceland (P4, 1) from Great Britain (4)
-INFO:root:Dice rolls: A[5, 5]; D[3]
-INFO:root:Losses: Attacker 0 (Great Britain 4); Defender 1 (Iceland 1)
-INFO:root:P1 has occupied Iceland
-INFO:root:P1 attacks North Africa (P3, 1) from Western Europe (2)
-INFO:root:Dice rolls: A[1]; D[6]
-INFO:root:Losses: Attacker 1 (Western Europe 2); Defender 0 (North Africa 1)
-INFO:root:P1 attacks Greenland (P4, 1) from Iceland (3)
-INFO:root:Dice rolls: A[2]; D[6]
-INFO:root:Losses: Attacker 1 (Iceland 3); Defender 0 (Greenland 1)
-INFO:root:P1 attacks Greenland (P4, 1) from Iceland (2)
-INFO:root:Dice rolls: A[3]; D[6]
-INFO:root:Losses: Attacker 1 (Iceland 2); Defender 0 (Greenland 1)
-INFO:root:P1 attacks Ural (P2, 1) from Ukraine (3)
-INFO:root:Dice rolls: A[6]; D[5]
-INFO:root:Losses: Attacker 0 (Ukraine 3); Defender 1 (Ural 1)
-INFO:root:P1 has occupied Ural
-INFO:root:P1 attacks China (P2, 1) from Ural (2)
-INFO:root:Dice rolls: A[1]; D[3]
-INFO:root:Losses: Attacker 1 (Ural 2); Defender 0 (China 1)
-INFO:root:P1 attacks East Africa (P3, 1) from Egypt (2)
-INFO:root:Dice rolls: A[1]; D[4]
-INFO:root:Losses: Attacker 1 (Egypt 2); Defender 0 (East Africa 1)
-INFO:root:Move: 8
-INFO:root:P2 receives 3 armies
-INFO:root:P2 fortifies Kamchatka (2)
-INFO:root:P2 fortifies Japan (3)
-INFO:root:P2 fortifies Mongolia (3)
-INFO:root:P2 attacks Ural (P1, 1) from Siberia (2)
-INFO:root:Dice rolls: A[2]; D[3]
-INFO:root:Losses: Attacker 1 (Siberia 2); Defender 0 (Ural 1)
-INFO:root:P2 attacks Alaska (P3, 1) from Kamchatka (2)
-INFO:root:Dice rolls: A[6]; D[1]
-INFO:root:Losses: Attacker 0 (Kamchatka 2); Defender 1 (Alaska 1)
-INFO:root:P2 has occupied Alaska
-INFO:root:P4 receives 3 armies
-INFO:root:P4 fortifies Brazil (2)
-INFO:root:P4 fortifies Eastern United States (2)
-INFO:root:P4 fortifies Greenland (2)
-INFO:root:P4 attacks Iceland (P1, 1) from Greenland (2)
-INFO:root:Dice rolls: A[2]; D[3]
-INFO:root:Losses: Attacker 1 (Greenland 2); Defender 0 (Iceland 1)
-INFO:root:P4 attacks Argentina (P1, 1) from Brazil (2)
+INFO:root:Losses: Attacker 0 (Venezuela 3); Defender 1 (Central America 0)
+INFO:root:Joe has occupied Central America
+INFO:root:Joe attacks Eastern United States (Steve, 1) from Western United States (3)
 INFO:root:Dice rolls: A[3]; D[3]
-INFO:root:Losses: Attacker 1 (Brazil 2); Defender 0 (Argentina 1)
-INFO:root:P3 receives 5 armies
-INFO:root:P3 receives 12 armies by trading a set
-INFO:root:P3 fortifies Madagascar (5)
-INFO:root:P3 fortifies Alberta (2)
-INFO:root:P3 fortifies South Africa (2)
-INFO:root:P3 fortifies South Africa (3)
-INFO:root:P3 fortifies East Africa (2)
-INFO:root:P3 fortifies East Africa (3)
-INFO:root:P3 fortifies Eastern Australia (4)
-INFO:root:P3 fortifies East Africa (4)
-INFO:root:P3 fortifies South Africa (4)
-INFO:root:P3 fortifies Alberta (3)
-INFO:root:P3 fortifies East Africa (5)
-INFO:root:P3 fortifies East Africa (6)
-INFO:root:P3 fortifies Madagascar (6)
-INFO:root:P3 fortifies South Africa (5)
-INFO:root:P3 fortifies Madagascar (7)
-INFO:root:P3 fortifies South Africa (6)
-INFO:root:P3 fortifies South Africa (7)
-INFO:root:P3 attacks Congo (P1, 1) from East Africa (6)
-INFO:root:Dice rolls: A[5]; D[6]
-INFO:root:Losses: Attacker 1 (East Africa 6); Defender 0 (Congo 1)
-INFO:root:P3 attacks Alaska (P2, 1) from Alberta (3)
-INFO:root:Dice rolls: A[6]; D[4]
-INFO:root:Losses: Attacker 0 (Alberta 3); Defender 1 (Alaska 1)
-INFO:root:P3 has occupied Alaska
-INFO:root:P3 attacks Congo (P1, 1) from East Africa (5)
-INFO:root:Dice rolls: A[6, 3, 1]; D[1]
-INFO:root:Losses: Attacker 0 (East Africa 5); Defender 1 (Congo 1)
-INFO:root:P3 has occupied Congo
-INFO:root:P3 attacks Northwest Territory (P4, 1) from Alaska (2)
-INFO:root:Dice rolls: A[5]; D[2]
-INFO:root:Losses: Attacker 0 (Alaska 2); Defender 1 (Northwest Territory 1)
-INFO:root:P3 has occupied Northwest Territory
-INFO:root:P1 receives 9 armies
-INFO:root:P1 receives 15 armies by trading a set
-INFO:root:P1 fortifies Ural (2)
-INFO:root:P1 fortifies Egypt (2)
-INFO:root:P1 fortifies Scandinavia (4)
-INFO:root:P1 fortifies Great Britain (2)
-INFO:root:P1 fortifies Northern Europe (8)
-INFO:root:P1 fortifies India (2)
-INFO:root:P1 fortifies Peru (2)
-INFO:root:P1 fortifies Southern Europe (2)
-INFO:root:P1 fortifies Egypt (3)
-INFO:root:P1 fortifies Middle East (2)
-INFO:root:P1 fortifies Great Britain (3)
-INFO:root:P1 fortifies India (3)
-INFO:root:P1 fortifies Iceland (2)
-INFO:root:P1 fortifies Ural (3)
-INFO:root:P1 fortifies Afghanistan (2)
-INFO:root:P1 fortifies Ural (4)
-INFO:root:P1 fortifies Scandinavia (5)
-INFO:root:P1 fortifies Afghanistan (3)
-INFO:root:P1 fortifies Great Britain (4)
-INFO:root:P1 fortifies Argentina (2)
-INFO:root:P1 fortifies Middle East (3)
-INFO:root:P1 fortifies Egypt (4)
-INFO:root:P1 fortifies India (4)
-INFO:root:P1 fortifies Southern Europe (3)
-INFO:root:P1 attacks Venezuela (P4, 1) from Peru (2)
-INFO:root:Dice rolls: A[4]; D[2]
-INFO:root:Losses: Attacker 0 (Peru 2); Defender 1 (Venezuela 1)
-INFO:root:P1 has occupied Venezuela
-INFO:root:P1 attacks Siberia (P2, 1) from Ural (4)
+INFO:root:Losses: Attacker 1 (Western United States 2); Defender 0 (Eastern United States 1)
+INFO:root:Joe attacks Eastern Australia (Steve, 1) from New Guinea (3)
+INFO:root:Dice rolls: A[6]; D[2]
+INFO:root:Losses: Attacker 0 (New Guinea 3); Defender 1 (Eastern Australia 0)
+INFO:root:Joe has occupied Eastern Australia
+INFO:root:Joe attacks Alberta (Mark, 3) from Ontario (3)
+INFO:root:Dice rolls: A[3]; D[6, 2]
+INFO:root:Losses: Attacker 1 (Ontario 2); Defender 0 (Alberta 3)
+INFO:root:Joe attacks Western Australia (Kelly, 3) from Eastern Australia (2)
 INFO:root:Dice rolls: A[3]; D[5]
-INFO:root:Losses: Attacker 1 (Ural 4); Defender 0 (Siberia 1)
-INFO:root:P1 attacks Greenland (P4, 1) from Iceland (2)
-INFO:root:Dice rolls: A[3]; D[5]
-INFO:root:Losses: Attacker 1 (Iceland 2); Defender 0 (Greenland 1)
-INFO:root:P1 attacks China (P2, 1) from India (4)
-INFO:root:Dice rolls: A[3, 3, 1]; D[5]
-INFO:root:Losses: Attacker 1 (India 4); Defender 0 (China 1)
-INFO:root:P1 attacks Siam (P3, 1) from India (3)
-INFO:root:Dice rolls: A[2]; D[5]
-INFO:root:Losses: Attacker 1 (India 3); Defender 0 (Siam 1)
-INFO:root:P1 attacks North Africa (P3, 1) from Egypt (4)
-INFO:root:Dice rolls: A[6, 1, 1]; D[3]
-INFO:root:Losses: Attacker 0 (Egypt 4); Defender 1 (North Africa 1)
-INFO:root:P1 has occupied North Africa
-INFO:root:P1 attacks Brazil (P4, 1) from Argentina (2)
-INFO:root:Dice rolls: A[1]; D[1]
-INFO:root:Losses: Attacker 1 (Argentina 2); Defender 0 (Brazil 1)
-INFO:root:P1 attacks Siam (P3, 1) from India (2)
-INFO:root:Dice rolls: A[6]; D[5]
-INFO:root:Losses: Attacker 0 (India 2); Defender 1 (Siam 1)
-INFO:root:P1 has occupied Siam
-INFO:root:P1 attacks Brazil (P4, 1) from North Africa (3)
-INFO:root:Dice rolls: A[6, 3]; D[3]
-INFO:root:Losses: Attacker 0 (North Africa 3); Defender 1 (Brazil 1)
-INFO:root:P1 has occupied Brazil
-INFO:root:P1 attacks China (P2, 1) from Afghanistan (3)
-INFO:root:Dice rolls: A[6]; D[1]
-INFO:root:Losses: Attacker 0 (Afghanistan 3); Defender 1 (China 1)
-INFO:root:P1 has occupied China
-INFO:root:P1 attacks Siberia (P2, 1) from China (2)
-INFO:root:Dice rolls: A[2]; D[5]
-INFO:root:Losses: Attacker 1 (China 2); Defender 0 (Siberia 1)
-INFO:root:P1 attacks Siberia (P2, 1) from Ural (3)
-INFO:root:Dice rolls: A[3]; D[1]
-INFO:root:Losses: Attacker 0 (Ural 3); Defender 1 (Siberia 1)
-INFO:root:P1 has occupied Siberia
-INFO:root:P1 attacks Irkutsk (P2, 1) from Siberia (2)
-INFO:root:Dice rolls: A[5]; D[5]
-INFO:root:Losses: Attacker 1 (Siberia 2); Defender 0 (Irkutsk 1)
-INFO:root:Move: 9
-INFO:root:P2 receives 3 armies
-INFO:root:P2 receives 20 armies by trading a set
-INFO:root:P2 fortifies Japan (4)
-INFO:root:P2 fortifies Mongolia (4)
-INFO:root:P2 fortifies Irkutsk (2)
-INFO:root:P2 fortifies Japan (5)
-INFO:root:P2 fortifies Kamchatka (2)
-INFO:root:P2 fortifies Mongolia (5)
-INFO:root:P2 fortifies Mongolia (6)
-INFO:root:P2 fortifies Japan (6)
-INFO:root:P2 fortifies Irkutsk (3)
-INFO:root:P2 fortifies Irkutsk (4)
-INFO:root:P2 fortifies Mongolia (7)
-INFO:root:P2 fortifies Japan (7)
-INFO:root:P2 fortifies Irkutsk (5)
-INFO:root:P2 fortifies Kamchatka (3)
-INFO:root:P2 fortifies Mongolia (8)
-INFO:root:P2 fortifies Mongolia (9)
-INFO:root:P2 fortifies Mongolia (10)
-INFO:root:P2 fortifies Japan (8)
-INFO:root:P2 fortifies Japan (9)
-INFO:root:P2 fortifies Kamchatka (4)
-INFO:root:P2 fortifies Mongolia (11)
-INFO:root:P2 fortifies Irkutsk (6)
-INFO:root:P2 fortifies Kamchatka (5)
-INFO:root:P2 attacks Alaska (P3, 1) from Kamchatka (5)
-INFO:root:Dice rolls: A[6, 6]; D[1]
-INFO:root:Losses: Attacker 0 (Kamchatka 5); Defender 1 (Alaska 1)
-INFO:root:P2 has occupied Alaska
-INFO:root:P2 attacks Alberta (P3, 1) from Alaska (4)
-INFO:root:Dice rolls: A[6]; D[6]
-INFO:root:Losses: Attacker 1 (Alaska 4); Defender 0 (Alberta 1)
-INFO:root:P2 attacks Siberia (P1, 1) from Mongolia (11)
-INFO:root:Dice rolls: A[2, 2]; D[4]
-INFO:root:Losses: Attacker 1 (Mongolia 11); Defender 0 (Siberia 1)
-INFO:root:P2 attacks Siberia (P1, 1) from Mongolia (10)
-INFO:root:Dice rolls: A[5]; D[6]
-INFO:root:Losses: Attacker 1 (Mongolia 10); Defender 0 (Siberia 1)
-INFO:root:P2 attacks Northwest Territory (P3, 1) from Alaska (3)
-INFO:root:Dice rolls: A[5, 1]; D[1]
-INFO:root:Losses: Attacker 0 (Alaska 3); Defender 1 (Northwest Territory 1)
-INFO:root:P2 has occupied Northwest Territory
-INFO:root:P2 attacks Alberta (P3, 1) from Northwest Territory (2)
-INFO:root:Dice rolls: A[6]; D[4]
-INFO:root:Losses: Attacker 0 (Northwest Territory 2); Defender 1 (Alberta 1)
-INFO:root:P2 has occupied Alberta
-INFO:root:P2 attacks Siberia (P1, 1) from Mongolia (9)
-INFO:root:Dice rolls: A[2, 2]; D[4]
-INFO:root:Losses: Attacker 1 (Mongolia 9); Defender 0 (Siberia 1)
-INFO:root:P2 attacks Siberia (P1, 1) from Irkutsk (6)
-INFO:root:Dice rolls: A[6, 4, 2]; D[1]
-INFO:root:Losses: Attacker 0 (Irkutsk 6); Defender 1 (Siberia 1)
-INFO:root:P2 has occupied Siberia
-INFO:root:P2 attacks China (P1, 1) from Mongolia (8)
-INFO:root:Dice rolls: A[2, 1]; D[3]
-INFO:root:Losses: Attacker 1 (Mongolia 8); Defender 0 (China 1)
-INFO:root:P2 attacks Ural (P1, 1) from Siberia (5)
-INFO:root:Dice rolls: A[6, 5, 1]; D[1]
-INFO:root:Losses: Attacker 0 (Siberia 5); Defender 1 (Ural 1)
-INFO:root:P2 has occupied Ural
-INFO:root:P2 attacks China (P1, 1) from Mongolia (7)
-INFO:root:Dice rolls: A[6, 5, 4]; D[5]
-INFO:root:Losses: Attacker 0 (Mongolia 7); Defender 1 (China 1)
-INFO:root:P2 has occupied China
-INFO:root:P2 attacks Afghanistan (P1, 1) from China (6)
-INFO:root:Dice rolls: A[3, 1, 1]; D[4]
-INFO:root:Losses: Attacker 1 (China 6); Defender 0 (Afghanistan 1)
-INFO:root:P2 attacks Ukraine (P1, 1) from Ural (4)
-INFO:root:Dice rolls: A[3]; D[3]
-INFO:root:Losses: Attacker 1 (Ural 4); Defender 0 (Ukraine 1)
-INFO:root:P2 attacks Siam (P1, 1) from China (5)
-INFO:root:Dice rolls: A[2]; D[2]
-INFO:root:Losses: Attacker 1 (China 5); Defender 0 (Siam 1)
-INFO:root:P2 attacks Ukraine (P1, 1) from Ural (3)
-INFO:root:Dice rolls: A[6, 4]; D[2]
-INFO:root:Losses: Attacker 0 (Ural 3); Defender 1 (Ukraine 1)
-INFO:root:P2 has occupied Ukraine
-INFO:root:P2 attacks Afghanistan (P1, 1) from China (4)
-INFO:root:Dice rolls: A[1]; D[3]
-INFO:root:Losses: Attacker 1 (China 4); Defender 0 (Afghanistan 1)
-INFO:root:P2 attacks Afghanistan (P1, 1) from China (3)
-INFO:root:Dice rolls: A[4]; D[2]
-INFO:root:Losses: Attacker 0 (China 3); Defender 1 (Afghanistan 1)
-INFO:root:P2 has occupied Afghanistan
-INFO:root:P2 attacks Scandinavia (P1, 5) from Ukraine (2)
-INFO:root:Dice rolls: A[6]; D[1]
-INFO:root:Losses: Attacker 0 (Ukraine 2); Defender 1 (Scandinavia 5)
-INFO:root:P2 attacks Scandinavia (P1, 4) from Ukraine (2)
-INFO:root:Dice rolls: A[5]; D[2]
-INFO:root:Losses: Attacker 0 (Ukraine 2); Defender 1 (Scandinavia 4)
-INFO:root:P2 attacks India (P1, 1) from Afghanistan (2)
-INFO:root:Dice rolls: A[5]; D[3]
-INFO:root:Losses: Attacker 0 (Afghanistan 2); Defender 1 (India 1)
-INFO:root:P2 has occupied India
-INFO:root:P2 attacks Southern Europe (P1, 3) from Ukraine (2)
-INFO:root:Dice rolls: A[3]; D[1]
-INFO:root:Losses: Attacker 0 (Ukraine 2); Defender 1 (Southern Europe 3)
-INFO:root:P2 attacks Northern Europe (P1, 8) from Ukraine (2)
-INFO:root:Dice rolls: A[1]; D[5, 3]
-INFO:root:Losses: Attacker 1 (Ukraine 2); Defender 0 (Northern Europe 8)
-INFO:root:P4 receives 3 armies
-INFO:root:P4 fortifies Ontario (2)
-INFO:root:P4 fortifies Eastern United States (3)
-INFO:root:P4 fortifies Ontario (3)
-INFO:root:P4 attacks Northwest Territory (P2, 1) from Ontario (3)
-INFO:root:Dice rolls: A[6, 3]; D[2]
-INFO:root:Losses: Attacker 0 (Ontario 3); Defender 1 (Northwest Territory 1)
-INFO:root:P4 has occupied Northwest Territory
-INFO:root:P4 attacks Venezuela (P1, 1) from Central America (4)
-INFO:root:Dice rolls: A[6, 6]; D[6]
-INFO:root:Losses: Attacker 1 (Central America 4); Defender 0 (Venezuela 1)
-INFO:root:P4 attacks Alaska (P2, 1) from Northwest Territory (2)
-INFO:root:Dice rolls: A[1]; D[6]
-INFO:root:Losses: Attacker 1 (Northwest Territory 2); Defender 0 (Alaska 1)
-INFO:root:P4 attacks Venezuela (P1, 1) from Central America (3)
-INFO:root:Dice rolls: A[6, 1]; D[5]
-INFO:root:Losses: Attacker 0 (Central America 3); Defender 1 (Venezuela 1)
-INFO:root:P4 has occupied Venezuela
-INFO:root:P4 attacks Brazil (P1, 2) from Venezuela (2)
-INFO:root:Dice rolls: A[3]; D[3, 3]
-INFO:root:Losses: Attacker 1 (Venezuela 2); Defender 0 (Brazil 2)
-INFO:root:P3 receives 5 armies
-INFO:root:P3 fortifies Western Australia (5)
-INFO:root:P3 fortifies East Africa (2)
-INFO:root:P3 fortifies Western Australia (6)
-INFO:root:P3 fortifies East Africa (3)
-INFO:root:P3 fortifies Western Australia (7)
-INFO:root:P3 attacks North Africa (P1, 1) from East Africa (3)
-INFO:root:Dice rolls: A[6, 6]; D[6]
-INFO:root:Losses: Attacker 1 (East Africa 3); Defender 0 (North Africa 1)
-INFO:root:P3 attacks North Africa (P1, 1) from East Africa (2)
-INFO:root:Dice rolls: A[5]; D[1]
-INFO:root:Losses: Attacker 0 (East Africa 2); Defender 1 (North Africa 1)
-INFO:root:P3 has occupied North Africa
-INFO:root:P3 attacks Siam (P1, 1) from Indonesia (3)
-INFO:root:Dice rolls: A[3]; D[5]
-INFO:root:Losses: Attacker 1 (Indonesia 3); Defender 0 (Siam 1)
-INFO:root:P3 attacks Siam (P1, 1) from Indonesia (2)
-INFO:root:Dice rolls: A[1]; D[6]
-INFO:root:Losses: Attacker 1 (Indonesia 2); Defender 0 (Siam 1)
-INFO:root:P1 receives 4 armies
-INFO:root:P1 fortifies Middle East (4)
-INFO:root:P1 fortifies Egypt (2)
-INFO:root:P1 fortifies Siam (2)
-INFO:root:P1 fortifies Iceland (2)
-INFO:root:P1 attacks Indonesia (P3, 1) from Siam (2)
-INFO:root:Dice rolls: A[6]; D[3]
-INFO:root:Losses: Attacker 0 (Siam 2); Defender 1 (Indonesia 1)
-INFO:root:P1 has occupied Indonesia
-INFO:root:P1 attacks North Africa (P3, 1) from Brazil (2)
-INFO:root:Dice rolls: A[3]; D[3]
-INFO:root:Losses: Attacker 1 (Brazil 2); Defender 0 (North Africa 1)
-INFO:root:P1 attacks India (P2, 1) from Middle East (4)
-INFO:root:Dice rolls: A[3, 3, 2]; D[4]
-INFO:root:Losses: Attacker 1 (Middle East 4); Defender 0 (India 1)
-INFO:root:P1 attacks North Africa (P3, 1) from Egypt (2)
-INFO:root:Dice rolls: A[2]; D[1]
-INFO:root:Losses: Attacker 0 (Egypt 2); Defender 1 (North Africa 1)
-INFO:root:P1 has occupied North Africa
-INFO:root:P1 attacks Greenland (P4, 1) from Iceland (2)
-INFO:root:Dice rolls: A[1]; D[6]
-INFO:root:Losses: Attacker 1 (Iceland 2); Defender 0 (Greenland 1)
-INFO:root:P1 attacks Ukraine (P2, 1) from Scandinavia (3)
-INFO:root:Dice rolls: A[4]; D[4]
-INFO:root:Losses: Attacker 1 (Scandinavia 3); Defender 0 (Ukraine 1)
-INFO:root:P1 attacks Ukraine (P2, 1) from Northern Europe (8)
-INFO:root:Dice rolls: A[3, 1]; D[2]
-INFO:root:Losses: Attacker 0 (Northern Europe 8); Defender 1 (Ukraine 1)
-INFO:root:P1 has occupied Ukraine
-INFO:root:P1 attacks Afghanistan (P2, 1) from Middle East (3)
-INFO:root:Dice rolls: A[3, 1]; D[4]
-INFO:root:Losses: Attacker 1 (Middle East 3); Defender 0 (Afghanistan 1)
-INFO:root:P1 attacks India (P2, 1) from Middle East (2)
-INFO:root:Dice rolls: A[6]; D[1]
-INFO:root:Losses: Attacker 0 (Middle East 2); Defender 1 (India 1)
-INFO:root:P1 has occupied India
-INFO:root:P1 attacks Ural (P2, 1) from Ukraine (7)
-INFO:root:Dice rolls: A[6]; D[3]
-INFO:root:Losses: Attacker 0 (Ukraine 7); Defender 1 (Ural 1)
-INFO:root:P1 has occupied Ural
-INFO:root:P1 attacks Afghanistan (P2, 1) from Ural (6)
-INFO:root:Dice rolls: A[3]; D[2]
-INFO:root:Losses: Attacker 0 (Ural 6); Defender 1 (Afghanistan 1)
-INFO:root:P1 has occupied Afghanistan
-INFO:root:P1 attacks China (P2, 1) from Afghanistan (5)
-INFO:root:Dice rolls: A[5]; D[2]
-INFO:root:Losses: Attacker 0 (Afghanistan 5); Defender 1 (China 1)
-INFO:root:P1 has occupied China
-INFO:root:P1 attacks Mongolia (P2, 1) from China (4)
-INFO:root:Dice rolls: A[5, 5, 1]; D[1]
-INFO:root:Losses: Attacker 0 (China 4); Defender 1 (Mongolia 1)
-INFO:root:P1 has occupied Mongolia
-INFO:root:P1 attacks Irkutsk (P2, 1) from Mongolia (3)
-INFO:root:Dice rolls: A[3, 1]; D[2]
-INFO:root:Losses: Attacker 0 (Mongolia 3); Defender 1 (Irkutsk 1)
-INFO:root:P1 has occupied Irkutsk
-INFO:root:P1 attacks Yakutsk (P2, 1) from Irkutsk (2)
-INFO:root:Dice rolls: A[5]; D[1]
-INFO:root:Losses: Attacker 0 (Irkutsk 2); Defender 1 (Yakutsk 1)
-INFO:root:P1 has occupied Yakutsk
-INFO:root:Move: 10
-INFO:root:P2 receives 3 armies
-INFO:root:P2 fortifies Alberta (2)
-INFO:root:P2 fortifies Siberia (2)
-INFO:root:P2 fortifies Japan (10)
-INFO:root:P2 attacks Mongolia (P1, 1) from Japan (10)
-INFO:root:Dice rolls: A[6, 1]; D[3]
-INFO:root:Losses: Attacker 0 (Japan 10); Defender 1 (Mongolia 1)
-INFO:root:P2 has occupied Mongolia
-INFO:root:P2 attacks Ontario (P4, 1) from Alberta (2)
-INFO:root:Dice rolls: A[6]; D[6]
-INFO:root:Losses: Attacker 1 (Alberta 2); Defender 0 (Ontario 1)
-INFO:root:P2 attacks Irkutsk (P1, 1) from Mongolia (9)
-INFO:root:Dice rolls: A[1]; D[1]
-INFO:root:Losses: Attacker 1 (Mongolia 9); Defender 0 (Irkutsk 1)
-INFO:root:P2 attacks China (P1, 1) from Mongolia (8)
-INFO:root:Dice rolls: A[2]; D[2]
-INFO:root:Losses: Attacker 1 (Mongolia 8); Defender 0 (China 1)
-INFO:root:P2 attacks China (P1, 1) from Mongolia (7)
-INFO:root:Dice rolls: A[5, 2, 1]; D[5]
-INFO:root:Losses: Attacker 1 (Mongolia 7); Defender 0 (China 1)
-INFO:root:P2 attacks China (P1, 1) from Mongolia (6)
-INFO:root:Dice rolls: A[5, 5]; D[1]
-INFO:root:Losses: Attacker 0 (Mongolia 6); Defender 1 (China 1)
-INFO:root:P2 has occupied China
-INFO:root:P2 attacks Yakutsk (P1, 1) from Siberia (2)
-INFO:root:Dice rolls: A[5]; D[3]
-INFO:root:Losses: Attacker 0 (Siberia 2); Defender 1 (Yakutsk 1)
-INFO:root:P2 has occupied Yakutsk
-INFO:root:P2 attacks Afghanistan (P1, 1) from China (5)
-INFO:root:Dice rolls: A[6, 4, 4]; D[3]
-INFO:root:Losses: Attacker 0 (China 5); Defender 1 (Afghanistan 1)
-INFO:root:P2 has occupied Afghanistan
-INFO:root:P2 attacks India (P1, 1) from Afghanistan (4)
-INFO:root:Dice rolls: A[3, 1]; D[6]
-INFO:root:Losses: Attacker 1 (Afghanistan 4); Defender 0 (India 1)
-INFO:root:P2 attacks Middle East (P1, 1) from Afghanistan (3)
-INFO:root:Dice rolls: A[6, 1]; D[6]
-INFO:root:Losses: Attacker 1 (Afghanistan 3); Defender 0 (Middle East 1)
-INFO:root:P2 attacks India (P1, 1) from Afghanistan (2)
-INFO:root:Dice rolls: A[3]; D[3]
-INFO:root:Losses: Attacker 1 (Afghanistan 2); Defender 0 (India 1)
-INFO:root:P4 receives 3 armies
-INFO:root:P4 fortifies Ontario (2)
-INFO:root:P4 fortifies Northwest Territory (2)
-INFO:root:P4 fortifies Greenland (2)
-INFO:root:P4 attacks Alberta (P2, 1) from Ontario (2)
-INFO:root:Dice rolls: A[2]; D[1]
-INFO:root:Losses: Attacker 0 (Ontario 2); Defender 1 (Alberta 1)
-INFO:root:P4 has occupied Alberta
-INFO:root:P4 attacks Alaska (P2, 1) from Northwest Territory (2)
-INFO:root:Dice rolls: A[3]; D[5]
-INFO:root:Losses: Attacker 1 (Northwest Territory 2); Defender 0 (Alaska 1)
-INFO:root:P4 attacks Iceland (P1, 1) from Greenland (2)
-INFO:root:Dice rolls: A[6]; D[5]
-INFO:root:Losses: Attacker 0 (Greenland 2); Defender 1 (Iceland 1)
-INFO:root:P4 has occupied Iceland
-INFO:root:P3 receives 3 armies
-INFO:root:P3 fortifies Eastern Australia (5)
-INFO:root:P3 fortifies Western Australia (8)
-INFO:root:P3 fortifies Madagascar (8)
-INFO:root:P3 attacks North Africa (P1, 1) from Congo (4)
-INFO:root:Dice rolls: A[6, 3, 3]; D[3]
-INFO:root:Losses: Attacker 0 (Congo 4); Defender 1 (North Africa 1)
-INFO:root:P3 has occupied North Africa
-INFO:root:P3 attacks Indonesia (P1, 1) from Western Australia (8)
-INFO:root:Dice rolls: A[2, 2]; D[6]
-INFO:root:Losses: Attacker 1 (Western Australia 8); Defender 0 (Indonesia 1)
-INFO:root:P3 attacks Indonesia (P1, 1) from Western Australia (7)
-INFO:root:Dice rolls: A[4, 1]; D[3]
-INFO:root:Losses: Attacker 0 (Western Australia 7); Defender 1 (Indonesia 1)
-INFO:root:P3 has occupied Indonesia
-INFO:root:P3 attacks Southern Europe (P1, 2) from North Africa (3)
-INFO:root:Dice rolls: A[3, 2]; D[3, 1]
-INFO:root:Losses: Attacker 1 (North Africa 3); Defender 1 (Southern Europe 2)
-INFO:root:P3 attacks Siam (P1, 1) from Indonesia (6)
-INFO:root:Dice rolls: A[3]; D[3]
-INFO:root:Losses: Attacker 1 (Indonesia 6); Defender 0 (Siam 1)
-INFO:root:P3 attacks Siam (P1, 1) from Indonesia (5)
-INFO:root:Dice rolls: A[2]; D[4]
-INFO:root:Losses: Attacker 1 (Indonesia 5); Defender 0 (Siam 1)
-INFO:root:P3 attacks Siam (P1, 1) from Indonesia (4)
-INFO:root:Dice rolls: A[5, 5]; D[1]
-INFO:root:Losses: Attacker 0 (Indonesia 4); Defender 1 (Siam 1)
-INFO:root:P3 has occupied Siam
-INFO:root:P3 attacks China (P2, 1) from Siam (3)
-INFO:root:Dice rolls: A[3]; D[1]
-INFO:root:Losses: Attacker 0 (Siam 3); Defender 1 (China 1)
-INFO:root:P3 has occupied China
-INFO:root:P3 attacks Egypt (P1, 1) from North Africa (2)
-INFO:root:Dice rolls: A[5]; D[3]
-INFO:root:Losses: Attacker 0 (North Africa 2); Defender 1 (Egypt 1)
-INFO:root:P3 has occupied Egypt
-INFO:root:P3 attacks Mongolia (P2, 1) from China (2)
-INFO:root:Dice rolls: A[3]; D[5]
-INFO:root:Losses: Attacker 1 (China 2); Defender 0 (Mongolia 1)
-INFO:root:P1 receives 4 armies
-INFO:root:P1 fortifies Western Europe (2)
-INFO:root:P1 fortifies Ural (2)
-INFO:root:P1 fortifies Scandinavia (3)
-INFO:root:P1 fortifies India (2)
-INFO:root:P1 attacks Iceland (P4, 1) from Great Britain (4)
-INFO:root:Dice rolls: A[6]; D[3]
-INFO:root:Losses: Attacker 0 (Great Britain 4); Defender 1 (Iceland 1)
-INFO:root:P1 has occupied Iceland
-INFO:root:P1 attacks North Africa (P3, 1) from Western Europe (2)
-INFO:root:Dice rolls: A[2]; D[5]
-INFO:root:Losses: Attacker 1 (Western Europe 2); Defender 0 (North Africa 1)
-INFO:root:P1 attacks Greenland (P4, 1) from Iceland (3)
-INFO:root:Dice rolls: A[4, 4]; D[5]
-INFO:root:Losses: Attacker 1 (Iceland 3); Defender 0 (Greenland 1)
-INFO:root:P1 attacks Afghanistan (P2, 1) from Ural (2)
-INFO:root:Dice rolls: A[4]; D[3]
-INFO:root:Losses: Attacker 0 (Ural 2); Defender 1 (Afghanistan 1)
-INFO:root:P1 has occupied Afghanistan
-INFO:root:P1 attacks Siam (P3, 1) from India (2)
-INFO:root:Dice rolls: A[3]; D[6]
-INFO:root:Losses: Attacker 1 (India 2); Defender 0 (Siam 1)
-INFO:root:P1 attacks Greenland (P4, 1) from Iceland (2)
-INFO:root:Dice rolls: A[2]; D[4]
-INFO:root:Losses: Attacker 1 (Iceland 2); Defender 0 (Greenland 1)
-INFO:root:Move: 11
-INFO:root:P2 receives 3 armies
-INFO:root:P2 fortifies Yakutsk (2)
-INFO:root:P2 fortifies Siberia (2)
-INFO:root:P2 fortifies Mongolia (2)
-INFO:root:P2 attacks Ural (P1, 1) from Siberia (2)
-INFO:root:Dice rolls: A[2]; D[3]
-INFO:root:Losses: Attacker 1 (Siberia 2); Defender 0 (Ural 1)
-INFO:root:P2 attacks China (P3, 1) from Mongolia (2)
-INFO:root:Dice rolls: A[2]; D[3]
-INFO:root:Losses: Attacker 1 (Mongolia 2); Defender 0 (China 1)
-INFO:root:P2 attacks Irkutsk (P1, 1) from Yakutsk (2)
-INFO:root:Dice rolls: A[3]; D[5]
-INFO:root:Losses: Attacker 1 (Yakutsk 2); Defender 0 (Irkutsk 1)
-INFO:root:P4 receives 3 armies
-INFO:root:P4 receives 25 armies by trading a set
-INFO:root:P4 fortifies Northwest Territory (2)
-INFO:root:P4 fortifies Northwest Territory (3)
-INFO:root:P4 fortifies Quebec (2)
-INFO:root:P4 fortifies Ontario (2)
-INFO:root:P4 fortifies Eastern United States (4)
-INFO:root:P4 fortifies Central America (2)
-INFO:root:P4 fortifies Alberta (2)
-INFO:root:P4 fortifies Greenland (2)
-INFO:root:P4 fortifies Greenland (3)
-INFO:root:P4 fortifies Western United States (2)
-INFO:root:P4 fortifies Greenland (4)
-INFO:root:P4 fortifies Venezuela (2)
-INFO:root:P4 fortifies Ontario (3)
-INFO:root:P4 fortifies Quebec (3)
-INFO:root:P4 fortifies Northwest Territory (4)
-INFO:root:P4 fortifies Quebec (4)
-INFO:root:P4 fortifies Ontario (4)
-INFO:root:P4 fortifies Venezuela (3)
-INFO:root:P4 fortifies Ontario (5)
-INFO:root:P4 fortifies Northwest Territory (5)
-INFO:root:P4 fortifies Western United States (3)
-INFO:root:P4 fortifies Alberta (3)
-INFO:root:P4 fortifies Greenland (5)
-INFO:root:P4 fortifies Quebec (5)
-INFO:root:P4 fortifies Western United States (4)
-INFO:root:P4 fortifies Central America (3)
-INFO:root:P4 fortifies Quebec (6)
-INFO:root:P4 fortifies Western United States (5)
-INFO:root:P4 attacks Iceland (P1, 1) from Greenland (5)
-INFO:root:Dice rolls: A[6, 5, 2]; D[4]
-INFO:root:Losses: Attacker 0 (Greenland 5); Defender 1 (Iceland 1)
-INFO:root:P4 has occupied Iceland
-INFO:root:P4 attacks Alaska (P2, 1) from Alberta (3)
-INFO:root:Dice rolls: A[6]; D[1]
-INFO:root:Losses: Attacker 0 (Alberta 3); Defender 1 (Alaska 1)
-INFO:root:P4 has occupied Alaska
-INFO:root:P4 attacks Scandinavia (P1, 3) from Iceland (4)
-INFO:root:Dice rolls: A[3, 1]; D[5, 1]
-INFO:root:Losses: Attacker 2 (Iceland 4); Defender 0 (Scandinavia 3)
-INFO:root:P4 attacks Scandinavia (P1, 3) from Iceland (2)
-INFO:root:Dice rolls: A[1]; D[4, 1]
-INFO:root:Losses: Attacker 1 (Iceland 2); Defender 0 (Scandinavia 3)
-INFO:root:P4 attacks Kamchatka (P2, 1) from Alaska (2)
-INFO:root:Dice rolls: A[1]; D[3]
-INFO:root:Losses: Attacker 1 (Alaska 2); Defender 0 (Kamchatka 1)
-INFO:root:P4 attacks Brazil (P1, 1) from Venezuela (3)
-INFO:root:Dice rolls: A[6, 4]; D[6]
-INFO:root:Losses: Attacker 1 (Venezuela 3); Defender 0 (Brazil 1)
-INFO:root:P4 attacks Peru (P1, 1) from Venezuela (2)
-INFO:root:Dice rolls: A[1]; D[5]
-INFO:root:Losses: Attacker 1 (Venezuela 2); Defender 0 (Peru 1)
-INFO:root:P3 receives 9 armies
-INFO:root:P3 fortifies China (2)
-INFO:root:P3 fortifies North Africa (2)
-INFO:root:P3 fortifies Siam (2)
-INFO:root:P3 fortifies North Africa (3)
-INFO:root:P3 fortifies Madagascar (9)
-INFO:root:P3 fortifies Egypt (2)
-INFO:root:P3 fortifies North Africa (4)
-INFO:root:P3 fortifies South Africa (8)
-INFO:root:P3 fortifies Madagascar (10)
-INFO:root:P3 attacks India (P1, 1) from Siam (2)
+INFO:root:Losses: Attacker 1 (Eastern Australia 1); Defender 0 (Western Australia 3)
+INFO:root:Joe attacks Eastern United States (Steve, 1) from Ontario (2)
 INFO:root:Dice rolls: A[4]; D[6]
-INFO:root:Losses: Attacker 1 (Siam 2); Defender 0 (India 1)
-INFO:root:P3 attacks Afghanistan (P1, 1) from China (2)
-INFO:root:Dice rolls: A[1]; D[4]
-INFO:root:Losses: Attacker 1 (China 2); Defender 0 (Afghanistan 1)
-INFO:root:P3 attacks Southern Europe (P1, 1) from Egypt (2)
-INFO:root:Dice rolls: A[2]; D[6]
-INFO:root:Losses: Attacker 1 (Egypt 2); Defender 0 (Southern Europe 1)
-INFO:root:P3 attacks Southern Europe (P1, 1) from North Africa (4)
-INFO:root:Dice rolls: A[3]; D[5]
-INFO:root:Losses: Attacker 1 (North Africa 4); Defender 0 (Southern Europe 1)
-INFO:root:P3 attacks Southern Europe (P1, 1) from North Africa (3)
-INFO:root:Dice rolls: A[2]; D[3]
-INFO:root:Losses: Attacker 1 (North Africa 3); Defender 0 (Southern Europe 1)
-INFO:root:P3 attacks Western Europe (P1, 1) from North Africa (2)
-INFO:root:Dice rolls: A[4]; D[2]
-INFO:root:Losses: Attacker 0 (North Africa 2); Defender 1 (Western Europe 1)
-INFO:root:P3 has occupied Western Europe
-INFO:root:P1 receives 4 armies
-INFO:root:P1 receives 30 armies by trading a set
-INFO:root:P1 fortifies India (2)
-INFO:root:P1 fortifies Southern Europe (2)
-INFO:root:P1 fortifies Peru (2)
-INFO:root:P1 fortifies Peru (3)
-INFO:root:P1 fortifies Southern Europe (3)
-INFO:root:P1 fortifies Northern Europe (2)
-INFO:root:P1 fortifies Argentina (2)
-INFO:root:P1 fortifies Argentina (3)
-INFO:root:P1 fortifies Scandinavia (4)
-INFO:root:P1 fortifies Middle East (2)
-INFO:root:P1 fortifies Scandinavia (5)
-INFO:root:P1 fortifies Middle East (3)
-INFO:root:P1 fortifies Ural (2)
-INFO:root:P1 fortifies India (3)
-INFO:root:P1 fortifies Ukraine (2)
-INFO:root:P1 fortifies Argentina (4)
-INFO:root:P1 fortifies Northern Europe (3)
-INFO:root:P1 fortifies Middle East (4)
-INFO:root:P1 fortifies Irkutsk (2)
-INFO:root:P1 fortifies Great Britain (2)
-INFO:root:P1 fortifies Middle East (5)
-INFO:root:P1 fortifies Northern Europe (4)
-INFO:root:P1 fortifies India (4)
-INFO:root:P1 fortifies Argentina (5)
-INFO:root:P1 fortifies Afghanistan (2)
-INFO:root:P1 fortifies Great Britain (3)
-INFO:root:P1 fortifies Argentina (6)
-INFO:root:P1 fortifies Ukraine (3)
-INFO:root:P1 fortifies Middle East (6)
-INFO:root:P1 fortifies Irkutsk (3)
-INFO:root:P1 fortifies Northern Europe (5)
-INFO:root:P1 fortifies Middle East (7)
-INFO:root:P1 fortifies Southern Europe (4)
-INFO:root:P1 fortifies Great Britain (4)
-INFO:root:P1 attacks Siberia (P2, 1) from Ural (2)
-INFO:root:Dice rolls: A[2]; D[1]
-INFO:root:Losses: Attacker 0 (Ural 2); Defender 1 (Siberia 1)
-INFO:root:P1 has occupied Siberia
-INFO:root:P1 attacks Egypt (P3, 1) from Southern Europe (4)
-INFO:root:Dice rolls: A[2]; D[2]
-INFO:root:Losses: Attacker 1 (Southern Europe 4); Defender 0 (Egypt 1)
-INFO:root:P1 attacks Yakutsk (P2, 1) from Irkutsk (3)
-INFO:root:Dice rolls: A[6, 5]; D[5]
-INFO:root:Losses: Attacker 0 (Irkutsk 3); Defender 1 (Yakutsk 1)
-INFO:root:P1 has occupied Yakutsk
-INFO:root:P1 attacks North Africa (P3, 1) from Southern Europe (3)
-INFO:root:Dice rolls: A[3, 2]; D[1]
-INFO:root:Losses: Attacker 0 (Southern Europe 3); Defender 1 (North Africa 1)
-INFO:root:P1 has occupied North Africa
-INFO:root:P1 attacks China (P3, 1) from Afghanistan (2)
-INFO:root:Dice rolls: A[5]; D[4]
-INFO:root:Losses: Attacker 0 (Afghanistan 2); Defender 1 (China 1)
-INFO:root:P1 has occupied China
-INFO:root:P1 attacks Venezuela (P4, 1) from Peru (3)
-INFO:root:Dice rolls: A[6, 2]; D[5]
-INFO:root:Losses: Attacker 0 (Peru 3); Defender 1 (Venezuela 1)
-INFO:root:P1 has occupied Venezuela
-INFO:root:P1 attacks Western Europe (P3, 1) from Northern Europe (5)
-INFO:root:Dice rolls: A[5, 5, 2]; D[5]
-INFO:root:Losses: Attacker 1 (Northern Europe 5); Defender 0 (Western Europe 1)
-INFO:root:P1 attacks Iceland (P4, 1) from Scandinavia (5)
-INFO:root:Dice rolls: A[3, 3, 2]; D[5]
-INFO:root:Losses: Attacker 1 (Scandinavia 5); Defender 0 (Iceland 1)
-INFO:root:P1 attacks Central America (P4, 3) from Venezuela (2)
-INFO:root:Dice rolls: A[3]; D[6]
-INFO:root:Losses: Attacker 1 (Venezuela 2); Defender 0 (Central America 3)
-INFO:root:P1 attacks Western Europe (P3, 1) from Great Britain (4)
-INFO:root:Dice rolls: A[2, 2]; D[6]
-INFO:root:Losses: Attacker 1 (Great Britain 4); Defender 0 (Western Europe 1)
-INFO:root:P1 attacks Siam (P3, 1) from India (4)
+INFO:root:Losses: Attacker 1 (Ontario 1); Defender 0 (Eastern United States 1)
+INFO:root:Joe attacks Congo (Steve, 6) from East Africa (4)
+INFO:root:Dice rolls: A[1]; D[5]
+INFO:root:Losses: Attacker 1 (East Africa 3); Defender 0 (Congo 6)
+INFO:root:Joe attacks Egypt (Steve, 2) from North Africa (3)
 INFO:root:Dice rolls: A[5, 4]; D[1]
-INFO:root:Losses: Attacker 0 (India 4); Defender 1 (Siam 1)
-INFO:root:P1 has occupied Siam
-INFO:root:P1 attacks Western Europe (P3, 1) from Northern Europe (4)
-INFO:root:Dice rolls: A[5, 3, 1]; D[6]
-INFO:root:Losses: Attacker 1 (Northern Europe 4); Defender 0 (Western Europe 1)
-INFO:root:P1 attacks Western Europe (P3, 1) from North Africa (2)
-INFO:root:Dice rolls: A[6]; D[2]
-INFO:root:Losses: Attacker 0 (North Africa 2); Defender 1 (Western Europe 1)
-INFO:root:P1 has occupied Western Europe
-INFO:root:P1 attacks Egypt (P3, 1) from Middle East (7)
-INFO:root:Dice rolls: A[3]; D[6]
-INFO:root:Losses: Attacker 1 (Middle East 7); Defender 0 (Egypt 1)
-INFO:root:P1 attacks Iceland (P4, 1) from Scandinavia (4)
-INFO:root:Dice rolls: A[2, 1]; D[3]
-INFO:root:Losses: Attacker 1 (Scandinavia 4); Defender 0 (Iceland 1)
-INFO:root:P1 attacks Indonesia (P3, 1) from Siam (3)
-INFO:root:Dice rolls: A[6, 6]; D[5]
-INFO:root:Losses: Attacker 0 (Siam 3); Defender 1 (Indonesia 1)
-INFO:root:P1 has occupied Indonesia
-INFO:root:P1 attacks Kamchatka (P2, 1) from Yakutsk (2)
-INFO:root:Dice rolls: A[4]; D[1]
-INFO:root:Losses: Attacker 0 (Yakutsk 2); Defender 1 (Kamchatka 1)
-INFO:root:P1 has occupied Kamchatka
-INFO:root:P1 attacks Iceland (P4, 1) from Scandinavia (3)
-INFO:root:Dice rolls: A[1]; D[6]
-INFO:root:Losses: Attacker 1 (Scandinavia 3); Defender 0 (Iceland 1)
-INFO:root:P1 attacks Iceland (P4, 1) from Great Britain (3)
-INFO:root:Dice rolls: A[6]; D[4]
-INFO:root:Losses: Attacker 0 (Great Britain 3); Defender 1 (Iceland 1)
-INFO:root:P1 has occupied Iceland
-INFO:root:P1 attacks Egypt (P3, 1) from Middle East (6)
-INFO:root:Dice rolls: A[3]; D[1]
-INFO:root:Losses: Attacker 0 (Middle East 6); Defender 1 (Egypt 1)
-INFO:root:P1 has occupied Egypt
-INFO:root:P1 attacks Greenland (P4, 1) from Iceland (2)
-INFO:root:Dice rolls: A[2]; D[4]
-INFO:root:Losses: Attacker 1 (Iceland 2); Defender 0 (Greenland 1)
-INFO:root:P1 attacks Western Australia (P3, 1) from Indonesia (2)
-INFO:root:Dice rolls: A[5]; D[5]
-INFO:root:Losses: Attacker 1 (Indonesia 2); Defender 0 (Western Australia 1)
-INFO:root:P1 attacks East Africa (P3, 1) from Egypt (5)
-INFO:root:Dice rolls: A[5, 4, 1]; D[6]
-INFO:root:Losses: Attacker 1 (Egypt 5); Defender 0 (East Africa 1)
-INFO:root:P1 attacks East Africa (P3, 1) from Egypt (4)
-INFO:root:Dice rolls: A[4, 4]; D[5]
-INFO:root:Losses: Attacker 1 (Egypt 4); Defender 0 (East Africa 1)
-INFO:root:P1 attacks East Africa (P3, 1) from Egypt (3)
-INFO:root:Dice rolls: A[5, 5]; D[6]
-INFO:root:Losses: Attacker 1 (Egypt 3); Defender 0 (East Africa 1)
-INFO:root:P1 attacks East Africa (P3, 1) from Egypt (2)
-INFO:root:Dice rolls: A[1]; D[5]
-INFO:root:Losses: Attacker 1 (Egypt 2); Defender 0 (East Africa 1)
-INFO:root:Move: 12
-INFO:root:P2 receives 3 armies
-INFO:root:P2 fortifies Japan (2)
-INFO:root:P2 fortifies Japan (3)
-INFO:root:P2 fortifies Mongolia (2)
-INFO:root:P2 attacks Kamchatka (P1, 1) from Japan (3)
-INFO:root:Dice rolls: A[3, 2]; D[2]
-INFO:root:Losses: Attacker 0 (Japan 3); Defender 1 (Kamchatka 1)
-INFO:root:P2 has occupied Kamchatka
-INFO:root:P2 attacks Yakutsk (P1, 1) from Kamchatka (2)
-INFO:root:Dice rolls: A[6]; D[5]
-INFO:root:Losses: Attacker 0 (Kamchatka 2); Defender 1 (Yakutsk 1)
-INFO:root:P2 has occupied Yakutsk
-INFO:root:P2 attacks China (P1, 1) from Mongolia (2)
-INFO:root:Dice rolls: A[3]; D[4]
-INFO:root:Losses: Attacker 1 (Mongolia 2); Defender 0 (China 1)
-INFO:root:P4 receives 8 armies
-INFO:root:P4 fortifies Northwest Territory (6)
-INFO:root:P4 fortifies Northwest Territory (7)
-INFO:root:P4 fortifies Greenland (2)
-INFO:root:P4 fortifies Alaska (2)
-INFO:root:P4 fortifies Central America (4)
-INFO:root:P4 fortifies Ontario (6)
-INFO:root:P4 fortifies Alaska (3)
-INFO:root:P4 fortifies Western United States (6)
-INFO:root:P4 attacks Venezuela (P1, 1) from Central America (4)
-INFO:root:Dice rolls: A[1]; D[6]
-INFO:root:Losses: Attacker 1 (Central America 4); Defender 0 (Venezuela 1)
-INFO:root:P4 attacks Iceland (P1, 1) from Greenland (2)
-INFO:root:Dice rolls: A[3]; D[2]
-INFO:root:Losses: Attacker 0 (Greenland 2); Defender 1 (Iceland 1)
-INFO:root:P4 has occupied Iceland
-INFO:root:P4 attacks Venezuela (P1, 1) from Central America (3)
-INFO:root:Dice rolls: A[6, 6]; D[5]
-INFO:root:Losses: Attacker 0 (Central America 3); Defender 1 (Venezuela 1)
-INFO:root:P4 has occupied Venezuela
-INFO:root:P4 attacks Kamchatka (P2, 1) from Alaska (3)
-INFO:root:Dice rolls: A[6]; D[3]
-INFO:root:Losses: Attacker 0 (Alaska 3); Defender 1 (Kamchatka 1)
-INFO:root:P4 has occupied Kamchatka
-INFO:root:P4 attacks Brazil (P1, 1) from Venezuela (2)
-INFO:root:Dice rolls: A[4]; D[5]
-INFO:root:Losses: Attacker 1 (Venezuela 2); Defender 0 (Brazil 1)
-INFO:root:P4 attacks Yakutsk (P2, 1) from Kamchatka (2)
-INFO:root:Dice rolls: A[2]; D[2]
-INFO:root:Losses: Attacker 1 (Kamchatka 2); Defender 0 (Yakutsk 1)
-INFO:root:P3 receives 3 armies
-INFO:root:P3 receives 35 armies by trading a set
-INFO:root:P3 fortifies East Africa (2)
-INFO:root:P3 fortifies South Africa (9)
-INFO:root:P3 fortifies Madagascar (11)
-INFO:root:P3 fortifies Eastern Australia (6)
-INFO:root:P3 fortifies Madagascar (12)
-INFO:root:P3 fortifies Western Australia (2)
-INFO:root:P3 fortifies Eastern Australia (7)
-INFO:root:P3 fortifies East Africa (3)
-INFO:root:P3 fortifies Western Australia (3)
-INFO:root:P3 fortifies East Africa (4)
-INFO:root:P3 fortifies East Africa (5)
-INFO:root:P3 fortifies Western Australia (4)
-INFO:root:P3 fortifies Madagascar (13)
-INFO:root:P3 fortifies Congo (2)
-INFO:root:P3 fortifies Western Australia (5)
-INFO:root:P3 fortifies Congo (3)
-INFO:root:P3 fortifies Eastern Australia (8)
-INFO:root:P3 fortifies East Africa (6)
-INFO:root:P3 fortifies Congo (4)
-INFO:root:P3 fortifies New Guinea (7)
-INFO:root:P3 fortifies Eastern Australia (9)
-INFO:root:P3 fortifies Western Australia (6)
-INFO:root:P3 fortifies East Africa (7)
-INFO:root:P3 fortifies New Guinea (8)
-INFO:root:P3 fortifies South Africa (10)
-INFO:root:P3 fortifies Western Australia (7)
-INFO:root:P3 fortifies Madagascar (14)
-INFO:root:P3 fortifies East Africa (8)
-INFO:root:P3 fortifies New Guinea (9)
-INFO:root:P3 fortifies South Africa (11)
-INFO:root:P3 fortifies Congo (5)
-INFO:root:P3 fortifies South Africa (12)
-INFO:root:P3 fortifies South Africa (13)
-INFO:root:P3 fortifies South Africa (14)
-INFO:root:P3 fortifies Congo (6)
-INFO:root:P3 fortifies Madagascar (15)
-INFO:root:P3 fortifies Eastern Australia (10)
-INFO:root:P3 fortifies Congo (7)
-INFO:root:P3 attacks North Africa (P1, 1) from Congo (7)
-INFO:root:Dice rolls: A[2, 1]; D[1]
-INFO:root:Losses: Attacker 0 (Congo 7); Defender 1 (North Africa 1)
-INFO:root:P3 has occupied North Africa
-INFO:root:P3 attacks Egypt (P1, 1) from East Africa (8)
-INFO:root:Dice rolls: A[6, 2]; D[3]
-INFO:root:Losses: Attacker 0 (East Africa 8); Defender 1 (Egypt 1)
-INFO:root:P3 has occupied Egypt
-INFO:root:P3 attacks Indonesia (P1, 1) from New Guinea (9)
-INFO:root:Dice rolls: A[3, 2]; D[5]
-INFO:root:Losses: Attacker 1 (New Guinea 9); Defender 0 (Indonesia 1)
-INFO:root:P3 attacks Southern Europe (P1, 1) from North Africa (6)
-INFO:root:Dice rolls: A[1]; D[6]
-INFO:root:Losses: Attacker 1 (North Africa 6); Defender 0 (Southern Europe 1)
-INFO:root:P3 attacks Indonesia (P1, 1) from Western Australia (7)
-INFO:root:Dice rolls: A[6]; D[2]
-INFO:root:Losses: Attacker 0 (Western Australia 7); Defender 1 (Indonesia 1)
-INFO:root:P3 has occupied Indonesia
-INFO:root:P3 attacks Brazil (P1, 1) from North Africa (5)
-INFO:root:Dice rolls: A[3, 2]; D[4]
-INFO:root:Losses: Attacker 1 (North Africa 5); Defender 0 (Brazil 1)
-INFO:root:P3 attacks Southern Europe (P1, 1) from North Africa (4)
-INFO:root:Dice rolls: A[3, 1]; D[1]
-INFO:root:Losses: Attacker 0 (North Africa 4); Defender 1 (Southern Europe 1)
-INFO:root:P3 has occupied Southern Europe
-INFO:root:P3 attacks Siam (P1, 1) from Indonesia (6)
-INFO:root:Dice rolls: A[6, 3]; D[2]
-INFO:root:Losses: Attacker 0 (Indonesia 6); Defender 1 (Siam 1)
-INFO:root:P3 has occupied Siam
-INFO:root:P3 attacks Western Europe (P1, 1) from Southern Europe (3)
-INFO:root:Dice rolls: A[3, 1]; D[6]
-INFO:root:Losses: Attacker 1 (Southern Europe 3); Defender 0 (Western Europe 1)
-INFO:root:P3 attacks Ukraine (P1, 3) from Southern Europe (2)
-INFO:root:Dice rolls: A[3]; D[4, 1]
-INFO:root:Losses: Attacker 1 (Southern Europe 2); Defender 0 (Ukraine 3)
-INFO:root:P3 attacks Middle East (P1, 1) from Egypt (7)
-INFO:root:Dice rolls: A[4, 3, 2]; D[1]
-INFO:root:Losses: Attacker 0 (Egypt 7); Defender 1 (Middle East 1)
-INFO:root:P3 has occupied Middle East
-INFO:root:P3 attacks China (P1, 1) from Siam (5)
-INFO:root:Dice rolls: A[3]; D[3]
-INFO:root:Losses: Attacker 1 (Siam 5); Defender 0 (China 1)
-INFO:root:P3 attacks India (P1, 1) from Middle East (6)
-INFO:root:Dice rolls: A[6, 1]; D[4]
-INFO:root:Losses: Attacker 0 (Middle East 6); Defender 1 (India 1)
-INFO:root:P3 has occupied India
-INFO:root:P3 attacks China (P1, 1) from India (5)
-INFO:root:Dice rolls: A[5, 2, 1]; D[5]
-INFO:root:Losses: Attacker 1 (India 5); Defender 0 (China 1)
-INFO:root:P3 attacks China (P1, 1) from India (4)
-INFO:root:Dice rolls: A[6, 6]; D[4]
-INFO:root:Losses: Attacker 0 (India 4); Defender 1 (China 1)
-INFO:root:P3 has occupied China
-INFO:root:P3 attacks Ural (P1, 1) from China (3)
-INFO:root:Dice rolls: A[4, 2]; D[1]
-INFO:root:Losses: Attacker 0 (China 3); Defender 1 (Ural 1)
-INFO:root:P3 has occupied Ural
-INFO:root:P3 attacks Afghanistan (P1, 1) from Ural (2)
-INFO:root:Dice rolls: A[3]; D[4]
-INFO:root:Losses: Attacker 1 (Ural 2); Defender 0 (Afghanistan 1)
-INFO:root:P1 receives 3 armies
-INFO:root:P1 fortifies Ukraine (4)
-INFO:root:P1 fortifies Peru (2)
-INFO:root:P1 fortifies Siberia (2)
-INFO:root:P1 attacks Iceland (P4, 1) from Scandinavia (2)
-INFO:root:Dice rolls: A[5]; D[5]
-INFO:root:Losses: Attacker 1 (Scandinavia 2); Defender 0 (Iceland 1)
-INFO:root:P1 attacks China (P3, 1) from Siberia (2)
-INFO:root:Dice rolls: A[4]; D[1]
-INFO:root:Losses: Attacker 0 (Siberia 2); Defender 1 (China 1)
-INFO:root:P1 has occupied China
-INFO:root:P1 attacks Ural (P3, 1) from Ukraine (4)
-INFO:root:Dice rolls: A[5, 1]; D[3]
-INFO:root:Losses: Attacker 0 (Ukraine 4); Defender 1 (Ural 1)
-INFO:root:P1 has occupied Ural
-INFO:root:P1 attacks Venezuela (P4, 1) from Peru (2)
-INFO:root:Dice rolls: A[6]; D[1]
-INFO:root:Losses: Attacker 0 (Peru 2); Defender 1 (Venezuela 1)
-INFO:root:P1 has occupied Venezuela
-INFO:root:P1 attacks Southern Europe (P3, 1) from Northern Europe (3)
-INFO:root:Dice rolls: A[5]; D[6]
-INFO:root:Losses: Attacker 1 (Northern Europe 3); Defender 0 (Southern Europe 1)
-INFO:root:P1 attacks Southern Europe (P3, 1) from Northern Europe (2)
-INFO:root:Dice rolls: A[6]; D[4]
-INFO:root:Losses: Attacker 0 (Northern Europe 2); Defender 1 (Southern Europe 1)
-INFO:root:P1 has occupied Southern Europe
-INFO:root:Move: 13
-INFO:root:P2 receives 3 armies
-INFO:root:P2 fortifies Japan (2)
-INFO:root:P2 fortifies Japan (3)
-INFO:root:P2 fortifies Japan (4)
-INFO:root:P2 attacks Kamchatka (P4, 1) from Japan (4)
-INFO:root:Dice rolls: A[6, 5]; D[3]
-INFO:root:Losses: Attacker 0 (Japan 4); Defender 1 (Kamchatka 1)
-INFO:root:P2 has occupied Kamchatka
-INFO:root:P2 attacks Alaska (P4, 1) from Kamchatka (3)
-INFO:root:Dice rolls: A[3]; D[5]
-INFO:root:Losses: Attacker 1 (Kamchatka 3); Defender 0 (Alaska 1)
-INFO:root:P2 attacks Alaska (P4, 1) from Kamchatka (2)
-INFO:root:Dice rolls: A[2]; D[4]
-INFO:root:Losses: Attacker 1 (Kamchatka 2); Defender 0 (Alaska 1)
-INFO:root:P4 receives 8 armies
-INFO:root:P4 fortifies Alberta (2)
-INFO:root:P4 fortifies Central America (2)
-INFO:root:P4 fortifies Alaska (2)
-INFO:root:P4 fortifies Ontario (7)
-INFO:root:P4 fortifies Alberta (3)
-INFO:root:P4 fortifies Western United States (7)
-INFO:root:P4 fortifies Alaska (3)
-INFO:root:P4 fortifies Northwest Territory (8)
-INFO:root:P4 attacks Venezuela (P1, 1) from Central America (2)
-INFO:root:Dice rolls: A[2]; D[2]
-INFO:root:Losses: Attacker 1 (Central America 2); Defender 0 (Venezuela 1)
-INFO:root:P4 attacks Kamchatka (P2, 1) from Alaska (3)
-INFO:root:Dice rolls: A[4, 2]; D[6]
-INFO:root:Losses: Attacker 1 (Alaska 3); Defender 0 (Kamchatka 1)
-INFO:root:P4 attacks Kamchatka (P2, 1) from Alaska (2)
-INFO:root:Dice rolls: A[1]; D[5]
-INFO:root:Losses: Attacker 1 (Alaska 2); Defender 0 (Kamchatka 1)
-INFO:root:P3 receives 9 armies
-INFO:root:P3 fortifies India (2)
-INFO:root:P3 fortifies India (3)
-INFO:root:P3 fortifies New Guinea (9)
-INFO:root:P3 fortifies Siam (5)
-INFO:root:P3 fortifies New Guinea (10)
-INFO:root:P3 fortifies Siam (6)
-INFO:root:P3 fortifies Western Australia (2)
-INFO:root:P3 fortifies Congo (2)
-INFO:root:P3 fortifies North Africa (2)
-INFO:root:P3 attacks China (P1, 1) from Siam (6)
-INFO:root:Dice rolls: A[1]; D[2]
-INFO:root:Losses: Attacker 1 (Siam 6); Defender 0 (China 1)
-INFO:root:P3 attacks Southern Europe (P1, 1) from North Africa (2)
-INFO:root:Dice rolls: A[1]; D[3]
-INFO:root:Losses: Attacker 1 (North Africa 2); Defender 0 (Southern Europe 1)
-INFO:root:P3 attacks China (P1, 1) from Siam (5)
-INFO:root:Dice rolls: A[2, 2]; D[4]
-INFO:root:Losses: Attacker 1 (Siam 5); Defender 0 (China 1)
-INFO:root:P3 attacks China (P1, 1) from Siam (4)
-INFO:root:Dice rolls: A[6, 2]; D[2]
-INFO:root:Losses: Attacker 0 (Siam 4); Defender 1 (China 1)
-INFO:root:P3 has occupied China
-INFO:root:P3 attacks Mongolia (P2, 1) from China (3)
-INFO:root:Dice rolls: A[3, 2]; D[3]
-INFO:root:Losses: Attacker 1 (China 3); Defender 0 (Mongolia 1)
-INFO:root:P3 attacks Ural (P1, 3) from China (2)
-INFO:root:Dice rolls: A[5]; D[6]
-INFO:root:Losses: Attacker 1 (China 2); Defender 0 (Ural 3)
-INFO:root:P3 attacks Afghanistan (P1, 1) from India (3)
-INFO:root:Dice rolls: A[4, 1]; D[3]
-INFO:root:Losses: Attacker 0 (India 3); Defender 1 (Afghanistan 1)
-INFO:root:P3 has occupied Afghanistan
-INFO:root:P3 attacks Ural (P1, 3) from Afghanistan (2)
-INFO:root:Dice rolls: A[4]; D[6]
-INFO:root:Losses: Attacker 1 (Afghanistan 2); Defender 0 (Ural 3)
-INFO:root:P1 receives 6 armies
-INFO:root:P1 fortifies Ural (4)
-INFO:root:P1 fortifies Southern Europe (2)
-INFO:root:P1 fortifies Northern Europe (2)
-INFO:root:P1 fortifies Brazil (2)
-INFO:root:P1 fortifies Peru (2)
-INFO:root:P1 fortifies Brazil (3)
-INFO:root:P1 attacks Afghanistan (P3, 1) from Ural (4)
-INFO:root:Dice rolls: A[3]; D[1]
-INFO:root:Losses: Attacker 0 (Ural 4); Defender 1 (Afghanistan 1)
-INFO:root:P1 has occupied Afghanistan
-INFO:root:P1 attacks North Africa (P3, 1) from Brazil (3)
-INFO:root:Dice rolls: A[2, 1]; D[6]
-INFO:root:Losses: Attacker 1 (Brazil 3); Defender 0 (North Africa 1)
-INFO:root:P1 attacks North Africa (P3, 1) from Brazil (2)
-INFO:root:Dice rolls: A[5]; D[2]
-INFO:root:Losses: Attacker 0 (Brazil 2); Defender 1 (North Africa 1)
-INFO:root:P1 has occupied North Africa
-INFO:root:P1 attacks Egypt (P3, 1) from Southern Europe (2)
-INFO:root:Dice rolls: A[3]; D[6]
-INFO:root:Losses: Attacker 1 (Southern Europe 2); Defender 0 (Egypt 1)
-INFO:root:P1 attacks Middle East (P3, 1) from Afghanistan (3)
-INFO:root:Dice rolls: A[3]; D[4]
-INFO:root:Losses: Attacker 1 (Afghanistan 3); Defender 0 (Middle East 1)
-INFO:root:P1 attacks India (P3, 1) from Afghanistan (2)
-INFO:root:Dice rolls: A[3]; D[1]
-INFO:root:Losses: Attacker 0 (Afghanistan 2); Defender 1 (India 1)
-INFO:root:P1 has occupied India
-INFO:root:Move: 14
-INFO:root:P2 receives 3 armies
-INFO:root:P2 fortifies Japan (2)
-INFO:root:P2 fortifies Mongolia (2)
-INFO:root:P2 fortifies Kamchatka (2)
-INFO:root:P2 attacks China (P3, 1) from Mongolia (2)
-INFO:root:Dice rolls: A[5]; D[5]
-INFO:root:Losses: Attacker 1 (Mongolia 2); Defender 0 (China 1)
-INFO:root:P2 attacks Irkutsk (P1, 1) from Kamchatka (2)
-INFO:root:Dice rolls: A[2]; D[1]
-INFO:root:Losses: Attacker 0 (Kamchatka 2); Defender 1 (Irkutsk 1)
-INFO:root:P2 has occupied Irkutsk
-INFO:root:P4 receives 8 armies
-INFO:root:P4 fortifies Greenland (2)
-INFO:root:P4 fortifies Central America (2)
-INFO:root:P4 fortifies Central America (3)
-INFO:root:P4 fortifies Eastern United States (5)
-INFO:root:P4 fortifies Eastern United States (6)
-INFO:root:P4 fortifies Northwest Territory (9)
-INFO:root:P4 fortifies Iceland (2)
-INFO:root:P4 fortifies Alberta (4)
-INFO:root:P4 attacks Great Britain (P1, 1) from Iceland (2)
-INFO:root:Dice rolls: A[2]; D[2]
-INFO:root:Losses: Attacker 1 (Iceland 2); Defender 0 (Great Britain 1)
-INFO:root:P4 attacks Venezuela (P1, 1) from Central America (3)
-INFO:root:Dice rolls: A[4]; D[5]
-INFO:root:Losses: Attacker 1 (Central America 3); Defender 0 (Venezuela 1)
-INFO:root:P4 attacks Venezuela (P1, 1) from Central America (2)
-INFO:root:Dice rolls: A[6]; D[5]
-INFO:root:Losses: Attacker 0 (Central America 2); Defender 1 (Venezuela 1)
-INFO:root:P4 has occupied Venezuela
-INFO:root:P3 receives 6 armies
-INFO:root:P3 fortifies Egypt (2)
-INFO:root:P3 fortifies Congo (3)
-INFO:root:P3 fortifies East Africa (2)
-INFO:root:P3 fortifies China (2)
-INFO:root:P3 fortifies Congo (4)
-INFO:root:P3 fortifies South Africa (15)
-INFO:root:P3 attacks Mongolia (P2, 1) from China (2)
-INFO:root:Dice rolls: A[1]; D[4]
-INFO:root:Losses: Attacker 1 (China 2); Defender 0 (Mongolia 1)
-INFO:root:P3 attacks Southern Europe (P1, 1) from Egypt (2)
-INFO:root:Dice rolls: A[3]; D[2]
-INFO:root:Losses: Attacker 0 (Egypt 2); Defender 1 (Southern Europe 1)
-INFO:root:P3 has occupied Southern Europe
-INFO:root:P3 attacks North Africa (P1, 1) from East Africa (2)
-INFO:root:Dice rolls: A[6]; D[2]
-INFO:root:Losses: Attacker 0 (East Africa 2); Defender 1 (North Africa 1)
-INFO:root:P3 has occupied North Africa
-INFO:root:P1 receives 4 armies
-INFO:root:P1 fortifies India (2)
-INFO:root:P1 fortifies Argentina (7)
-INFO:root:P1 fortifies Northern Europe (3)
-INFO:root:P1 fortifies Ural (2)
-INFO:root:P1 attacks Southern Europe (P3, 1) from Northern Europe (3)
-INFO:root:Dice rolls: A[2]; D[1]
-INFO:root:Losses: Attacker 0 (Northern Europe 3); Defender 1 (Southern Europe 1)
-INFO:root:P1 has occupied Southern Europe
-INFO:root:P1 attacks China (P3, 1) from Ural (2)
-INFO:root:Dice rolls: A[1]; D[1]
-INFO:root:Losses: Attacker 1 (Ural 2); Defender 0 (China 1)
-INFO:root:P1 attacks Egypt (P3, 1) from Southern Europe (2)
+INFO:root:Losses: Attacker 0 (North Africa 3); Defender 1 (Egypt 1)
+INFO:root:Joe attacks Argentina (Mark, 4) from Brazil (3)
 INFO:root:Dice rolls: A[2]; D[5]
-INFO:root:Losses: Attacker 1 (Southern Europe 2); Defender 0 (Egypt 1)
-INFO:root:P1 attacks Venezuela (P4, 1) from Peru (2)
-INFO:root:Dice rolls: A[3]; D[2]
-INFO:root:Losses: Attacker 0 (Peru 2); Defender 1 (Venezuela 1)
-INFO:root:P1 has occupied Venezuela
-INFO:root:P1 attacks Middle East (P3, 1) from India (2)
-INFO:root:Dice rolls: A[5]; D[5]
+INFO:root:Losses: Attacker 1 (Brazil 2); Defender 0 (Argentina 4)
+INFO:root:Joe attacks Argentina (Mark, 4) from Brazil (2)
+INFO:root:Dice rolls: A[6]; D[2, 2]
+INFO:root:Losses: Attacker 0 (Brazil 2); Defender 1 (Argentina 3)
+INFO:root:Joe attacks Eastern United States (Steve, 1) from Western United States (2)
+INFO:root:Dice rolls: A[1]; D[2]
+INFO:root:Losses: Attacker 1 (Western United States 1); Defender 0 (Eastern United States 1)
+INFO:root:Joe attacks Eastern United States (Steve, 1) from Quebec (3)
+INFO:root:Dice rolls: A[5]; D[1]
+INFO:root:Losses: Attacker 0 (Quebec 3); Defender 1 (Eastern United States 0)
+INFO:root:Joe has occupied Eastern United States
+INFO:root:Joe attacks Argentina (Mark, 3) from Brazil (2)
+INFO:root:Dice rolls: A[1]; D[2]
+INFO:root:Losses: Attacker 1 (Brazil 1); Defender 0 (Argentina 3)
+INFO:root:Joe attacks South Africa (Steve, 4) from East Africa (3)
+INFO:root:Dice rolls: A[3]; D[3]
+INFO:root:Losses: Attacker 1 (East Africa 2); Defender 0 (South Africa 4)
+INFO:root:Joe attacks Greenland (Steve, 4) from Northwest Territory (2)
+INFO:root:Dice rolls: A[3]; D[1]
+INFO:root:Losses: Attacker 0 (Northwest Territory 2); Defender 1 (Greenland 3)
+INFO:root:Joe attacks South Africa (Steve, 4) from East Africa (2)
+INFO:root:Dice rolls: A[1]; D[5, 1]
+INFO:root:Losses: Attacker 1 (East Africa 1); Defender 0 (South Africa 4)
+INFO:root:Joe attacks Western Europe (Kelly, 5) from North Africa (3)
+INFO:root:Dice rolls: A[6]; D[6]
+INFO:root:Losses: Attacker 1 (North Africa 2); Defender 0 (Western Europe 5)
+INFO:root:Joe attacks Western Europe (Kelly, 5) from North Africa (2)
+INFO:root:Dice rolls: A[5]; D[4]
+INFO:root:Losses: Attacker 0 (North Africa 2); Defender 1 (Western Europe 4)
+INFO:root:Joe attacks Egypt (Steve, 1) from North Africa (2)
+INFO:root:Dice rolls: A[4]; D[6]
+INFO:root:Losses: Attacker 1 (North Africa 1); Defender 0 (Egypt 1)
+INFO:root:Joe attacks Alaska (Mark, 5) from Northwest Territory (2)
+INFO:root:Dice rolls: A[5]; D[4, 1]
+INFO:root:Losses: Attacker 0 (Northwest Territory 2); Defender 1 (Alaska 4)
+INFO:root:Joe attacks Greenland (Steve, 3) from Northwest Territory (2)
+INFO:root:Dice rolls: A[6]; D[6, 5]
+INFO:root:Losses: Attacker 1 (Northwest Territory 1); Defender 0 (Greenland 3)
+INFO:root:Steve receives 3 armies
+INFO:root:Steve fortifies Peru (4)
+INFO:root:Steve fortifies Egypt (2)
+INFO:root:Steve fortifies Ukraine (4)
+INFO:root:Steve attacks East Africa (Joe, 1) from South Africa (4)
+INFO:root:Dice rolls: A[3, 3, 1]; D[1]
+INFO:root:Losses: Attacker 0 (South Africa 4); Defender 1 (East Africa 0)
+INFO:root:Steve has occupied East Africa
+INFO:root:Steve attacks Iceland (Kelly, 4) from Greenland (3)
+INFO:root:Dice rolls: A[2]; D[6]
+INFO:root:Losses: Attacker 1 (Greenland 2); Defender 0 (Iceland 4)
+INFO:root:Steve attacks Middle East (Kelly, 2) from Ukraine (4)
+INFO:root:Dice rolls: A[4]; D[4]
+INFO:root:Losses: Attacker 1 (Ukraine 3); Defender 0 (Middle East 2)
+INFO:root:Steve attacks Southern Europe (Kelly, 4) from Egypt (2)
+INFO:root:Dice rolls: A[4]; D[4, 1]
+INFO:root:Losses: Attacker 1 (Egypt 1); Defender 0 (Southern Europe 4)
+INFO:root:Steve attacks Madagascar (Mark, 1) from East Africa (3)
+INFO:root:Dice rolls: A[4]; D[6]
+INFO:root:Losses: Attacker 1 (East Africa 2); Defender 0 (Madagascar 1)
+INFO:root:Steve attacks Madagascar (Mark, 1) from East Africa (2)
+INFO:root:Dice rolls: A[3]; D[1]
+INFO:root:Losses: Attacker 0 (East Africa 2); Defender 1 (Madagascar 0)
+INFO:root:Steve has occupied Madagascar
+INFO:root:Steve attacks Northwest Territory (Joe, 1) from Greenland (2)
+INFO:root:Dice rolls: A[5]; D[3]
+INFO:root:Losses: Attacker 0 (Greenland 2); Defender 1 (Northwest Territory 0)
+INFO:root:Steve has occupied Northwest Territory
+INFO:root:Steve attacks Middle East (Kelly, 2) from Ukraine (3)
+INFO:root:Dice rolls: A[5, 4]; D[5]
+INFO:root:Losses: Attacker 1 (Ukraine 2); Defender 0 (Middle East 2)
+INFO:root:Steve attacks Scandinavia (Kelly, 4) from Ukraine (2)
+INFO:root:Dice rolls: A[5]; D[6]
+INFO:root:Losses: Attacker 1 (Ukraine 1); Defender 0 (Scandinavia 4)
+INFO:root:Steve attacks Argentina (Mark, 3) from Peru (4)
+INFO:root:Dice rolls: A[4, 2]; D[6, 5]
+INFO:root:Losses: Attacker 2 (Peru 2); Defender 0 (Argentina 3)
+INFO:root:Steve attacks Argentina (Mark, 3) from Peru (2)
+INFO:root:Dice rolls: A[1]; D[2]
+INFO:root:Losses: Attacker 1 (Peru 1); Defender 0 (Argentina 3)
+INFO:root:Steve attacks North Africa (Joe, 1) from Congo (6)
+INFO:root:Dice rolls: A[3, 3]; D[6]
+INFO:root:Losses: Attacker 1 (Congo 5); Defender 0 (North Africa 1)
+INFO:root:Steve attacks North Africa (Joe, 1) from Congo (5)
+INFO:root:Dice rolls: A[3, 2, 2]; D[2]
+INFO:root:Losses: Attacker 0 (Congo 5); Defender 1 (North Africa 0)
+INFO:root:Steve has occupied North Africa
+INFO:root:Steve attacks Western Europe (Kelly, 4) from North Africa (4)
+INFO:root:Dice rolls: A[6, 4]; D[2, 1]
+INFO:root:Losses: Attacker 0 (North Africa 4); Defender 2 (Western Europe 2)
+INFO:root:Steve attacks Western Europe (Kelly, 2) from North Africa (4)
+INFO:root:Dice rolls: A[1]; D[1, 1]
+INFO:root:Losses: Attacker 1 (North Africa 3); Defender 0 (Western Europe 2)
+INFO:root:Steve attacks Western Europe (Kelly, 2) from North Africa (3)
+INFO:root:Dice rolls: A[4, 3]; D[2]
+INFO:root:Losses: Attacker 0 (North Africa 3); Defender 1 (Western Europe 1)
+INFO:root:Steve attacks Brazil (Joe, 1) from North Africa (3)
+INFO:root:Dice rolls: A[3, 1]; D[2]
+INFO:root:Losses: Attacker 0 (North Africa 3); Defender 1 (Brazil 0)
+INFO:root:Steve has occupied Brazil
+INFO:root:Steve attacks Venezuela (Joe, 1) from Brazil (2)
+INFO:root:Dice rolls: A[3]; D[5]
+INFO:root:Losses: Attacker 1 (Brazil 1); Defender 0 (Venezuela 1)
+INFO:root:Steph receives 3 armies
+INFO:root:Steph fortifies China (5)
+INFO:root:Steph fortifies Indonesia (2)
+INFO:root:Steph fortifies Indonesia (3)
+INFO:root:Steph attacks Ukraine (Steve, 1) from Afghanistan (4)
+INFO:root:Dice rolls: A[5, 3]; D[3]
+INFO:root:Losses: Attacker 0 (Afghanistan 4); Defender 1 (Ukraine 0)
+INFO:root:Steph has occupied Ukraine
+INFO:root:Steph attacks Siberia (Mark, 2) from Ural (2)
+INFO:root:Dice rolls: A[1]; D[6, 6]
+INFO:root:Losses: Attacker 1 (Ural 1); Defender 0 (Siberia 2)
+INFO:root:Steph attacks Siberia (Mark, 2) from China (5)
+INFO:root:Dice rolls: A[4]; D[6, 1]
+INFO:root:Losses: Attacker 1 (China 4); Defender 0 (Siberia 2)
+INFO:root:Steph attacks Kamchatka (Mark, 5) from Japan (4)
+INFO:root:Dice rolls: A[3, 2, 2]; D[4, 2]
+INFO:root:Losses: Attacker 2 (Japan 2); Defender 0 (Kamchatka 5)
+INFO:root:Steph attacks Middle East (Kelly, 2) from India (5)
+INFO:root:Dice rolls: A[6, 3, 3]; D[4, 3]
+INFO:root:Losses: Attacker 1 (India 4); Defender 1 (Middle East 1)
+INFO:root:Steph attacks Siberia (Mark, 2) from China (4)
+INFO:root:Dice rolls: A[5, 4, 4]; D[4, 3]
+INFO:root:Losses: Attacker 0 (China 4); Defender 2 (Siberia 0)
+INFO:root:Steph has occupied Siberia
+INFO:root:Steph attacks Kamchatka (Mark, 5) from Mongolia (4)
+INFO:root:Dice rolls: A[4]; D[5, 1]
+INFO:root:Losses: Attacker 1 (Mongolia 3); Defender 0 (Kamchatka 5)
+INFO:root:Steph attacks Yakutsk (Mark, 1) from Siberia (3)
+INFO:root:Dice rolls: A[3]; D[6]
+INFO:root:Losses: Attacker 1 (Siberia 2); Defender 0 (Yakutsk 1)
+INFO:root:Steph attacks Middle East (Kelly, 1) from India (4)
+INFO:root:Dice rolls: A[5, 2]; D[6]
+INFO:root:Losses: Attacker 1 (India 3); Defender 0 (Middle East 1)
+INFO:root:Steph attacks Kamchatka (Mark, 5) from Japan (2)
+INFO:root:Dice rolls: A[3]; D[5, 4]
+INFO:root:Losses: Attacker 1 (Japan 1); Defender 0 (Kamchatka 5)
+INFO:root:Steph attacks Middle East (Kelly, 1) from India (3)
+INFO:root:Dice rolls: A[3, 2]; D[3]
 INFO:root:Losses: Attacker 1 (India 2); Defender 0 (Middle East 1)
+INFO:root:Steph attacks Middle East (Kelly, 1) from India (2)
+INFO:root:Dice rolls: A[6]; D[2]
+INFO:root:Losses: Attacker 0 (India 2); Defender 1 (Middle East 0)
+INFO:root:Steph has occupied Middle East
+INFO:root:Steph attacks Western Australia (Kelly, 3) from Indonesia (3)
+INFO:root:Dice rolls: A[1, 1]; D[4, 3]
+INFO:root:Losses: Attacker 2 (Indonesia 1); Defender 0 (Western Australia 3)
+INFO:root:Steph attacks Kamchatka (Mark, 5) from Mongolia (3)
+INFO:root:Dice rolls: A[5, 4]; D[5, 3]
+INFO:root:Losses: Attacker 1 (Mongolia 2); Defender 1 (Kamchatka 4)
+INFO:root:Steph attacks Kamchatka (Mark, 4) from Mongolia (2)
+INFO:root:Dice rolls: A[3]; D[3, 2]
+INFO:root:Losses: Attacker 1 (Mongolia 1); Defender 0 (Kamchatka 4)
+INFO:root:Steph attacks Southern Europe (Kelly, 4) from Ukraine (3)
+INFO:root:Dice rolls: A[6]; D[5, 1]
+INFO:root:Losses: Attacker 0 (Ukraine 3); Defender 1 (Southern Europe 3)
+INFO:root:Steph attacks Yakutsk (Mark, 1) from Siberia (2)
+INFO:root:Dice rolls: A[2]; D[4]
+INFO:root:Losses: Attacker 1 (Siberia 1); Defender 0 (Yakutsk 1)
+INFO:root:Steph attacks Scandinavia (Kelly, 4) from Ukraine (3)
+INFO:root:Dice rolls: A[5, 3]; D[2, 2]
+INFO:root:Losses: Attacker 0 (Ukraine 3); Defender 2 (Scandinavia 2)
+INFO:root:Steph attacks Southern Europe (Kelly, 3) from Ukraine (3)
+INFO:root:Dice rolls: A[1]; D[3, 2]
+INFO:root:Losses: Attacker 1 (Ukraine 2); Defender 0 (Southern Europe 3)
+INFO:root:Steph attacks Northern Europe (Kelly, 2) from Ukraine (2)
+INFO:root:Dice rolls: A[5]; D[2, 2]
+INFO:root:Losses: Attacker 0 (Ukraine 2); Defender 1 (Northern Europe 1)
+INFO:root:Steph attacks Northern Europe (Kelly, 1) from Ukraine (2)
+INFO:root:Dice rolls: A[1]; D[2]
+INFO:root:Losses: Attacker 1 (Ukraine 1); Defender 0 (Northern Europe 1)
+INFO:root:Kelly receives 3 armies
+INFO:root:Kelly fortifies Western Australia (4)
+INFO:root:Kelly fortifies Western Australia (5)
+INFO:root:Kelly fortifies Southern Europe (4)
+INFO:root:Kelly attacks Greenland (Steve, 1) from Iceland (4)
+INFO:root:Dice rolls: A[6, 2, 1]; D[6]
+INFO:root:Losses: Attacker 1 (Iceland 3); Defender 0 (Greenland 1)
+INFO:root:Kelly attacks Ukraine (Steph, 1) from Scandinavia (2)
+INFO:root:Dice rolls: A[4]; D[4]
+INFO:root:Losses: Attacker 1 (Scandinavia 1); Defender 0 (Ukraine 1)
+INFO:root:Kelly attacks Eastern Australia (Joe, 1) from Western Australia (5)
+INFO:root:Dice rolls: A[3, 2]; D[4]
+INFO:root:Losses: Attacker 1 (Western Australia 4); Defender 0 (Eastern Australia 1)
+INFO:root:Kelly attacks Greenland (Steve, 1) from Iceland (3)
+INFO:root:Dice rolls: A[4]; D[4]
+INFO:root:Losses: Attacker 1 (Iceland 2); Defender 0 (Greenland 1)
+INFO:root:Kelly attacks Eastern Australia (Joe, 1) from Western Australia (4)
+INFO:root:Dice rolls: A[6, 1, 1]; D[4]
+INFO:root:Losses: Attacker 0 (Western Australia 4); Defender 1 (Eastern Australia 0)
+INFO:root:Kelly has occupied Eastern Australia
+INFO:root:Kelly attacks Greenland (Steve, 1) from Iceland (2)
+INFO:root:Dice rolls: A[6]; D[6]
+INFO:root:Losses: Attacker 1 (Iceland 1); Defender 0 (Greenland 1)
+INFO:root:Kelly attacks North Africa (Steve, 1) from Southern Europe (4)
+INFO:root:Dice rolls: A[5]; D[6]
+INFO:root:Losses: Attacker 1 (Southern Europe 3); Defender 0 (North Africa 1)
+INFO:root:Kelly attacks New Guinea (Joe, 1) from Eastern Australia (3)
+INFO:root:Dice rolls: A[4]; D[4]
+INFO:root:Losses: Attacker 1 (Eastern Australia 2); Defender 0 (New Guinea 1)
+INFO:root:Kelly attacks Egypt (Steve, 1) from Southern Europe (3)
+INFO:root:Dice rolls: A[6, 4]; D[2]
+INFO:root:Losses: Attacker 0 (Southern Europe 3); Defender 1 (Egypt 0)
+INFO:root:Kelly has occupied Egypt
+INFO:root:Kelly attacks New Guinea (Joe, 1) from Eastern Australia (2)
+INFO:root:Dice rolls: A[2]; D[6]
+INFO:root:Losses: Attacker 1 (Eastern Australia 1); Defender 0 (New Guinea 1)
+INFO:root:Kelly attacks East Africa (Steve, 1) from Egypt (2)
+INFO:root:Dice rolls: A[3]; D[3]
+INFO:root:Losses: Attacker 1 (Egypt 1); Defender 0 (East Africa 1)
+INFO:root:Mark receives 3 armies
+INFO:root:Mark fortifies Irkutsk (5)
+INFO:root:Mark fortifies Alberta (4)
+INFO:root:Mark fortifies Yakutsk (2)
+INFO:root:Mark attacks Siberia (Steph, 1) from Yakutsk (2)
+INFO:root:Dice rolls: A[1]; D[1]
+INFO:root:Losses: Attacker 1 (Yakutsk 1); Defender 0 (Siberia 1)
+INFO:root:Mark attacks Mongolia (Steph, 1) from Irkutsk (5)
+INFO:root:Dice rolls: A[5, 3, 1]; D[5]
+INFO:root:Losses: Attacker 1 (Irkutsk 4); Defender 0 (Mongolia 1)
+INFO:root:Mark attacks Mongolia (Steph, 1) from Kamchatka (4)
+INFO:root:Dice rolls: A[2, 1, 1]; D[5]
+INFO:root:Losses: Attacker 1 (Kamchatka 3); Defender 0 (Mongolia 1)

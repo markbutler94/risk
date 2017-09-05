@@ -64,12 +64,18 @@ def redeemCards(p):
     else:
         return False
 
-# Not changed yet
+# This version prioritises reinforcing threatened territories.
 def placeReinforcements(p):
     with open("gamestate.p", 'rb') as pickle_file:
         territories, continents, remainingTerritories, players = pickle.load(pickle_file)
-    ownedTerritories = {k for k, v in territories.items() if v.player == p}
-    return random.sample(ownedTerritories,1)[0]
+    
+    ownedTerritories = {k: v for k, v in territories.items() if v.player == p}
+    threatenedTerritories = {k: v for k, v in ownedTerritories.items() if not all(territories[e].player == p for e in v.edges)}
+
+    if len(threatenedTerritories) != 0:
+        return random.sample(list(threatenedTerritories),1)[0]
+    else:
+        return random.sample(list(ownedTerritories),1)[0]
 
 # Prioritises the continent with highest (but not complete) ownership. Doesn't always attack.
 def attackTerritory(p):
@@ -77,6 +83,7 @@ def attackTerritory(p):
         territories, continents, remainingTerritories, players = pickle.load(pickle_file)
 
     continentOwnership = {}
+    continentTarget = False
     for c in continents:
         continentTerritoriesOwned = len([t for t in territories if territories[t].continent == c and territories[t].player == p])
         continentTerritoriesTotal = len([t for t in territories if territories[t].continent == c])
@@ -86,7 +93,6 @@ def attackTerritory(p):
         if v < 1:
             continentTarget = k
             break
-    print(continentTarget)
 
     attackCapableTerritories = {k for k, v in territories.items() if v.player == p and v.armies > 1 and any(territories[e].player != p for e in v.edges)}
     if len(attackCapableTerritories) > 0:

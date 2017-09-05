@@ -6,21 +6,28 @@ import random
 import time
 import logging
 import pickle
+import operator
 from graphics import *
+
+displayMap = False
 
 import ai_basic
 import ai_improved
 
-def gameState():
-    pickle.dump([territories,remainingTerritories,players],open("gamestate.p","wb"))
-
-def aiCall(player,request):
-    gameState()
-    return getattr(globals()[players[player].ai],request)(player)
-
 open("moves.log","w").close()
 logging.basicConfig(filename="moves.log",level=logging.INFO)
 
+def gameState():
+    pickle.dump([territories, continents, remainingTerritories, players],open("gamestate.p","wb"))
+
+def aiCall(player,request):
+    gameState()
+    #try:
+    return getattr(globals()[players[player].ai],request)(player)
+    #except AttributeError:
+    #    logging.info("USED BASIC AI FOR PLAYER " + p + " WITH REQUEST " + request)
+    #    return getattr(ai_basic,request)(player)
+        
 class Territory:
     def __init__(self,edges,continent,pos):
         self.edges = edges
@@ -42,7 +49,8 @@ class Player:
         self.cards = []
 
 class Card:
-    def __init__(self,type):
+    def __init__(self,id,type):
+        self.id = id
         self.type = type
         self.territory = ""
 
@@ -89,10 +97,12 @@ for i in range(0,len(playerList)):
 
 with open("cards.txt") as f:
     content = f.readlines()
+cardId = 0
 for line in content:
     lst = ast.literal_eval(line)
     for i in range(int(lst[1])):
-        deck.append(Card(lst[0]))
+        deck.append(Card(cardId,lst[0]))
+        cardId += 1
 random.shuffle(deck)
 
 territoryList = list(territories)
@@ -107,15 +117,6 @@ for line in content:
     cardBonuses.append(int(line))
 
 # Needs to deal with more turns!!!
-
-
-
-
-
-
-
-
-
 
 
 
@@ -200,7 +201,7 @@ for t in territories:
 while len(remainingTerritories) > 0:
     for p in playerList:
         if len(remainingTerritories) > 0:
-            t = aiCall(p,"selectTerritory") # Should probably check that this string is acceptable?
+            t = aiCall(p, "selectTerritory") # Should probably check that this string is acceptable?
             territories[t].player = p
             players[p].armies -= 1
             territories[t].armies += 1
@@ -211,13 +212,14 @@ while len(remainingTerritories) > 0:
 while any(players[p].armies > 0 for p in players):
     for p in playerList:
         if players[p].armies > 0:
-            t = aiCall(p,"placeArmies") # Should probably check that this string is acceptable?
+            t = aiCall(p, "placeArmies") # Should probably check that this string is acceptable?
             territories[t].armies += 1
             players[p].armies -= 1
             logging.info(p + " fortifies " + t + " (" + str(territories[t].armies) + ") ")
 
-win = GraphWin("RISK", 1000, 680)
-initMap()
+if displayMap:    
+    win = GraphWin("RISK", 1000, 680)
+    initMap()
 
 move = 0
 setsTradedIn = 0
@@ -232,7 +234,7 @@ setsTradedIn = 0
 
 # MAIN LOOP
 
-while len(playerList) > 1:
+while len(playerList) > 1 and move < 15:
 
     print("Move:", str(move))
     logging.info("Move: " + str(move))
@@ -254,11 +256,13 @@ while len(playerList) > 1:
         logging.info(p + " receives " + str(reinforcements) + " armies")
         
         tradeInBonusReceived = False
-        tradeIn = aiCall(p,"redeemCards") # Should probably check that this string is acceptable?
+        tradeIn = aiCall(p, "redeemCards") # Should probably check that this string is acceptable?
         
         while tradeIn:
             for card in tradeIn:
-                players[p].cards.remove(card)
+                players[p].cards = [c for c in players[p].cards if c.id != card.id]
+
+                # What happens to these cards?
             players[p].armies += cardBonuses[setsTradedIn]
             logging.info(p + " receives " + str(cardBonuses[setsTradedIn]) + " armies by trading a set")         
             
@@ -266,50 +270,86 @@ while len(playerList) > 1:
                 if not(card.territory == "") and tradeInBonusReceived == False:     # Can only receive the extra bonus once per turn
                     if territories[card.territory].armies == p:
                         players[p].armies += 2
-                        logging.info(p + " receives 2 extra armies by trading a card with an owned territory (these have been placed on " + card.territory + ")")
+                        logging.info(p + " receives 2 extra armies on " + card.territory)
                         tradeInBonusReceived = True
                         
             setsTradedIn +=1
-            tradeIn = aiCall(p,"redeemCards") # Should probably check that this string is acceptable?
+            tradeIn = aiCall(p, "redeemCards") # Should probably check that this string is acceptable?
 
         # Reinforcing
         while players[p].armies > 0:
-            t = aiCall(p,"placeReinforcements") # Should probably check that this string is acceptable?
+            t = aiCall(p, "placeReinforcements") # Should probably check that this string is acceptable?
             territories[t].armies += 1
             players[p].armies -= 1
             logging.info(p + " fortifies " + t + " (" + str(territories[t].armies) + ")")
 
-'''         #Attacking
-        attackTerritories(p)
+        # Attacking
+        capturedTerritory = False
+        attackData = aiCall(p, "attackTerritory") # Should probably check that this string is acceptable?
+        while attackData != False:
+            attackingTerritory, defendingTerritory, attackDice = attackData
+            logging.info(p + " attacks " + defendingTerritory + " (" + territories[defendingTerritory].player + ", " + str(territories[defendingTerritory].armies) + ") from " + attackingTerritory + " (" + str(territories[attackingTerritory].armies) + ")")
+            pickle.dump(attackData,open("attackdata.p","wb"))
+            defendDice = aiCall(p,"defendTerritory") # Should probably check that this string is acceptable?
+            diceRollsAttack = []
+            for i in range(attackDice):
+                diceRollsAttack.append(random.randint(1,6))
+            diceRollsDefend = []
+            for i in range(defendDice):
+                diceRollsDefend.append(random.randint(1,6))
+            diceRollsAttack.sort(reverse = True)
+            diceRollsDefend.sort(reverse = True)
+            logging.info("Dice rolls: A" + str(diceRollsAttack) + "; D" + str(diceRollsDefend))
 
-        #see if any territories have been occupied (will use a bool flag eventually - this is a temporary measure)
-        ownedTerritories = set()
-        for t in territories:
-            if territories[t].player == p:
-                ownedTerritories.add(t)
-                
-        if len(ownedTerritories) > ownedTerritoriesCount:
+            lossesAttacker = 0
+            lossesDefender = 0
+            for i in range(min(attackDice,defendDice)):
+                if diceRollsAttack[i] > diceRollsDefend[i]:
+                    lossesDefender += 1
+                else:
+                    lossesAttacker += 1
+            logging.info("Losses: Attacker " + str(lossesAttacker) + " (" + attackingTerritory + " " + str(territories[attackingTerritory].armies) + "); Defender " + str(lossesDefender) + " (" + defendingTerritory + " " + str(territories[defendingTerritory].armies) + ")")
+
+            territories[attackingTerritory].armies -= lossesAttacker
+            territories[defendingTerritory].armies -= lossesDefender
+   
+            if territories[defendingTerritory].armies == 0:
+                territories[defendingTerritory].player = p
+                #occupyingArmies = diceAttack                                            #(add potential to move more with an aiCall...)
+                territories[defendingTerritory].armies += territories[attackingTerritory].armies - 1
+                territories[attackingTerritory].armies = 1
+                capturedTerritory = True
+                logging.info(p + " has occupied " + defendingTerritory)
+
+            attackData = aiCall(p, "attackTerritory") # Should probably check that this string is acceptable?
+        
+        # Receive card
+        if capturedTerritory:
             if len(deck) > 0:
                 players[p].cards.append(deck.pop(0))
 
-        #fortifying
+        # Fortifying
 
-        #wiping out
-        for pEnemy in playerList:
-            if not(any(territories[t].player == pEnemy for t in territories)):
-                logging.info(p + " has ELIMINATED " + pEnemy + " on move " + str(move))
-                playerList.remove(pEnemy)
-                
+
+        # Wiping out
+        for e in playerList:
+            if not(any(territories[t].player == e for t in territories)):
+                logging.info(p + " has ELIMINATED " + e + " on move " + str(move))
+                playerList.remove(e)
+
+                # CARDS transfer
+                               
         if len(playerList) == 1:
-            logging.info(p + " WINS on move " + str(move)) '''
+            logging.info(p + " WINS on move " + str(move))
 
     move += 1
-    
+
     if displayMap:
         updateMap() 
 
-#EXIT
+# EXIT
 
-updateMap()
-win.getMouse()
-win.close()
+if displayMap:  
+    updateMap()
+    win.getMouse()
+    win.close()

@@ -1,7 +1,3 @@
-# rewrite default values (eg Highlights) - THEY WILL NOT WORK
-# SEE THIS: http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html#other-languages-have-variables
-# Use more listcomps?
-
 import os
 import ast
 import math
@@ -9,14 +5,21 @@ import itertools
 import random
 import time
 import logging
+import pickle
 from graphics import *
 
-displayMap = 0
+import ai_basic
+import ai_improved
+
+def gameState():
+    pickle.dump([territories,remainingTerritories,players],open("gamestate.p","wb"))
+
+def aiCall(player,request):
+    gameState()
+    return getattr(globals()[players[player].ai],request)(player)
 
 open("moves.log","w").close()
 logging.basicConfig(filename="moves.log",level=logging.INFO)
-
-#CLASSES
 
 class Territory:
     def __init__(self,edges,continent,pos):
@@ -31,10 +34,11 @@ class Continent:
         self.bonus = bonus
 
 class Player:
-    def __init__(self,color):
-        self.armies = 35
+    def __init__(self,color,ai):
+        self.armies = 0
         self.index = 0
         self.color = color
+        self.ai = ai
         self.cards = []
 
 class Card:
@@ -42,106 +46,85 @@ class Card:
         self.type = type
         self.territory = ""
 
-#LOADING DATA
+territories = {} 
+continents = {}
+players = {}
+deck = []
+cardBonuses = []
 
-#territories
 with open("territories.txt") as f:
     content = f.readlines()
-    
-territories = {} 
-
 for line in content:
     lst = ast.literal_eval(line)
     territories[lst[0]] = Territory(lst[1],lst[2],lst[3])
 
-#continents
 with open("continents.txt") as f:
     content = f.readlines()
-
-continents = {}
-
 for line in content:
     lst = ast.literal_eval(line)
     continents[lst[0]] = Continent(lst[1])
 
-#players
 with open("players.txt") as f:
     content = f.readlines()
-
-players = {}
-
 for line in content:
     lst = ast.literal_eval(line)
-    players[lst[0]] = Player(lst[1])
-    
-#randomise order
+    players[lst[0]] = Player(lst[1],lst[2])
+
+def playersToReinforcements(numPlayers):
+    switcher = {
+        3: 35,
+        4: 30,
+        5: 25,
+        6: 20,
+    }
+    return switcher.get(numPlayers, 20)
+
+for p in players:
+    players[p].armies = playersToReinforcements(len(players))
+
 playerList = list(players)
 random.shuffle(playerList)
 for i in range(0,len(playerList)):
     players[playerList[i]].index = i
 
-#deck
 with open("cards.txt") as f:
     content = f.readlines()
-    
-deck = []
-    
 for line in content:
     lst = ast.literal_eval(line)
     for i in range(int(lst[1])):
         deck.append(Card(lst[0]))
-        
-#randomise order
 random.shuffle(deck)
 
-#assign each non-wildcard card a territory
-territoryList = []
-for t in territories:
-    territoryList.append(t)
+territoryList = list(territories)
 random.shuffle(territoryList)
 for card in deck:
     if card.type != "Wildcard":
         card.territory = territoryList.pop()
-        
-#card set bonuses
+
 with open("cardbonuses.txt") as f:
     content = f.read().splitlines()
-
-cardBonuses = []
-
 for line in content:
     cardBonuses.append(int(line))
-        
-#USEFUL FUNCTIONS
-    
-def adjacentTerritories(user_tname):
-    for t in territories[user_tname].edges:
-        print(">", t)
 
-def continentTerritories(user_cname):
-    for t in territories:
-        if territories[t].continent == user_cname:
-            print(">", t)
+# Needs to deal with more turns!!!
 
-def territoryInfo(user_tname):
-    print("Continent:", territories[user_tname].continent)
-    print("Adjacent to:")
-    adjacentTerritories(user_tname)
 
-def cardSets(playerCards):
-    cardTriples = itertools.combinations(playerCards,3)
-    cardSets = []
-    for cardTriple in cardTriples:
-        if cardTriple[0].type == cardTriple[1].type and cardTriple[0].type == cardTriple[2].type:
-            cardSets.append(cardTriple)
-        if cardTriple[0].type != cardTriple[1].type and cardTriple[0].type != cardTriple[2].type and cardTriple[1].type != cardTriple[2].type:
-            cardSets.append(cardTriple)
-    return cardSets
 
-#DRAWING FUNCTIONS
 
-if displayMap:
-    win = GraphWin("RISK", 1000, 680)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 points = {t: Circle(Point(*territories[t].pos), 5) for t in territories}
 captions = {t: Text(Point(territories[t].pos[0], territories[t].pos[1] + 20), "") for t in territories}
@@ -166,7 +149,7 @@ def initMap():
     for c in captions:
         captions[c].draw(win)
 
-def updateMap(highlightPlayers=[],highlightTerritories=[],highlightDefending=[],pause=0):
+def updateMap(highlightPlayers=[],highlightTerritories=[],highlightDefending=[]):
     for t in territories:
         points[t].setFill(players[territories[t].player].color)
             
@@ -197,160 +180,72 @@ def updateMap(highlightPlayers=[],highlightTerritories=[],highlightDefending=[],
         lines[(highlightDefending[0],highlightTerritories[0])].setFill('yellow')
         lines[(highlightDefending[0],highlightTerritories[0])].setWidth(2)
         lines[(highlightTerritories[0],highlightDefending[0])].setArrow('last')
-    
-    if pause == -1:
-        win.getMouse()
-    elif pause > 0:
-        time.sleep(pause)
 
-#GAME SETUP
 
-def selectTerritoriesRandom():
-    remainingTerritories = set()
-    for t in territories:
-        remainingTerritories.add(t)
-    while len(remainingTerritories) > 0:
-        for p in playerList:
-            t = random.sample(remainingTerritories,1)[0]
+
+
+
+
+
+
+
+# GAME SETUP
+
+logging.info("GAME STARTED")
+
+#Select territories
+remainingTerritories = set()
+for t in territories:
+    remainingTerritories.add(t)
+while len(remainingTerritories) > 0:
+    for p in playerList:
+        if len(remainingTerritories) > 0:
+            t = aiCall(p,"selectTerritory") # Should probably check that this string is acceptable?
             territories[t].player = p
             players[p].armies -= 1
             territories[t].armies += 1
             remainingTerritories.remove(t)
             logging.info(p + " gets " + t)
 
-def placeArmiesRandom():
-    while any(players[p].armies > 0 for p in players):
-        for p in playerList:
-            if players[p].armies > 0:
-                ownedTerritories = set()
-                for t in territories:
-                    if territories[t].player == p:
-                        ownedTerritories.add(t)
-                t = random.sample(ownedTerritories,1)[0]
-                territories[t].armies += 1
-                players[p].armies -= 1
-                logging.info(p + " fortifies " + t + " (" + str(territories[t].armies) + ") ")
+#Place armies
+while any(players[p].armies > 0 for p in players):
+    for p in playerList:
+        if players[p].armies > 0:
+            t = aiCall(p,"placeArmies") # Should probably check that this string is acceptable?
+            territories[t].armies += 1
+            players[p].armies -= 1
+            logging.info(p + " fortifies " + t + " (" + str(territories[t].armies) + ") ")
 
-logging.info("GAME STARTED")
-selectTerritoriesRandom()
-placeArmiesRandom()
+win = GraphWin("RISK", 1000, 680)
+initMap()
 
-#PLAYER TACTICS
-
-def placeReinforcements(p):     #random
-    updatedTerritories = set()  
-    for i in range(1,players[p].armies+1):
-        t = random.sample(ownedTerritories,1)[0]
-        territories[t].armies += 1
-        players[p].armies -= 1
-        updatedTerritories.add(t)
-        logging.info(p + " fortifies " + t + " (" + str(territories[t].armies) + ")")
-
-    if displayMap:    
-        updateMap([p],updatedTerritories,[],0)
-
-def attackTerritories(p):       #random
-    logging.info(p + " is attacking")  
-    canAttackTerritories = set()
-    for t in ownedTerritories:
-        if territories[t].armies > 1 and any(territories[edge].player != p for edge in territories[t].edges):
-            canAttackTerritories.add(t)
-    while len(canAttackTerritories) > 0:                    # If we have a territory we can attack from
-        if random.random() < 1:                          # Chance of attacking
-            logging.info(p + " can attack from: " + str(canAttackTerritories))
-            t = random.sample(canAttackTerritories,1)[0]    # Choose one territory to attack from, t
-            possibleTargets = set()                         # Generate set of targets which can be attacked from t
-            for edge in territories[t].edges:
-                if territories[edge].player!= p:
-                    possibleTargets.add(edge)
-            logging.info("> Chosen: " + t)
-            logging.info("Possible targets: " + str(possibleTargets))
-            tDefend = random.sample(possibleTargets,1)[0]  # Choose attack target, tDefend
-            logging.info("> Chosen: " + tDefend)
-            diceAttack = random.randint(1,min(3,territories[t].armies - 1))     # Choose number of dice
-            diceDefend = min(defendTerritory(p),territories[tDefend].armies)
-            diceRollsAttack = []
-            for i in range(diceAttack):
-                diceRollsAttack.append(random.randint(1,6))
-            diceRollsDefend = []
-            for i in range(diceDefend):
-                diceRollsDefend.append(random.randint(1,6))
-            diceRollsAttack.sort(reverse = True)
-            diceRollsDefend.sort(reverse = True)
-            logging.info("Dice rolls: A" + str(diceRollsAttack) + "; D" + str(diceRollsDefend))
-            lossesAttack = 0
-            lossesDefend = 0
-            compares = min(diceAttack,diceDefend)           # Number of dice to compare
-            for i in range(compares):
-                if diceRollsAttack[i] > diceRollsDefend[i]:
-                    lossesDefend += 1
-                else:
-                    lossesAttack += 1
-            logging.info("Losses: A" + str(lossesAttack) + "; D" + str(lossesDefend))
-            
-            territories[t].armies -= lossesAttack
-            territories[tDefend].armies -= lossesDefend
-            
-            if territories[tDefend].armies == 0:
-                occupyingArmies = diceAttack
-                #(add potential to move more...)
-                territories[tDefend].armies += occupyingArmies
-                territories[tDefend].player = p
-                territories[t].armies -= occupyingArmies
-                logging.info(p + " has occupied " + tDefend)
-            
-            if displayMap:            
-                updateMap([p],[t],[tDefend],0)            
-            
-            canAttackTerritories = set()
-            for t in ownedTerritories:
-                if territories[t].armies > 1 and any(territories[edge].player != p for edge in territories[t].edges):
-                    canAttackTerritories.add(t)
-            
-        else:  
-            # If we have decided not to attack
-            logging.info(p + " has decided to cease attacking")
-            break
-            
-def defendTerritory(p):          #random
-    if random.getrandbits(1) == 1:
-        return 1
-    else:
-        return 2
-
-def redeemCards(p):     #random
-    # Must redeem cards if player has 5 or more
-    if len(players[p].cards) > 4:
-        cardSet = random.sample(cardSets(players[p].cards),1)[0]
-        return cardSet
-    elif len(cardSets(players[p].cards)) > 0:
-            if random.getrandbits(1) == 1:
-                cardSet = random.sample(cardSets(players[p].cards),1)[0]
-                return cardSet
-    else:
-        return 0
-
-#MAIN LOOP
-
-if displayMap:
-    initMap()
 move = 0
 setsTradedIn = 0
 
-while len(playerList) > 1 and move < 100:
+
+
+
+
+
+
+
+
+# MAIN LOOP
+
+while len(playerList) > 1:
+
     print("Move:", str(move))
     logging.info("Move: " + str(move))
+    
     for p in playerList:
-        #reinforcements
+
+        # Calculating reinforcements
         reinforcements = 0
         
-        ownedTerritories = set()
-        for t in territories:
-            if territories[t].player == p:
-                ownedTerritories.add(t)
+        ownedTerritories = {k for k, v in territories.items() if v.player == p}
         ownedTerritoriesCount = len(ownedTerritories)
         
-        reinforcements += max(3,math.floor(len(ownedTerritories) / 3))
+        reinforcements += max(3, math.floor(len(ownedTerritories)/3))
         
         for c in continents:
             if all((not(territories[t].continent == c) or territories[t].player == p) for t in territories):
@@ -358,8 +253,8 @@ while len(playerList) > 1 and move < 100:
         players[p].armies += reinforcements
         logging.info(p + " receives " + str(reinforcements) + " armies")
         
-        tradeInBonusReceived = 0
-        tradeIn = redeemCards(p)
+        tradeInBonusReceived = False
+        tradeIn = aiCall(p,"redeemCards") # Should probably check that this string is acceptable?
         
         while tradeIn:
             for card in tradeIn:
@@ -368,19 +263,23 @@ while len(playerList) > 1 and move < 100:
             logging.info(p + " receives " + str(cardBonuses[setsTradedIn]) + " armies by trading a set")         
             
             for card in tradeIn:
-                if not(card.territory == "") and tradeInBonusReceived == 0:     #Can only receive the extra bonus once per turn
-                    if territories[card.territory].player == p:
+                if not(card.territory == "") and tradeInBonusReceived == False:     # Can only receive the extra bonus once per turn
+                    if territories[card.territory].armies == p:
                         players[p].armies += 2
-                        logging.info(p + " receives 2 extra armies by trading a card with an owned territory (" + card.territory + ")")
-                        tradeInBonusReceived = 1
+                        logging.info(p + " receives 2 extra armies by trading a card with an owned territory (these have been placed on " + card.territory + ")")
+                        tradeInBonusReceived = True
                         
             setsTradedIn +=1
-            tradeIn = redeemCards(p)
+            tradeIn = aiCall(p,"redeemCards") # Should probably check that this string is acceptable?
 
-        #placing armies (randomly)
-        placeReinforcements(p)
+        # Reinforcing
+        while players[p].armies > 0:
+            t = aiCall(p,"placeReinforcements") # Should probably check that this string is acceptable?
+            territories[t].armies += 1
+            players[p].armies -= 1
+            logging.info(p + " fortifies " + t + " (" + str(territories[t].armies) + ")")
 
-        #attacking
+'''         #Attacking
         attackTerritories(p)
 
         #see if any territories have been occupied (will use a bool flag eventually - this is a temporary measure)
@@ -402,15 +301,15 @@ while len(playerList) > 1 and move < 100:
                 playerList.remove(pEnemy)
                 
         if len(playerList) == 1:
-            logging.info(p + " WINS on move " + str(move))
+            logging.info(p + " WINS on move " + str(move)) '''
 
     move += 1
     
     if displayMap:
-        updateMap([],[],[],0)
+        updateMap() 
 
 #EXIT
 
-if displayMap:
-    updateMap()
-    win.close()
+updateMap()
+win.getMouse()
+win.close()

@@ -1,3 +1,4 @@
-"Mark","blue"
-"Joe","green"
-"Oly","red"
+"P1","blue","ai_basic"
+"P2","lawn green","ai_basic"
+"P3","red","ai_basic"
+"P4","gold","ai_basic"

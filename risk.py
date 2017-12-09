@@ -18,16 +18,23 @@ argparser.add_argument(
     const=False,
     default=True,
     help='Run without UI map animation')
+argparser.add_argument(
+    '--log',
+    dest='logPath',
+    default='moves.log',
+    help='Specify a file path to log moves to.'
+)
 
 args = argparser.parse_args()
 
 displayMap = args.displayMap
+logPath = args.logPath
 
 import ai_basic
 import ai_improved
 
-open("moves.log","w").close()
-logging.basicConfig(filename="moves.log",level=logging.INFO)
+open(logPath,"w").close()
+logging.basicConfig(filename=logPath,level=logging.INFO)
 
 def gameState():
     pickle.dump([territories, continents, remainingTerritories, players],open("gamestate.p","wb"))

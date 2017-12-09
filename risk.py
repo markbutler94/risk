@@ -7,9 +7,21 @@ import time
 import logging
 import pickle
 import operator
+import argparse
 from graphics import *
 
-displayMap = True
+argparser = argparse.ArgumentParser(description='Play RISK')
+argparser.add_argument(
+    '--nomap',
+    dest='displayMap',
+    action='store_const',
+    const=False,
+    default=True,
+    help='Run without UI map animation')
+
+args = argparser.parse_args()
+
+displayMap = args.displayMap
 
 import ai_basic
 import ai_improved

@@ -10,28 +10,41 @@ import operator
 import argparse
 from graphics import *
 
+riskPath = os.path.dirname("__file__")
+
 argparser = argparse.ArgumentParser(description='Play RISK')
 argparser.add_argument(
-    '--nomap',
+    '--nodisplay',
     dest='displayMap',
     action='store_const',
     const=False,
     default=True,
-    help='Run without UI map animation')
+    help='Run without UI map animation.')
 argparser.add_argument(
     '--log',
     dest='logPath',
     default='moves.log',
     help='Specify a file path to log moves to.'
 )
+argparser.add_argument(
+    '--map',
+    dest='mapName',
+    default='default',
+    help='Specify a map to use.'
+)
 
 args = argparser.parse_args()
 
 displayMap = args.displayMap
 logPath = args.logPath
+mapName = args.mapName
 
 import ai_basic
 import ai_improved
+
+mapPath = os.path.join(riskPath, 'custom-maps', mapName)
+territoriesPath = os.path.join(mapPath, 'territories.txt')
+continentsPath = os.path.join(mapPath, 'continents.txt')
 
 open(logPath,"w").close()
 logging.basicConfig(filename=logPath,level=logging.INFO)
@@ -79,13 +92,13 @@ players = {}
 deck = []
 cardBonuses = []
 
-with open("territories.txt") as f:
+with open(territoriesPath) as f:
     content = f.readlines()
 for line in content:
     lst = ast.literal_eval(line)
     territories[lst[0]] = Territory(lst[1],lst[2],lst[3])
 
-with open("continents.txt") as f:
+with open(continentsPath) as f:
     content = f.readlines()
 for line in content:
     lst = ast.literal_eval(line)
@@ -158,7 +171,8 @@ moveText = Text(Point(930,730),"")
 lossLabels = {t: Text(Point(territories[t].pos[0],territories[t].pos[1]-20), "") for t in territories}
     
 def initMap():
-    i = Image(Point(500,680/2),os.path.join(os.path.dirname("__file__"), "map.gif"))
+    imagePath = os.path.join(mapPath, 'map.gif')
+    i = Image(Point(500,680/2), imagePath)
     i.draw(win)
     box = Rectangle(Point(30,510),Point(210,520 + (30*len(players))))
     box.setFill("grey")

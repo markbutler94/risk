@@ -41,6 +41,7 @@ mapName = args.mapName
 
 import ai_basic
 import ai_improved
+import ai_state_eval
 
 mapPath = os.path.join(riskPath, 'custom-maps', mapName)
 territoriesPath = os.path.join(mapPath, 'territories.txt')

@@ -269,6 +269,8 @@ def updateMap(highlightPlayers=[], highlightTerritories=[], highlightDefending=[
 
         if p not in playerList:
             playerStrikethroughs[p].draw(win)
+            
+            # TODO - now seems to crash
 
     for l in lines:
         lines[l].setFill('black')

@@ -1,6 +1,6 @@
 __pycache__
 .vscode
 *.log
-logs/
+logs/gamestates/
 *.p
 *.pyc

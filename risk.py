@@ -47,6 +47,7 @@ continentsPath = os.path.join(mapPath, 'continents.txt')
 
 import ai_basic
 import ai_improved
+import ai_state_eval
 
 open(logFilePath,"w").close()
 if os.path.exists(logGamestatesPath):

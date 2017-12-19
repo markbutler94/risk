@@ -1,5 +1,6 @@
 import os
 import ast
+import shutil
 import math
 import itertools
 import random
@@ -23,8 +24,8 @@ argparser.add_argument(
 argparser.add_argument(
     '--log',
     dest='logPath',
-    default='moves.log',
-    help='Specify a file path to log moves to.'
+    default=os.path.join(riskPath, 'logs'),
+    help='Specify a folder path to log moves to.'
 )
 argparser.add_argument(
     '--map',
@@ -36,27 +37,34 @@ argparser.add_argument(
 args = argparser.parse_args()
 
 displayMap = args.displayMap
-logPath = args.logPath
+logFolderPath = args.logPath
+logFilePath = os.path.join(logFolderPath, "moves.log")
+logGamestatesPath = os.path.join(logFolderPath, "gamestates")
 mapName = args.mapName
+mapPath = os.path.join(riskPath, 'custom-maps', mapName)
+territoriesPath = os.path.join(mapPath, 'territories.txt')
+continentsPath = os.path.join(mapPath, 'continents.txt')
 
 import ai_basic
 import ai_improved
 import ai_state_eval
 
-mapPath = os.path.join(riskPath, 'custom-maps', mapName)
-territoriesPath = os.path.join(mapPath, 'territories.txt')
-continentsPath = os.path.join(mapPath, 'continents.txt')
+open(logFilePath,"w").close()
+if os.path.exists(logGamestatesPath):
+    shutil.rmtree(logGamestatesPath)
+os.makedirs(logGamestatesPath)
+logging.basicConfig(filename=logFilePath,level=logging.INFO)
+def updateLog(s):
+		logging.info(s)
+		gameState(os.path.join(logGamestatesPath, "gamestate-line-" + str(sum(1 for line in open(logFilePath))) + ".p"))
 
-open(logPath,"w").close()
-logging.basicConfig(filename=logPath,level=logging.INFO)
+def gameState(path = "gamestate.p"):
+    pickle.dump([territories, continents, remainingTerritories, players],open(path,"wb"))
 
-def gameState():
-    pickle.dump([territories, continents, remainingTerritories, players],open("gamestate.p","wb"))
-
-def aiCall(player,request):
+def aiCall(p,request):
     gameState()
     #try:
-    return getattr(globals()[players[player].ai],request)(player)
+    return getattr(globals()[players[p].ai],request)(p)
     #except AttributeError:
     #    logging.info("USED BASIC AI FOR PLAYER " + p + " WITH REQUEST " + request)
     #    return getattr(ai_basic,request)(player)
@@ -149,16 +157,10 @@ with open("cardbonuses.txt") as f:
 for line in content:
     cardBonuses.append(int(line))
 
-# Needs to deal with more turns!!!
+# Needs to deal with more turns!
 
 
-
-
-
-
-
-
-
+# MAP DRAWING
 
 points = {t: Circle(Point(*territories[t].pos), 5) for t in territories}
 captions = {t: Text(Point(territories[t].pos[0], territories[t].pos[1] + 20), "") for t in territories}
@@ -170,7 +172,7 @@ lines = {(t,edge): Line(Point(*territories[t].pos),Point(*territories[edge].pos)
 messageText = Text(Point(500,730),"")
 moveText = Text(Point(930,730),"")
 lossLabels = {t: Text(Point(territories[t].pos[0],territories[t].pos[1]-20), "") for t in territories}
-    
+
 def initMap():
     imagePath = os.path.join(mapPath, 'map.gif')
     i = Image(Point(500,680/2), imagePath)
@@ -265,15 +267,11 @@ def updateMap(highlightPlayers=[], highlightTerritories=[], highlightDefending=[
     if pause:
         win.getMouse()
 
-
-
-
-
-
-
+				
+				
+				
 # GAME SETUP
 
-logging.info("GAME STARTED")
 move = 0
 
 if displayMap:    
@@ -292,10 +290,10 @@ while len(remainingTerritories) > 0:
             players[p].armies -= 1
             territories[t].armies += 1
             remainingTerritories.remove(t)
-            logging.info(p + " gets " + t)
+            updateLog(p + " gets " + t)
             #if displayMap:    
                 #updateMap(highlightPlayers=[p], highlightTerritories=[t], message=p + " gets " + t)
-
+	
 # Place armies
 while any(players[p].armies > 0 for p in players):
     for p in playerList:
@@ -303,20 +301,12 @@ while any(players[p].armies > 0 for p in players):
             t = aiCall(p, "placeArmies") # Should probably check that this string is acceptable?
             territories[t].armies += 1
             players[p].armies -= 1
-            logging.info(p + " fortifies " + t + " (" + str(territories[t].armies) + ")")
+            updateLog(p + " fortifies " + t + " (" + str(territories[t].armies) + ")")
             #if displayMap:    
-                #updateMap(highlightPlayers=[p], highlightTerritories=[t], message=p + " fortifies " + t + " (" + str(territories[t].armies) + ")")
+                #updateMap(highlightPlayers=[p], highlightTerritories=[t], message=p + " fortifies " + t + " (" + str(territories[t].armies) + ")")						
 
-
-
-
-
-
-
-
-
-
-
+								
+								
 # MAIN LOOP
 
 move = 1
@@ -325,7 +315,7 @@ setsTradedIn = 0
 while len(playerList) > 1:
 
     print("Move:", str(move))
-    logging.info("Move: " + str(move))
+    updateLog("Move: " + str(move))
     
     for p in playerList:
 
@@ -341,7 +331,7 @@ while len(playerList) > 1:
             if all((not(territories[t].continent == c) or territories[t].player == p) for t in territories):
                 reinforcements += continents[c].bonus
         players[p].armies += reinforcements
-        logging.info(p + " receives " + str(reinforcements) + " armies")
+        updateLog(p + " receives " + str(reinforcements) + " armies")
 
         if displayMap:
             updateMap(highlightPlayers=[p], message=p + " receives " + str(reinforcements) + " armies")
@@ -352,10 +342,10 @@ while len(playerList) > 1:
         while tradeIn:
             for card in tradeIn:
                 players[p].cards = [c for c in players[p].cards if c.id != card.id]
-
                 # What happens to these cards?
+								
             players[p].armies += cardBonuses[setsTradedIn]
-            logging.info(p + " receives " + str(cardBonuses[setsTradedIn]) + " armies by trading a set")         
+            updateLog(p + " receives " + str(cardBonuses[setsTradedIn]) + " armies by trading a set")         
             
             if displayMap:
                 updateMap(highlightPlayers=[p], message=p + " receives " + str(cardBonuses[setsTradedIn]) + " armies by trading a set")
@@ -364,7 +354,7 @@ while len(playerList) > 1:
                 if not(card.territory == "") and tradeInBonusReceived == False:     # Can only receive the extra bonus once per turn
                     if territories[card.territory].armies == p:
                         players[p].armies += 2
-                        logging.info(p + " receives 2 extra armies on " + card.territory)
+                        updateLog(p + " receives 2 extra armies on " + card.territory)
                         tradeInBonusReceived = True
 
                         if displayMap:
@@ -378,7 +368,7 @@ while len(playerList) > 1:
             t = aiCall(p, "placeReinforcements") # Should probably check that this string is acceptable?
             territories[t].armies += 1
             players[p].armies -= 1
-            logging.info(p + " fortifies " + t + " (" + str(territories[t].armies) + ")")
+            updateLog(p + " fortifies " + t + " (" + str(territories[t].armies) + ")")
 
             if displayMap:
                 updateMap(highlightPlayers=[p], highlightTerritories=[t], message=p + " fortifies " + t + " (" + str(territories[t].armies) + ")")
@@ -389,7 +379,7 @@ while len(playerList) > 1:
         while attackData != False:
             attackingTerritory, defendingTerritory, attackDice = attackData
 
-            logging.info(p + " attacks " + defendingTerritory + " (" + territories[defendingTerritory].player + ", " + str(territories[defendingTerritory].armies) + ") from " + attackingTerritory + " (" + str(territories[attackingTerritory].armies) + ")")
+            updateLog(p + " attacks " + defendingTerritory + " (" + territories[defendingTerritory].player + ", " + str(territories[defendingTerritory].armies) + ") from " + attackingTerritory + " (" + str(territories[attackingTerritory].armies) + ")")
             pickle.dump(attackData,open("attackdata.p","wb"))
             defendDice = aiCall(p,"defendTerritory") # Should probably check that this string is acceptable?
             diceRollsAttack = []
@@ -400,7 +390,7 @@ while len(playerList) > 1:
                 diceRollsDefend.append(random.randint(1,6))
             diceRollsAttack.sort(reverse = True)
             diceRollsDefend.sort(reverse = True)
-            logging.info("Dice rolls: A" + str(diceRollsAttack) + "; D" + str(diceRollsDefend))
+            updateLog("Dice rolls: A" + str(diceRollsAttack) + "; D" + str(diceRollsDefend))
 
             lossesAttacker = 0
             lossesDefender = 0
@@ -413,7 +403,7 @@ while len(playerList) > 1:
             territories[attackingTerritory].armies -= lossesAttacker
             territories[defendingTerritory].armies -= lossesDefender
 
-            logging.info("Losses: Attacker " + str(lossesAttacker) + " (" + attackingTerritory + " " + str(territories[attackingTerritory].armies) + "); Defender " + str(lossesDefender) + " (" + defendingTerritory + " " + str(territories[defendingTerritory].armies) + ")")
+            updateLog("Losses: Attacker " + str(lossesAttacker) + " (" + attackingTerritory + " " + str(territories[attackingTerritory].armies) + "); Defender " + str(lossesDefender) + " (" + defendingTerritory + " " + str(territories[defendingTerritory].armies) + ")")
 
             if displayMap:
                 updateMap(highlightPlayers=[p], highlightTerritories=[attackingTerritory], highlightDefending=[defendingTerritory], 
@@ -426,7 +416,7 @@ while len(playerList) > 1:
                 territories[defendingTerritory].armies += territories[attackingTerritory].armies - 1
                 territories[attackingTerritory].armies = 1
                 capturedTerritory = True
-                logging.info(p + " has occupied " + defendingTerritory)
+                updateLog(p + " has occupied " + defendingTerritory)
 
             if displayMap:
                 updateMap() 
@@ -444,19 +434,21 @@ while len(playerList) > 1:
         # Wiping out
         for e in playerList:
             if not(any(territories[t].player == e for t in territories)):
-                logging.info(p + " has ELIMINATED " + e + " on move " + str(move))
+                updateLog(p + " has eliminated " + e + " on move " + str(move))
                 playerList.remove(e)
 
                 # CARDS transfer
                                
         if len(playerList) == 1:
-            logging.info(p + " WINS on move " + str(move))
+            updateLog(p + " wins on move " + str(move))
 
     move += 1
 
     if displayMap:
         updateMap() 
 
+				
+				
 # EXIT
 
 if displayMap:  

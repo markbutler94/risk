@@ -11,7 +11,7 @@ import ai_basic
 # This version selects an adjacent terrotiry to one already selected, if it can.
 def selectTerritory(p):
     with open("gamestate.p", 'rb') as pickle_file:
-        territories, continents, players, deck, cardBonuses, playerList, move, currentPlayer, currentPhase = pickle.load(pickle_file)
+        territories, continents, playersRestricted, deckRestricted, cardBonuses, playerList, move, currentPlayer, currentPhase = pickle.load(pickle_file)
 
     remainingTerritories = {k for k, v in territories.items() if v.player == ''}
     ownedTerritories = set()
@@ -32,7 +32,7 @@ def selectTerritory(p):
 # This version prioritises reinforcing threatened territories.
 def placeArmies(p):
     with open("gamestate.p", 'rb') as pickle_file:
-        territories, continents, players, deck, cardBonuses, playerList, move, currentPlayer, currentPhase = pickle.load(pickle_file)
+        territories, continents, playersRestricted, deckRestricted, cardBonuses, playerList, move, currentPlayer, currentPhase = pickle.load(pickle_file)
 
     ownedTerritories = {k: v for k, v in territories.items() if v.player == p}
     threatenedTerritories = {k: v for k, v in ownedTerritories.items() if not all(territories[e].player == p for e in v.edges)}
@@ -52,7 +52,7 @@ def redeemCards(p):
 # This version prioritises reinforcing threatened territories.
 def placeReinforcements(p):
     with open("gamestate.p", 'rb') as pickle_file:
-        territories, continents, players, deck, cardBonuses, playerList, move, currentPlayer, currentPhase = pickle.load(pickle_file)
+        territories, continents, playersRestricted, deckRestricted, cardBonuses, playerList, move, currentPlayer, currentPhase = pickle.load(pickle_file)
     
     ownedTerritories = {k: v for k, v in territories.items() if v.player == p}
     threatenedTerritories = {k: v for k, v in ownedTerritories.items() if not all(territories[e].player == p for e in v.edges)}
@@ -65,7 +65,7 @@ def placeReinforcements(p):
 # Prioritises the continent with highest (but not complete) ownership. Doesn't always attack.
 def attackTerritory(p):
     with open("gamestate.p", 'rb') as pickle_file:
-        territories, continents, players, deck, cardBonuses, playerList, move, currentPlayer, currentPhase = pickle.load(pickle_file)
+        territories, continents, playersRestricted, deckRestricted, cardBonuses, playerList, move, currentPlayer, currentPhase = pickle.load(pickle_file)
 
     continentOwnership = {}
     continentTarget = False
@@ -92,7 +92,7 @@ def attackTerritory(p):
 # This version always defends with two armies if it can.
 def defendTerritory(p):
     with open("gamestate.p", 'rb') as pickle_file:
-        territories, continents, players, deck, cardBonuses, playerList, move, currentPlayer, currentPhase = pickle.load(pickle_file)
+        territories, continents, playersRestricted, deckRestricted, cardBonuses, playerList, move, currentPlayer, currentPhase = pickle.load(pickle_file)
     with open("attackdata.p", 'rb') as pickle_file:
         attackingTerritory, defendingTerritory, attackDice = pickle.load(pickle_file)
         

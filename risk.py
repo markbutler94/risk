@@ -1,15 +1,27 @@
 import os
 import ast
 import shutil
+import argparse
+import logging
+
 import math
+import operator
 import itertools
 import random
 import time
-import logging
+
+import copy
 import pickle
-import operator
-import argparse
-from graphics import *
+
+import ai_basic
+import ai_improved
+
+import map_display
+
+
+
+
+# ARGUMENT PARSING
 
 riskPath = os.path.dirname('__file__')
 
@@ -33,9 +45,9 @@ argparser.add_argument(
     dest='loggingLevel',
     default=1,
     help=('0: No logging. ' + 
-          '1: moves.log only. ' +
-          '2: moves.log and gamestate.p every move. ' +
-          '3: moves.log and gamestate.p for every line.')
+    '1: moves.log only. ' +
+    '2: moves.log and gamestate.p every move. ' +
+    '3: moves.log and gamestate.p for every line.')
 )
 argparser.add_argument(
     '--map',
@@ -65,23 +77,34 @@ manualPlayback = args.manualPlayback
 
 loadGamestate = args.loadGamestate
 
-logFolderPath = args.logPath
-logFilePath = os.path.join(logFolderPath, 'moves.log')
-logGamestatesPath = os.path.join(logFolderPath, 'gamestates')
-loggingLevel = args.loggingLevel
-
 mapName = args.mapName
 mapPath = os.path.join(riskPath, 'custom-maps', mapName)
 
 territoriesPath = os.path.join(mapPath, 'territories.txt')
 continentsPath = os.path.join(mapPath, 'continents.txt')
 
-import ai_basic
-import ai_improved
-  
-def aiCall(p,request):
-    gameState()
-    return getattr(globals()[players[p].ai],request)(p)
+logFolderPath = args.logPath
+logFilePath = os.path.join(logFolderPath, 'moves.log')
+logGamestatesPath = os.path.join(logFolderPath, 'gamestates')
+loggingLevel = args.loggingLevel
+
+if int(loggingLevel) > 0:
+    open(logFilePath,'w').close()
+    if os.path.exists(logGamestatesPath):
+        shutil.rmtree(logGamestatesPath)
+    os.makedirs(logGamestatesPath)
+    logging.basicConfig(filename=logFilePath,level=logging.INFO)
+    
+def updateLog(s, startOfMove = False):
+    if int(loggingLevel) > 0:
+        logging.info(s)
+    if int(loggingLevel) > 2 or (int(loggingLevel) > 1 and startOfMove == True):
+        gameState(os.path.join(logGamestatesPath, 'gamestate-line-' + str(sum(1 for line in open(logFilePath))) + '.p'))
+
+
+        
+        
+# GAME OBJECTS
         
 class Territory:
     def __init__(self,edges,continent,pos):
@@ -170,21 +193,12 @@ with open('cardbonuses.txt') as f:
     content = f.read().splitlines()
 for line in content:
     cardBonuses.append(int(line))
-    
-    
-if int(loggingLevel) > 0:
-    open(logFilePath,'w').close()
-    if os.path.exists(logGamestatesPath):
-        shutil.rmtree(logGamestatesPath)
-    os.makedirs(logGamestatesPath)
-    logging.basicConfig(filename=logFilePath,level=logging.INFO)
-    
-def updateLog(s, startOfMove = False):
-    if int(loggingLevel) > 0:
-        logging.info(s)
-    if int(loggingLevel) > 2 or (int(loggingLevel) > 1 and startOfMove == True):
-        gameState(os.path.join(logGamestatesPath, 'gamestate-line-' + str(sum(1 for line in open(logFilePath))) + '.p'))
 
+    
+    
+    
+# AI HELPER FUNCTIONS    
+    
 def gameState(path = 'gamestate.p', restricted = False):
     if not restricted:
         pickle.dump([territories, continents, players, deck, cardBonuses, playerList, move, currentPlayer, currentPhase],open(path,'wb'))
@@ -195,132 +209,25 @@ def gameState(path = 'gamestate.p', restricted = False):
             v.cards = length(v.cards)
         deckRestricted = length(deck)
         pickle.dump([territories, continents, playersRestricted, deckRestricted, cardBonuses, playerList, move, currentPlayer, currentPhase],open(path,'wb'))
+        
+def aiCall(p,request):
+    gameState(restricted = True)
+    return getattr(globals()[players[p].ai],request)(p)
+
+
     
-    
-# MAP DRAWING
-
-points = {t: Circle(Point(*territories[t].pos), 5) for t in territories}
-captions = {t: Text(Point(territories[t].pos[0], territories[t].pos[1] + 20), '') for t in territories}
-playerNames = {p: Text(Point(70, 530 + (30 * players[p].index)),'') for p in players}
-playerTerritories = {p: Text(Point(140, 530 + (30 * players[p].index)),'') for p in players}
-playerCards = {p: Text(Point(180, 530 + (30 * players[p].index)),'') for p in players}
-playerStrikethroughs = {p: Line(Point(45, 530 + (30 * players[p].index)), Point(195, 530 + (30 * players[p].index))) for p in players}
-lines = {(t,edge): Line(Point(*territories[t].pos),Point(*territories[edge].pos)) for t in territories for edge in territories[t].edges}
-messageText = Text(Point(500,730),'')
-moveText = Text(Point(930,730),'')
-lossLabels = {t: Text(Point(territories[t].pos[0],territories[t].pos[1]-20), '') for t in territories}
-
-def initMap():
-    imagePath = os.path.join(mapPath, 'map.gif')
-    i = Image(Point(500,680/2), imagePath)
-    i.draw(win)
-    box = Rectangle(Point(30,510),Point(210,520 + (30*len(players))))
-    box.setFill('grey')
-    box.draw(win)
-    for p in players:
-        playerNames[p].setText(p)
-        playerNames[p].setTextColor(players[p].color)
-        playerNames[p].draw(win)
-        playerTerritories[p].draw(win)
-        playerTerritories[p].setTextColor(players[p].color)
-        playerCards[p].draw(win)
-        playerCards[p].setTextColor(players[p].color)
-        playerStrikethroughs[p].setFill(players[p].color)
-    for t in territories:
-        points[t].draw(win)
-        lossLabels[t].setTextColor('red')
-        lossLabels[t].setSize(8)
-        captions[t].setSize(8)
-        captions[t].draw(win)
-    for l in lines:
-        lines[l].draw(win)
-
-    infoBox = Rectangle(Point(0,680),Point(1000,780))
-    infoBox.setFill('black')
-    infoBox.draw(win)
-    messageText.setTextColor('yellow')
-    messageText.draw(win)
-    moveText.setTextColor('white')
-    moveText.draw(win)
-
-def updateMap(highlightPlayers=[], highlightTerritories=[], highlightDefending=[], attackLoss = '', defendLoss = '', message=''):
-
-    pause = False
-
-    for t in territories:
-        p = territories[t].player
-        if p != '':
-            points[t].setFill(players[p].color)
-            
-        if t in highlightTerritories:
-            points[t].setOutline('yellow')
-            points[t].setWidth(2)
-        else:
-            points[t].setOutline('black')
-            points[t].setWidth(1)
-            
-        captions[t].setText(t + ' (' + str(territories[t].armies) + ')')
- 
-    for p in players:
-        playerTerritories[p].setText(str(players[p].armies))
-        playerCards[p].setText(str(len(players[p].cards)))
-
-        if p in highlightPlayers:
-            playerNames[p].setStyle('bold')
-            playerTerritories[p].setStyle('bold')
-            playerCards[p].setStyle('bold')
-        else:
-            playerNames[p].setStyle('normal')
-            playerTerritories[p].setStyle('normal')
-            playerCards[p].setStyle('normal')
-
-        if p not in playerList:
-            playerStrikethroughs[p].draw(win)
-            
-            # TODO - now seems to crash
-
-    for l in lines:
-        lines[l].setFill('black')
-        lines[l].setWidth(1)
-        lines[l].setArrow('none')
-    if len(highlightDefending) > 0:
-        lines[(highlightTerritories[0],highlightDefending[0])].setFill('yellow')
-        lines[(highlightTerritories[0],highlightDefending[0])].setWidth(2)
-        lines[(highlightDefending[0],highlightTerritories[0])].setFill('yellow')
-        lines[(highlightDefending[0],highlightTerritories[0])].setWidth(2)
-        lines[(highlightTerritories[0],highlightDefending[0])].setArrow('last')
-
-    for l in lossLabels:
-        lossLabels[l].undraw()
-    if attackLoss != '':
-        lossLabels[highlightTerritories[0]].setText(attackLoss)
-        lossLabels[highlightTerritories[0]].draw(win)
-    if defendLoss != '':
-        lossLabels[highlightDefending[0]].setText(defendLoss)
-        lossLabels[highlightDefending[0]].draw(win)
-        if manualPlayback:
-            pause = True
-
-    messageText.setText(message)
-    moveText.setText('Move: ' + str(move))
-
-    if pause:
-        win.getMouse()
-
 
 # GAME SETUP
 
-if displayMap:    
-    win = GraphWin('RISK', 1000, 780)
-    initMap()
+win = GraphWin('RISK', 1000, 780)
+initMap()
 
 if loadGamestate == '':
-
+    # If starting a new game
     move = 0
     currentPlayer = 'none'
     currentPhase = 'none'
 
-    # Select territories
     remainingTerritories = set()
     for t in territories:
         remainingTerritories.add(t)
@@ -336,9 +243,7 @@ if loadGamestate == '':
                 territories[t].armies += 1
                 remainingTerritories.remove(t)
                 updateLog(p + ' gets ' + t)
-                
-                if displayMap:    
-                    updateMap(highlightPlayers=[p], highlightTerritories=[t], message=p + ' gets ' + t)
+                updateMap(highlightPlayers=[p], highlightTerritories=[t], message=p + ' gets ' + t)
         
             else:
                 currentPhase = 'Fortify territories'
@@ -347,20 +252,19 @@ if loadGamestate == '':
                     territories[t].armies += 1
                     players[p].armies -= 1
                     updateLog(p + ' fortifies ' + t + ' (' + str(territories[t].armies) + ')')
-                    
-                    if displayMap:    
-                        updateMap(highlightPlayers=[p], highlightTerritories=[t], message=p + ' fortifies ' + t + ' (' + str(territories[t].armies) + ')')          
-                        
+                    updateMap(highlightPlayers=[p], highlightTerritories=[t], message=p + 
+                    ' fortifies ' + t + ' (' + str(territories[t].armies) + ')')          
     move = 1
-else:
-
+else:               
+    # If loading from a gamestate.p file
     with open(loadGamestate, 'rb') as pickle_file:
         territories, continents, players, deck, cardBonuses, playerList, move, currentPlayer, currentPhase = pickle.load(pickle_file)
+    updateMap()
+
         
-        if displayMap:
-            updateMap()
-            
-            
+        
+        
+        
 # MAIN LOOP
 
 # TODO: Sort playback from a gamestate.p file - it should join in the correct part of the main loop
@@ -373,12 +277,10 @@ while len(playerList) > 1:
     for p in playerList:
         currentPlayer = p
         
-        # Calculating reinforcements
+        # Reinforcements
         reinforcements = 0
         
-        ownedTerritories = {k for k, v in territories.items() if v.player == p}
-        ownedTerritoriesCount = len(ownedTerritories)
-        
+        ownedTerritories = {k for k, v in territories.items() if v.player == p}       
         reinforcements += max(3, math.floor(len(ownedTerritories)/3))
         
         for c in continents:
@@ -386,9 +288,7 @@ while len(playerList) > 1:
                 reinforcements += continents[c].bonus
         players[p].armies += reinforcements
         updateLog(p + ' receives ' + str(reinforcements) + ' armies')
-
-        if displayMap:
-            updateMap(highlightPlayers=[p], message=p + ' receives ' + str(reinforcements) + ' armies')
+        updateMap(highlightPlayers=[p], message=p + ' receives ' + str(reinforcements) + ' armies')
         
         tradeInBonusReceived = False
         tradeIn = aiCall(p, 'redeemCards')
@@ -402,9 +302,7 @@ while len(playerList) > 1:
             cardBonuses.append(cardBonuses[-1] + 5)     # Keep the list of cardBonuses at full length by adding another entry to the end.
             players[p].armies += cardBonus
             updateLog(p + ' receives ' + str(cardBonus) + ' armies by trading a set')         
-            
-            if displayMap:
-                updateMap(highlightPlayers=[p], message=p + ' receives ' + str(cardBonus) + ' armies by trading a set')
+            updateMap(highlightPlayers=[p], message=p + ' receives ' + str(cardBonus) + ' armies by trading a set')
 
             for card in tradeIn:
                 if not(card.territory == '') and tradeInBonusReceived == False:     # Can only receive the extra bonus once per turn
@@ -424,9 +322,7 @@ while len(playerList) > 1:
             territories[t].armies += 1
             players[p].armies -= 1
             updateLog(p + ' fortifies ' + t + ' (' + str(territories[t].armies) + ')')
-
-            if displayMap:
-                updateMap(highlightPlayers=[p], highlightTerritories=[t], message=p + ' fortifies ' + t + ' (' + str(territories[t].armies) + ')')
+            updateMap(highlightPlayers=[p], highlightTerritories=[t], message=p + ' fortifies ' + t + ' (' + str(territories[t].armies) + ')')
 
         # Attacking
         capturedTerritory = False
@@ -434,9 +330,9 @@ while len(playerList) > 1:
         while attackData != False:
             attackingTerritory, defendingTerritory, attackDice = attackData
 
-            updateLog(p + ' attacks ' + territories[defendingTerritory].player + '\'s ' + defendingTerritory + ' (' +  
-                      str(territories[defendingTerritory].armies) + ') from ' + attackingTerritory + 
-                      ' (' + str(territories[attackingTerritory].armies) + ')')
+            updateLog(p + ' attacks ' + territories[defendingTerritory].player + '\'s ' + defendingTerritory + 
+            ' (' +  str(territories[defendingTerritory].armies) + ') from ' + attackingTerritory + 
+            ' (' + str(territories[attackingTerritory].armies) + ')')
             pickle.dump(attackData,open('attackdata.p','wb'))
             defendDice = aiCall(p,'defendTerritory')
             diceRollsAttack = []
@@ -460,14 +356,12 @@ while len(playerList) > 1:
             territories[attackingTerritory].armies -= lossesAttacker
             territories[defendingTerritory].armies -= lossesDefender
 
-            updateLog('Losses: A' + str(lossesAttacker) + ' ' + attackingTerritory + ' (' + 
-                      str(territories[attackingTerritory].armies) + '); D' + str(lossesDefender) + ' ' +
-                      defendingTerritory + ' (' +  str(territories[defendingTerritory].armies) + ')')
-
-            if displayMap:
-                updateMap(highlightPlayers=[p], highlightTerritories=[attackingTerritory], highlightDefending=[defendingTerritory], 
-                            attackLoss = str(lossesAttacker), defendLoss = str(lossesDefender),
-                            message=p + ' attacks ' + defendingTerritory + ' from ' + attackingTerritory)
+            updateLog('Losses: A' + str(lossesAttacker) + ' ' + attackingTerritory + 
+            ' (' + str(territories[attackingTerritory].armies) + '); D' + str(lossesDefender) + 
+            ' ' + defendingTerritory + ' (' +  str(territories[defendingTerritory].armies) + ')')
+            updateMap(highlightPlayers=[p], highlightTerritories=[attackingTerritory], highlightDefending=[defendingTerritory], 
+            attackLoss = str(lossesAttacker), defendLoss = str(lossesDefender),
+            message=p + ' attacks ' + defendingTerritory + ' from ' + attackingTerritory)
 
             if territories[defendingTerritory].armies == 0:
                 territories[defendingTerritory].player = p
@@ -476,15 +370,13 @@ while len(playerList) > 1:
                 territories[attackingTerritory].armies = 1
                 capturedTerritory = True
                 updateLog(p + ' has occupied ' + defendingTerritory + '. ' + attackingTerritory +
-                          '(' + str(territories[attackingTerritory].armies) + '), ' + defendingTerritory + 
-                          '(' + str(territories[defendingTerritory].armies) + ').')
+                '(' + str(territories[attackingTerritory].armies) + '), ' + defendingTerritory + 
+                '(' + str(territories[defendingTerritory].armies) + ').')
 
-            if displayMap:
-                updateMap() 
+            updateMap() 
 
             attackData = aiCall(p, 'attackTerritory')
         
-        # Receive card
         if capturedTerritory:
             if len(deck) > 0:
                 players[p].cards.append(deck.pop(0))
@@ -506,16 +398,30 @@ while len(playerList) > 1:
 
     move += 1
 
-    if displayMap:
-        updateMap()
+    updateMap()
 
     if manualPlayback and not displayMap:       # If manualPlayback and displayMap are both true then we already
         input("Press Enter to continue...")     # pause after each move, so do not need this line.
-        
-        
+
+
+
+
 # EXIT
 
 if displayMap:  
     updateMap()
     win.getMouse()
     win.close()
+    
+    
+    
+    
+# MAP DISPLAY
+
+def initMap()
+    if displayMap:
+        map_display.init_map()
+
+def updateMap(highlightPlayers=[], highlightTerritories=[], highlightDefending=[], attackLoss='', defendLoss='', message=''):
+    if displayMap:
+        map_display.update_map(highlightPlayers, highlightTerritories, highlightDefending, attackLoss, defendLoss, message)

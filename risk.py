@@ -78,25 +78,7 @@ continentsPath = os.path.join(mapPath, 'continents.txt')
 
 import ai_basic
 import ai_improved
-
-if int(loggingLevel) > 0:
-    open(logFilePath,'w').close()
-    if os.path.exists(logGamestatesPath):
-        shutil.rmtree(logGamestatesPath)
-    os.makedirs(logGamestatesPath)
-    logging.basicConfig(filename=logFilePath,level=logging.INFO)
-    
-def updateLog(s, startOfMove = False):
-    if int(loggingLevel) > 0:
-        logging.info(s)
-    if int(loggingLevel) > 2 or (int(loggingLevel) > 1 and startOfMove == True):
-        gameState(os.path.join(logGamestatesPath, 'gamestate-line-' + str(sum(1 for line in open(logFilePath))) + '.p'))
-
-def gameState(path = 'gamestate.p'):
-    pickle.dump([territories, continents, players, deck, cardBonuses, playerList, move, currentPlayer, currentPhase],open(path,'wb'))
-    # TODO: This contains all information about the gamestate, which is OK for logging - but some of this information is not public 
-    # (eg. deck and player card ownership) so we should use a different (restricted) version of this for the AI.
-    
+  
 def aiCall(p,request):
     gameState()
     return getattr(globals()[players[p].ai],request)(p)
@@ -188,8 +170,33 @@ with open('cardbonuses.txt') as f:
     content = f.read().splitlines()
 for line in content:
     cardBonuses.append(int(line))
+    
+    
+if int(loggingLevel) > 0:
+    open(logFilePath,'w').close()
+    if os.path.exists(logGamestatesPath):
+        shutil.rmtree(logGamestatesPath)
+    os.makedirs(logGamestatesPath)
+    logging.basicConfig(filename=logFilePath,level=logging.INFO)
+    
+def updateLog(s, startOfMove = False):
+    if int(loggingLevel) > 0:
+        logging.info(s)
+    if int(loggingLevel) > 2 or (int(loggingLevel) > 1 and startOfMove == True):
+        gameState(os.path.join(logGamestatesPath, 'gamestate-line-' + str(sum(1 for line in open(logFilePath))) + '.p'))
 
-
+def gameState(path = 'gamestate.p', restricted = False):
+    if not restricted:
+        pickle.dump([territories, continents, players, deck, cardBonuses, playerList, move, currentPlayer, currentPhase],open(path,'wb'))
+    else:
+        # The restricted version of this function returns only the number of cards each player has, and the length of the remaining deck.
+        playersRestricted = copy.deepcopy(players)
+        for k, v in playersRestricted:
+            v.cards = length(v.cards)
+        deckRestricted = length(deck)
+        pickle.dump([territories, continents, playersRestricted, deckRestricted, cardBonuses, playerList, move, currentPlayer, currentPhase],open(path,'wb'))
+    
+    
 # MAP DRAWING
 
 points = {t: Circle(Point(*territories[t].pos), 5) for t in territories}
@@ -311,16 +318,18 @@ if loadGamestate == '':
 
     move = 0
     currentPlayer = 'none'
-    currentPhase = 'setup'
+    currentPhase = 'none'
 
     # Select territories
     remainingTerritories = set()
     for t in territories:
         remainingTerritories.add(t)
-    while len(remainingTerritories) > 0:
+    
+    while any(players[p].armies > 0 for p in players):
         for p in playerList:
             currentplayer = p
             if len(remainingTerritories) > 0:
+                currentPhase = 'Select territories'
                 t = aiCall(p, 'selectTerritory') # TODO: Check that this string is acceptable at each aiCall
                 territories[t].player = p
                 players[p].armies -= 1
@@ -331,21 +340,17 @@ if loadGamestate == '':
                 if displayMap:    
                     updateMap(highlightPlayers=[p], highlightTerritories=[t], message=p + ' gets ' + t)
         
-    # TODO: Move into one routine so that playerList cycle does not restart once first phase is over.
-        
-    # Place armies
-    while any(players[p].armies > 0 for p in players):
-        for p in playerList:
-            currentPlayer = p
-            if players[p].armies > 0:
-                t = aiCall(p, 'placeArmies')
-                territories[t].armies += 1
-                players[p].armies -= 1
-                updateLog(p + ' fortifies ' + t + ' (' + str(territories[t].armies) + ')')
-                
-                if displayMap:    
-                    updateMap(highlightPlayers=[p], highlightTerritories=[t], message=p + ' fortifies ' + t + ' (' + str(territories[t].armies) + ')')          
+            else:
+                currentPhase = 'Fortify territories'
+                if players[p].armies > 0:
+                    t = aiCall(p, 'placeArmies')
+                    territories[t].armies += 1
+                    players[p].armies -= 1
+                    updateLog(p + ' fortifies ' + t + ' (' + str(territories[t].armies) + ')')
                     
+                    if displayMap:    
+                        updateMap(highlightPlayers=[p], highlightTerritories=[t], message=p + ' fortifies ' + t + ' (' + str(territories[t].armies) + ')')          
+                        
     move = 1
 else:
 
@@ -492,7 +497,8 @@ while len(playerList) > 1:
                 updateLog(p + ' has eliminated ' + e + ' on move ' + str(move))
                 playerList.remove(e)
 
-                # TODO: Cards transfer
+                for c in players[e].cards:
+                    players[p].cards.append(c)
     
         if len(playerList) == 1:
             print(p + ' wins.')

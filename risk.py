@@ -49,10 +49,12 @@ import ai_basic
 import ai_improved
 import ai_state_eval
 
-open(logFilePath,"w").close()
-if os.path.exists(logGamestatesPath):
-    shutil.rmtree(logGamestatesPath)
+if os.path.exists(logFolderPath):
+    shutil.rmtree(logFolderPath)
+os.makedirs(logFolderPath)
 os.makedirs(logGamestatesPath)
+
+open(logFilePath,"w").close()
 logging.basicConfig(filename=logFilePath,level=logging.INFO)
 def updateLog(s):
 		logging.info(s)

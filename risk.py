@@ -39,11 +39,15 @@ args = argparser.parse_args()
 displayMap = args.displayMap
 logFolderPath = args.logPath
 logFilePath = os.path.join(logFolderPath, "moves.log")
+logMapTerritoriesPath = os.path.join(logFolderPath, "map-territories.log")
+logMapContinentsPath = os.path.join(logFolderPath, "map-continents.log")
+logGamePlayersPath = os.path.join(logFolderPath, "game-players.log")
 logGamestatesPath = os.path.join(logFolderPath, "gamestates")
 mapName = args.mapName
 mapPath = os.path.join(riskPath, 'custom-maps', mapName)
 territoriesPath = os.path.join(mapPath, 'territories.txt')
 continentsPath = os.path.join(mapPath, 'continents.txt')
+playersPath = "players.txt"
 
 import ai_basic
 import ai_improved
@@ -53,6 +57,10 @@ if os.path.exists(logFolderPath):
     shutil.rmtree(logFolderPath)
 os.makedirs(logFolderPath)
 os.makedirs(logGamestatesPath)
+
+shutil.copy(territoriesPath, logMapTerritoriesPath)
+shutil.copy(continentsPath, logMapContinentsPath)
+shutil.copy(playersPath, logGamePlayersPath)
 
 open(logFilePath,"w").close()
 logging.basicConfig(filename=logFilePath,level=logging.INFO)
@@ -121,7 +129,7 @@ for line in content:
     lst = ast.literal_eval(line)
     continents[lst[0]] = Continent(lst[1])
 
-with open("players.txt") as f:
+with open(playersPath) as f:
     content = f.readlines()
 for line in content:
     lst = ast.literal_eval(line)

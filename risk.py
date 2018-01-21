@@ -64,9 +64,12 @@ shutil.copy(playersPath, logGamePlayersPath)
 
 open(logFilePath,"w").close()
 logging.basicConfig(filename=logFilePath,level=logging.INFO)
+logLineCount = 0
 def updateLog(s):
-		logging.info(s)
-		gameState(os.path.join(logGamestatesPath, "gamestate-line-" + str(sum(1 for line in open(logFilePath))) + ".p"))
+    global logLineCount
+    logging.info(s)
+    logLineCount += 1
+    gameState(os.path.join(logGamestatesPath, "gamestate-line-" + str(logLineCount) + ".p"))
 
 def gameState(path):
     pickle.dump([territories, players],open(path,"wb"))

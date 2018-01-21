@@ -1,4 +1,3 @@
-import pickle
 import copy
 
 import ai_basic
@@ -13,24 +12,22 @@ from state_evaluators.stub import evaluate_attackphase
 
 # AI decision implementations
 
-def selectTerritory(p):
-    return ai_basic.selectTerritory(p)
+def selectTerritory(p, state):
+    return ai_basic.selectTerritory(p, state)
 
-def placeArmies(p):
-    return ai_basic.placeArmies(p)
+def placeArmies(p, state):
+    return ai_basic.placeArmies(p, state)
 
-def cardSets(playerCards):
-    return ai_basic.cardSets(playerCards)
+def redeemCards(p, state):
+    return ai_basic.redeemCards(p, state)
 
-def redeemCards(p):
-    return ai_basic.redeemCards(p)
+def placeReinforcements(p, state):
+    return ai_basic.placeReinforcements(p, state)
 
-def placeReinforcements(p):
-    return ai_basic.placeReinforcements(p)
-
-def attackTerritory(p):
-    with open("gamestate.p", 'rb') as pickle_file:
-        territories, continents, remainingTerritories, players = pickle.load(pickle_file)
+def attackTerritory(p, state):
+    territories = state.territories
+    continents = state.continents
+    players = state.players
 
     optimal_seen_value = evaluate_attackphase(territories, continents, players, p)
     optimal_seen_action = False
@@ -56,8 +53,8 @@ def attackTerritory(p):
 
     return optimal_seen_action
 
-def defendTerritory(p):
-    return ai_basic.defendTerritory(p)
+def defendTerritory(p, state):
+    return ai_basic.defendTerritory(p, state)
 
 # Choice-enumeration helpers
 

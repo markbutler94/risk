@@ -6,7 +6,7 @@ import itertools
 import random
 import time
 import logging
-import pickle
+import cPickle as pickle
 import operator
 import argparse
 from graphics import *
@@ -60,16 +60,12 @@ def updateLog(s):
 		logging.info(s)
 		gameState(os.path.join(logGamestatesPath, "gamestate-line-" + str(sum(1 for line in open(logFilePath))) + ".p"))
 
-def gameState(path = "gamestate.p"):
-    pickle.dump([territories, continents, remainingTerritories, players],open(path,"wb"))
+def gameState(path):
+    pickle.dump([territories, players],open(path,"wb"))
 
 def aiCall(p,request):
-    gameState()
-    #try:
-    return getattr(globals()[players[p].ai],request)(p)
-    #except AttributeError:
-    #    logging.info("USED BASIC AI FOR PLAYER " + p + " WITH REQUEST " + request)
-    #    return getattr(ai_basic,request)(player)
+    state = State(territories, continents, remainingTerritories, players, attackData)
+    return getattr(globals()[players[p].ai],request)(p, state)
         
 class Territory:
     def __init__(self,edges,continent,pos):
@@ -97,9 +93,19 @@ class Card:
         self.type = type
         self.territory = ""
 
+# Game State
+class State:
+    def __init__(self, territories, continents, remainingTerritories, players, attackData):
+        self.territories = territories
+        self.continents = continents
+        self.remainingTerritories = remainingTerritories
+        self.players = players
+        self.attackData = attackData
+
 territories = {} 
 continents = {}
 players = {}
+attackData = False
 deck = []
 cardBonuses = []
 
@@ -382,7 +388,6 @@ while len(playerList) > 1:
             attackingTerritory, defendingTerritory, attackDice = attackData
 
             updateLog(p + " attacks " + defendingTerritory + " (" + territories[defendingTerritory].player + ", " + str(territories[defendingTerritory].armies) + ") from " + attackingTerritory + " (" + str(territories[attackingTerritory].armies) + ")")
-            pickle.dump(attackData,open("attackdata.p","wb"))
             defendDice = aiCall(p,"defendTerritory") # Should probably check that this string is acceptable?
             diceRollsAttack = []
             for i in range(attackDice):

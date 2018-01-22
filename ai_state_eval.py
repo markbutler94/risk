@@ -36,9 +36,9 @@ def attackTerritory(p):
     optimal_seen_action = False
     
     for (attack_from, attack_to) in getPossibleAttacks(territories, p):
-        # For now, always assume using the max number of attacking/defending armies
-        attack_num = max(3, territories[attack_from].armies)
-        defend_num = max(2, territories[attack_to].armies)
+        # For now, always assume using the max available attacking/defending armies
+        attack_num = min(3, territories[attack_from].armies - 1)
+        defend_num = min(2, territories[attack_to].armies)
 
         # Get distribution of attack outcomes given the attack number and defend number
         attack_outcome_distribution = getAttackOutcomeDistribution(attack_num, defend_num)

@@ -9,6 +9,7 @@ import logging
 import cPickle as pickle
 import operator
 import argparse
+import copy
 from graphics import *
 
 riskPath = os.path.dirname("__file__")
@@ -33,6 +34,14 @@ argparser.add_argument(
     default='default',
     help='Specify a map to use.'
 )
+argparser.add_argument(
+    '--unsafe',
+    dest='safe',
+    action='store_const',
+    const=False,
+    default=True,
+    help='Optimise for performance at the expense of validation.'
+)
 
 args = argparser.parse_args()
 
@@ -48,6 +57,7 @@ mapPath = os.path.join(riskPath, 'custom-maps', mapName)
 territoriesPath = os.path.join(mapPath, 'territories.txt')
 continentsPath = os.path.join(mapPath, 'continents.txt')
 playersPath = "players.txt"
+safe = args.safe
 
 import ai_basic
 import ai_improved
@@ -76,6 +86,9 @@ def gameState(path):
 
 def aiCall(p,request):
     state = State(territories, continents, remainingTerritories, players, attackData)
+    global safe
+    if (safe):
+        state = copy.deepcopy(state)
     return getattr(globals()[players[p].ai],request)(p, state)
         
 class Territory:

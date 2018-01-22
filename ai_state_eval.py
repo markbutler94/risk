@@ -1,7 +1,7 @@
 import copy
 
 import ai_basic
-from state_evaluators.stub import evaluate_attackphase
+from state_evaluators.stub import evaluate_attackphase, evaluate_reinforcementphase
 
 # General approach:
 #   - Enumerate available choices
@@ -22,7 +22,21 @@ def redeemCards(p, state):
     return ai_basic.redeemCards(p, state)
 
 def placeReinforcements(p, state):
-    return ai_basic.placeReinforcements(p, state)
+    territories = state.territories
+    continents = state.continents
+    players = state.players
+
+    optimal_seen_value = 0
+    optimal_seen_action = False
+
+    for territory in getPossibleReinforcements(territories, p):
+        territories_outcome = withReinforcement(territories, territory)
+        value = evaluate_reinforcementphase(territories_outcome, continents, players, p)
+        if value > optimal_seen_value:
+            optimal_seen_value = value
+            optimal_seen_action = territory
+
+    return optimal_seen_action
 
 def attackTerritory(p, state):
     territories = state.territories
@@ -96,6 +110,9 @@ class AttackOutcome:
         self.attackerLosses = attackerLosses
         self.defenderLosses = defenderLosses
 
+def getPossibleReinforcements(territories, p):
+    return (territory for territory, data in territories.items() if data.player == p)
+
 # State updator helpers - keep the functions pure
 
 def withAttackOutcome(territories, attack_from, attack_to, attack_outcome, player):
@@ -119,6 +136,12 @@ def withAttackOutcome(territories, attack_from, attack_to, attack_outcome, playe
     result[attack_from] = attacker
     result[attack_to] = defender
     
+    return result
+
+def withReinforcement(territories, territory):
+    result = copy.copy(territories)
+    result[territory] = copy.copy(result[territory])
+    result[territory].armies += 1
     return result
 
 # Miscellaneous helpers

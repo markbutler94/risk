@@ -459,7 +459,7 @@ while len(playerList) > 1:
                 territories[attackingTerritory].armies -= occupyingForce
                 territories[defendingTerritory].armies += occupyingForce
                 capturedTerritory = True
-                updateLog(p + " has occupied " + defendingTerritory)
+                updateLog(p + " has occupied " + defendingTerritory + " (" + str(territories[defendingTerritory].armies) + ") from " + attackingTerritory + " (" + str(territories[attackingTerritory].armies) + ")")
 
             if displayMap:
                 updateMap() 
@@ -487,8 +487,8 @@ while len(playerList) > 1:
                 # CARDS transfer
                                
         if len(playerList) == 1:
-            updateLog(p + " wins on move " + str(move))
-            print(p + " wins")
+            updateLog(p + " (" + players[p].ai + ") wins on move " + str(move))
+            print(p + " (" + players[p].ai + ") wins on move " + str(move))
 
     move += 1
 

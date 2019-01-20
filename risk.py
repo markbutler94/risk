@@ -453,9 +453,11 @@ while len(playerList) > 1:
 
             if territories[defendingTerritory].armies == 0:
                 territories[defendingTerritory].player = p
-                #occupyingArmies = diceAttack                                                               #(add potential to move more with an aiCall...)
-                territories[defendingTerritory].armies += territories[attackingTerritory].armies - 1
-                territories[attackingTerritory].armies = 1
+                territories[attackingTerritory].armies -= 1
+                territories[defendingTerritory].armies = 1
+                occupyingForce = aiCall(p, "occupyTerritory") # verify this is valid/acceptable?
+                territories[attackingTerritory].armies -= occupyingForce
+                territories[defendingTerritory].armies += occupyingForce
                 capturedTerritory = True
                 updateLog(p + " has occupied " + defendingTerritory)
 
@@ -468,9 +470,6 @@ while len(playerList) > 1:
         if capturedTerritory:
             if len(deck) > 0:
                 players[p].cards.append(deck.pop(0))
-
-        # Fortifying
-
 
         # Wiping out
         for e in playerList:

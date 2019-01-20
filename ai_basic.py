@@ -54,3 +54,9 @@ def defendTerritory(p, state):
     attackingTerritory, defendingTerritory, attackDice = state.attackData
     defendDice = random.randint(1,min(2,territories[defendingTerritory].armies))
     return defendDice
+
+def occupyTerritory(p, state):
+    territories = state.territories
+    attackingTerritory, defendingTerritory, _ = state.attackData
+    occupyingForce = random.randint(0, territories[attackingTerritory].armies - 1)
+    return occupyingForce

@@ -69,6 +69,6 @@ def moveArmies(p, state):
         possibleTargets = [e for e in territories[moveFrom].edges if territories[e].player == p]
         moveTo = random.sample(possibleTargets, 1)[0]
         moveCount = random.randint(0, territories[moveFrom].armies - 1)
-        return [moveFrom, moveTo, moveCount]
-    else:
-        return False
+        if moveCount > 0:
+            return [moveFrom, moveTo, moveCount]
+    return False

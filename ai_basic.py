@@ -60,3 +60,15 @@ def occupyTerritory(p, state):
     attackingTerritory, defendingTerritory, _ = state.attackData
     occupyingForce = random.randint(0, territories[attackingTerritory].armies - 1)
     return occupyingForce
+
+def moveArmies(p, state):
+    territories = state.territories
+    moveCapableTerritories = {k for k, v in territories.items() if v.player == p and v.armies > 1 and any(territories[e].player == p for e in v.edges)}
+    if len(moveCapableTerritories) > 0:
+        moveFrom = random.sample(moveCapableTerritories, 1)[0]
+        possibleTargets = [e for e in territories[moveFrom].edges if territories[e].player == p]
+        moveTo = random.sample(possibleTargets, 1)[0]
+        moveCount = random.randint(0, territories[moveFrom].armies - 1)
+        return [moveFrom, moveTo, moveCount]
+    else:
+        return False

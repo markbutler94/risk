@@ -471,6 +471,13 @@ while len(playerList) > 1:
             if len(deck) > 0:
                 players[p].cards.append(deck.pop(0))
 
+        # Move
+        moveData = aiCall(p, "moveArmies") # verify this is valid/acceptable?
+        if moveData != False:
+            moveFrom, moveTo, moveCount = moveData
+            territories[moveFrom].armies -= moveCount
+            territories[moveTo].armies += moveCount
+
         # Wiping out
         for e in playerList:
             if not(any(territories[t].player == e for t in territories)):

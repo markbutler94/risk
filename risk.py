@@ -42,6 +42,14 @@ argparser.add_argument(
     default=True,
     help='Optimise for performance at the expense of validation.'
 )
+argparser.add_argument(
+    '--nosave',
+    dest='save',
+    action='store_const',
+    const=False,
+    default=True,
+    help='Run without persisting the state to disk'
+)
 
 args = argparser.parse_args()
 
@@ -58,6 +66,7 @@ territoriesPath = os.path.join(mapPath, 'territories.txt')
 continentsPath = os.path.join(mapPath, 'continents.txt')
 playersPath = "players.txt"
 safe = args.safe
+save = args.save
 
 import ai_basic
 import ai_improved
@@ -79,7 +88,8 @@ def updateLog(s):
     global logLineCount
     logging.info(s)
     logLineCount += 1
-    gameState(os.path.join(logGamestatesPath, "gamestate-line-" + str(logLineCount) + ".p"))
+    if (save):
+        gameState(os.path.join(logGamestatesPath, "gamestate-line-" + str(logLineCount) + ".p"))
 
 def gameState(path):
     pickle.dump([territories, players],open(path,"wb"))
@@ -472,6 +482,7 @@ while len(playerList) > 1:
                                
         if len(playerList) == 1:
             updateLog(p + " wins on move " + str(move))
+            print(p + " wins")
 
     move += 1
 

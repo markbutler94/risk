@@ -477,6 +477,7 @@ while len(playerList) > 1:
             moveFrom, moveTo, moveCount = moveData
             territories[moveFrom].armies -= moveCount
             territories[moveTo].armies += moveCount
+            updateLog(p + " has moved " + str(moveCount) + " from " + moveFrom + " (" + str(territories[moveFrom].armies) + ") to " + moveTo + " (" + str(territories[moveTo].armies) + ")")
 
         # Wiping out
         for e in playerList:

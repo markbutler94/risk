@@ -453,8 +453,9 @@ while len(playerList) > 1:
 
             if territories[defendingTerritory].armies == 0:
                 territories[defendingTerritory].player = p
-                territories[attackingTerritory].armies -= 1
-                territories[defendingTerritory].armies = 1
+                initialOccupyingForce = attackDice - lossesAttacker
+                territories[attackingTerritory].armies -= initialOccupyingForce
+                territories[defendingTerritory].armies = initialOccupyingForce
                 occupyingForce = aiCall(p, "occupyTerritory") # verify this is valid/acceptable?
                 territories[attackingTerritory].armies -= occupyingForce
                 territories[defendingTerritory].armies += occupyingForce

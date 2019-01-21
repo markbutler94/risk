@@ -11,6 +11,7 @@ import operator
 import argparse
 import copy
 from graphics import *
+import verify
 
 riskPath = os.path.dirname("__file__")
 
@@ -43,6 +44,14 @@ argparser.add_argument(
     help='Optimise for performance at the expense of validation.'
 )
 argparser.add_argument(
+    '--noverify',
+    dest='verify',
+    action='store_const',
+    const=False,
+    default=True,
+    help='Optimise for performance by not verifying validity of AI responses'
+)
+argparser.add_argument(
     '--nosave',
     dest='save',
     action='store_const',
@@ -66,6 +75,7 @@ territoriesPath = os.path.join(mapPath, 'territories.txt')
 continentsPath = os.path.join(mapPath, 'continents.txt')
 playersPath = "players.txt"
 safe = args.safe
+shouldVerify = args.verify
 save = args.save
 
 import ai_basic
@@ -94,8 +104,11 @@ def updateLog(s):
 def gameState(path):
     pickle.dump([territories, players],open(path,"wb"))
 
+def getState():
+    return State(territories, continents, remainingTerritories, players, attackData)
+
 def aiCall(p,request):
-    state = State(territories, continents, remainingTerritories, players, attackData)
+    state = getState()
     global safe
     if (safe):
         state = copy.deepcopy(state)
@@ -327,7 +340,9 @@ for t in territories:
 while len(remainingTerritories) > 0:
     for p in playerList:
         if len(remainingTerritories) > 0:
-            t = aiCall(p, "selectTerritory") # Should probably check that this string is acceptable?
+            t = aiCall(p, "selectTerritory")
+            if shouldVerify:
+                verify.verifySelectTerritory(getState(), t)
             territories[t].player = p
             players[p].armies -= 1
             territories[t].armies += 1
@@ -340,7 +355,9 @@ while len(remainingTerritories) > 0:
 while any(players[p].armies > 0 for p in players):
     for p in playerList:
         if players[p].armies > 0:
-            t = aiCall(p, "placeArmies") # Should probably check that this string is acceptable?
+            t = aiCall(p, "placeArmies")
+            if shouldVerify:
+                verify.verifyPlaceArmies(getState(), p, t)
             territories[t].armies += 1
             players[p].armies -= 1
             updateLog(p + " fortifies " + t + " (" + str(territories[t].armies) + ")")
@@ -407,7 +424,9 @@ while len(playerList) > 1:
 
         # Reinforcing
         while players[p].armies > 0:
-            t = aiCall(p, "placeReinforcements") # Should probably check that this string is acceptable?
+            t = aiCall(p, "placeReinforcements")
+            if shouldVerify:
+                verify.verifyPlaceReinforcements(getState(), p, t)
             territories[t].armies += 1
             players[p].armies -= 1
             updateLog(p + " fortifies " + t + " (" + str(territories[t].armies) + ")")
@@ -417,12 +436,16 @@ while len(playerList) > 1:
 
         # Attacking
         capturedTerritory = False
-        attackData = aiCall(p, "attackTerritory") # Should probably check that this string is acceptable?
+        attackData = aiCall(p, "attackTerritory")
         while attackData != False:
+            if shouldVerify:
+                verify.verifyAttackTerritory(getState(), p)
             attackingTerritory, defendingTerritory, attackDice = attackData
 
             updateLog(p + " attacks " + defendingTerritory + " (" + territories[defendingTerritory].player + ", " + str(territories[defendingTerritory].armies) + ") from " + attackingTerritory + " (" + str(territories[attackingTerritory].armies) + ")")
-            defendDice = aiCall(p,"defendTerritory") # Should probably check that this string is acceptable?
+            defendDice = aiCall(p,"defendTerritory")
+            if shouldVerify:
+                verify.verifyDefendTerritory(getState(), defendDice)
             diceRollsAttack = []
             for i in range(attackDice):
                 diceRollsAttack.append(random.randint(1,6))

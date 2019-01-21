@@ -1,18 +1,12 @@
-import os
-import ast
-import math
 import itertools
 import random
-import pickle
 
-def selectTerritory(p):
-    with open("gamestate.p", 'rb') as pickle_file:
-        territories, continents, remainingTerritories, players = pickle.load(pickle_file)
+def selectTerritory(p, state):
+    remainingTerritories = state.remainingTerritories
     return random.sample(remainingTerritories,1)[0]
 
-def placeArmies(p):
-    with open("gamestate.p", 'rb') as pickle_file:
-        territories, continents, remainingTerritories, players = pickle.load(pickle_file)
+def placeArmies(p, state):
+    territories = state.territories
     ownedTerritories = {k for k, v in territories.items() if v.player == p}
     return random.sample(ownedTerritories,1)[0]
 
@@ -26,9 +20,8 @@ def cardSets(playerCards):
             cardSets.append(cardTriple)
     return cardSets
 
-def redeemCards(p):
-    with open("gamestate.p", 'rb') as pickle_file:
-        territories, continents, remainingTerritories, players = pickle.load(pickle_file)
+def redeemCards(p, state):
+    players = state.players
     if len(players[p].cards) > 4:
         cardSet = random.sample(cardSets(players[p].cards),1)[0]
         return cardSet
@@ -39,15 +32,13 @@ def redeemCards(p):
     else:
         return False
 
-def placeReinforcements(p):
-    with open("gamestate.p", 'rb') as pickle_file:
-        territories, continents, remainingTerritories, players = pickle.load(pickle_file)
+def placeReinforcements(p, state):
+    territories = state.territories
     ownedTerritories = {k for k, v in territories.items() if v.player == p}
     return random.sample(ownedTerritories,1)[0]
 
-def attackTerritory(p):
-    with open("gamestate.p", 'rb') as pickle_file:
-        territories, continents, remainingTerritories, players = pickle.load(pickle_file)
+def attackTerritory(p, state):
+    territories = state.territories
     attackCapableTerritories = {k for k, v in territories.items() if v.player == p and v.armies > 1 and any(territories[e].player != p for e in v.edges)}
     if len(attackCapableTerritories) > 0:
         attackFrom = random.sample(attackCapableTerritories,1)[0]
@@ -58,10 +49,8 @@ def attackTerritory(p):
     else:
         return False
 
-def defendTerritory(p):
-    with open("gamestate.p", 'rb') as pickle_file:
-        territories, continents, remainingTerritories, players = pickle.load(pickle_file)
-    with open("attackdata.p", 'rb') as pickle_file:
-        attackingTerritory, defendingTerritory, attackDice = pickle.load(pickle_file)
+def defendTerritory(p, state):
+    territories = state.territories
+    attackingTerritory, defendingTerritory, attackDice = state.attackData
     defendDice = random.randint(1,min(2,territories[defendingTerritory].armies))
     return defendDice

@@ -6,9 +6,10 @@ import itertools
 import random
 import time
 import logging
-import pickle
+import cPickle as pickle
 import operator
 import argparse
+import copy
 from graphics import *
 
 riskPath = os.path.dirname("__file__")
@@ -33,17 +34,39 @@ argparser.add_argument(
     default='default',
     help='Specify a map to use.'
 )
+argparser.add_argument(
+    '--unsafe',
+    dest='safe',
+    action='store_const',
+    const=False,
+    default=True,
+    help='Optimise for performance at the expense of validation.'
+)
+argparser.add_argument(
+    '--nosave',
+    dest='save',
+    action='store_const',
+    const=False,
+    default=True,
+    help='Run without persisting the state to disk'
+)
 
 args = argparser.parse_args()
 
 displayMap = args.displayMap
 logFolderPath = args.logPath
 logFilePath = os.path.join(logFolderPath, "moves.log")
+logMapTerritoriesPath = os.path.join(logFolderPath, "map-territories.log")
+logMapContinentsPath = os.path.join(logFolderPath, "map-continents.log")
+logGamePlayersPath = os.path.join(logFolderPath, "game-players.log")
 logGamestatesPath = os.path.join(logFolderPath, "gamestates")
 mapName = args.mapName
 mapPath = os.path.join(riskPath, 'custom-maps', mapName)
 territoriesPath = os.path.join(mapPath, 'territories.txt')
 continentsPath = os.path.join(mapPath, 'continents.txt')
+playersPath = "players.txt"
+safe = args.safe
+save = args.save
 
 import ai_basic
 import ai_improved
@@ -54,22 +77,29 @@ if os.path.exists(logFolderPath):
 os.makedirs(logFolderPath)
 os.makedirs(logGamestatesPath)
 
+shutil.copy(territoriesPath, logMapTerritoriesPath)
+shutil.copy(continentsPath, logMapContinentsPath)
+shutil.copy(playersPath, logGamePlayersPath)
+
 open(logFilePath,"w").close()
 logging.basicConfig(filename=logFilePath,level=logging.INFO)
+logLineCount = 0
 def updateLog(s):
-		logging.info(s)
-		gameState(os.path.join(logGamestatesPath, "gamestate-line-" + str(sum(1 for line in open(logFilePath))) + ".p"))
+    global logLineCount
+    logging.info(s)
+    logLineCount += 1
+    if (save):
+        gameState(os.path.join(logGamestatesPath, "gamestate-line-" + str(logLineCount) + ".p"))
 
-def gameState(path = "gamestate.p"):
-    pickle.dump([territories, continents, remainingTerritories, players],open(path,"wb"))
+def gameState(path):
+    pickle.dump([territories, players],open(path,"wb"))
 
 def aiCall(p,request):
-    gameState()
-    #try:
-    return getattr(globals()[players[p].ai],request)(p)
-    #except AttributeError:
-    #    logging.info("USED BASIC AI FOR PLAYER " + p + " WITH REQUEST " + request)
-    #    return getattr(ai_basic,request)(player)
+    state = State(territories, continents, remainingTerritories, players, attackData)
+    global safe
+    if (safe):
+        state = copy.deepcopy(state)
+    return getattr(globals()[players[p].ai],request)(p, state)
         
 class Territory:
     def __init__(self,edges,continent,pos):
@@ -97,9 +127,19 @@ class Card:
         self.type = type
         self.territory = ""
 
+# Game State
+class State:
+    def __init__(self, territories, continents, remainingTerritories, players, attackData):
+        self.territories = territories
+        self.continents = continents
+        self.remainingTerritories = remainingTerritories
+        self.players = players
+        self.attackData = attackData
+
 territories = {} 
 continents = {}
 players = {}
+attackData = False
 deck = []
 cardBonuses = []
 
@@ -115,7 +155,7 @@ for line in content:
     lst = ast.literal_eval(line)
     continents[lst[0]] = Continent(lst[1])
 
-with open("players.txt") as f:
+with open(playersPath) as f:
     content = f.readlines()
 for line in content:
     lst = ast.literal_eval(line)
@@ -382,7 +422,6 @@ while len(playerList) > 1:
             attackingTerritory, defendingTerritory, attackDice = attackData
 
             updateLog(p + " attacks " + defendingTerritory + " (" + territories[defendingTerritory].player + ", " + str(territories[defendingTerritory].armies) + ") from " + attackingTerritory + " (" + str(territories[attackingTerritory].armies) + ")")
-            pickle.dump(attackData,open("attackdata.p","wb"))
             defendDice = aiCall(p,"defendTerritory") # Should probably check that this string is acceptable?
             diceRollsAttack = []
             for i in range(attackDice):
@@ -443,6 +482,7 @@ while len(playerList) > 1:
                                
         if len(playerList) == 1:
             updateLog(p + " wins on move " + str(move))
+            print(p + " wins")
 
     move += 1
 

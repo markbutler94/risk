@@ -1,15 +1,11 @@
-import os
-import ast
-import math
 import itertools
 import random
-import pickle
 import operator
 
 # This version selects an adjacent terrotiry to one already selected, if it can.
-def selectTerritory(p):
-    with open("gamestate.p", 'rb') as pickle_file:
-        territories, continents, remainingTerritories, players = pickle.load(pickle_file)
+def selectTerritory(p, state):
+    territories = state.territories
+    remainingTerritories = state.remainingTerritories
 
     ownedTerritories = set()
     adjTerritories = set()
@@ -27,9 +23,8 @@ def selectTerritory(p):
         return random.sample(remainingTerritories,1)[0]
 
 # This version prioritises reinforcing threatened territories.
-def placeArmies(p):
-    with open("gamestate.p", 'rb') as pickle_file:
-        territories, continents, remainingTerritories, players = pickle.load(pickle_file)
+def placeArmies(p, state):
+    territories = state.territories
 
     ownedTerritories = {k: v for k, v in territories.items() if v.player == p}
     threatenedTerritories = {k: v for k, v in ownedTerritories.items() if not all(territories[e].player == p for e in v.edges)}
@@ -51,9 +46,9 @@ def cardSets(playerCards):
     return cardSets
 
 # Not changed yet
-def redeemCards(p):
-    with open("gamestate.p", 'rb') as pickle_file:
-        territories, continents, remainingTerritories, players = pickle.load(pickle_file)
+def redeemCards(p, state):
+    players = state.players
+
     if len(players[p].cards) > 4:
         cardSet = random.sample(cardSets(players[p].cards),1)[0]
         return cardSet
@@ -65,9 +60,8 @@ def redeemCards(p):
         return False
 
 # This version prioritises reinforcing threatened territories.
-def placeReinforcements(p):
-    with open("gamestate.p", 'rb') as pickle_file:
-        territories, continents, remainingTerritories, players = pickle.load(pickle_file)
+def placeReinforcements(p, state):
+    territories = state.territories
     
     ownedTerritories = {k: v for k, v in territories.items() if v.player == p}
     threatenedTerritories = {k: v for k, v in ownedTerritories.items() if not all(territories[e].player == p for e in v.edges)}
@@ -78,9 +72,9 @@ def placeReinforcements(p):
         return random.sample(list(ownedTerritories),1)[0]
 
 # Prioritises the continent with highest (but not complete) ownership. Doesn't always attack.
-def attackTerritory(p):
-    with open("gamestate.p", 'rb') as pickle_file:
-        territories, continents, remainingTerritories, players = pickle.load(pickle_file)
+def attackTerritory(p, state):
+    territories = state.territories
+    continents = state.continents
 
     continentOwnership = {}
     continentTarget = False
@@ -105,10 +99,10 @@ def attackTerritory(p):
         return False
 
 # This version always defends with 2 armies if it can.
-def defendTerritory(p):
-    with open("gamestate.p", 'rb') as pickle_file:
-        territories, continents, remainingTerritories, players = pickle.load(pickle_file)
-    with open("attackdata.p", 'rb') as pickle_file:
-        attackingTerritory, defendingTerritory, attackDice = pickle.load(pickle_file)
+def defendTerritory(p, state):
+    territories = state.territories
+    attackData = state.attackData
+
+    attackingTerritory, defendingTerritory, attackDice = attackData
     defendDice = max(1,min(2,territories[defendingTerritory].armies))
     return defendDice

@@ -56,6 +56,12 @@ def attackTerritory(p, state):
 def defendTerritory(p, state):
     return ai_basic.defendTerritory(p, state)
 
+def occupyTerritory(p, state):
+    return ai_basic.occupyTerritory(p, state)
+
+def moveArmies(p, state):
+    return ai_basic.moveArmies(p, state)
+
 # Choice-enumeration helpers
 
 def getPossibleAttacks(territories, p):

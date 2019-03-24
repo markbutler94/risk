@@ -476,11 +476,14 @@ while len(playerList) > 1:
 
             if territories[defendingTerritory].armies == 0:
                 territories[defendingTerritory].player = p
-                #occupyingArmies = diceAttack                                                               #(add potential to move more with an aiCall...)
-                territories[defendingTerritory].armies += territories[attackingTerritory].armies - 1
-                territories[attackingTerritory].armies = 1
+                initialOccupyingForce = attackDice - lossesAttacker
+                territories[attackingTerritory].armies -= initialOccupyingForce
+                territories[defendingTerritory].armies = initialOccupyingForce
+                occupyingForce = aiCall(p, "occupyTerritory") # verify this is valid/acceptable?
+                territories[attackingTerritory].armies -= occupyingForce
+                territories[defendingTerritory].armies += occupyingForce
                 capturedTerritory = True
-                updateLog(p + " has occupied " + defendingTerritory)
+                updateLog(p + " has occupied " + defendingTerritory + " (" + str(territories[defendingTerritory].armies) + ") from " + attackingTerritory + " (" + str(territories[attackingTerritory].armies) + ")")
 
             if displayMap:
                 updateMap() 
@@ -492,8 +495,13 @@ while len(playerList) > 1:
             if len(deck) > 0:
                 players[p].cards.append(deck.pop(0))
 
-        # Fortifying
-
+        # Move
+        moveData = aiCall(p, "moveArmies") # verify this is valid/acceptable?
+        if moveData != False:
+            moveFrom, moveTo, moveCount = moveData
+            territories[moveFrom].armies -= moveCount
+            territories[moveTo].armies += moveCount
+            updateLog(p + " has moved " + str(moveCount) + " from " + moveFrom + " (" + str(territories[moveFrom].armies) + ") to " + moveTo + " (" + str(territories[moveTo].armies) + ")")
 
         # Wiping out
         for e in playerList:
@@ -504,8 +512,8 @@ while len(playerList) > 1:
                 # CARDS transfer
                                
         if len(playerList) == 1:
-            updateLog(p + " wins on move " + str(move))
-            print(p + " wins")
+            updateLog(p + " (" + players[p].ai + ") wins on move " + str(move))
+            print(p + " (" + players[p].ai + ") wins on move " + str(move))
 
     move += 1
 

@@ -1,7 +1,7 @@
 import copy
 
 import ai_basic
-from state_evaluators.stub import evaluate_attackphase
+from state_evaluators.stub import evaluate_attackphase, evaluate_occupyphase
 
 # General approach:
 #   - Enumerate available choices
@@ -57,7 +57,22 @@ def defendTerritory(p, state):
     return ai_basic.defendTerritory(p, state)
 
 def occupyTerritory(p, state):
-    return ai_basic.occupyTerritory(p, state)
+    territories = state.territories
+    attackData = state.attackData
+    attackFrom, _, _ = attackData
+
+    optimal_seen_value = evaluate_occupyphase(state)
+    optimal_seen_action = 0
+
+    availableArmies = territories[attackFrom].armies - 1
+
+    for occupyingForce in range(1, availableArmies):
+        candidateValue = evaluate_occupyphase(withOccupation(state, occupyingForce))
+        if candidateValue > optimal_seen_value:
+            optimal_seen_value = candidateValue
+            optimal_seen_action = occupyingForce
+
+    return optimal_seen_action
 
 def moveArmies(p, state):
     return ai_basic.moveArmies(p, state)
@@ -119,6 +134,17 @@ def withAttackOutcome(territories, attack_from, attack_to, attack_outcome, playe
     result[attack_from] = attacker
     result[attack_to] = defender
     
+    return result
+
+def withOccupation(state, occupyingForce):
+    # Get a copy so we can modify without affecting input
+    result = copy.deepcopy(state)
+
+    # Apply the occupation
+    occupyingFrom, occupyingTo, _ = state.attackData
+    result.territories[occupyingFrom].armies -= occupyingForce
+    result.territories[occupyingTo].armies += occupyingForce
+
     return result
 
 # Miscellaneous helpers

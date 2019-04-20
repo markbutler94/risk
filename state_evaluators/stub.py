@@ -29,3 +29,6 @@ def evaluate_attackphase(territories, continents, players, player):
     continentIncentive = myContinentBonus - enemyContinentBonus
     armiesIncentive = myArmies / totalArmies
     return eliminatePlayersIncentive + continentIncentive + armiesIncentive
+
+def evaluate_occupyphase(state):
+    return 1

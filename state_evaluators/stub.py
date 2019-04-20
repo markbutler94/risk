@@ -1,6 +1,6 @@
 import random
 
-# Given the state, estimates the probability of player eventually winning, if it is currently the attack phase.
+# Given the state, estimates some monotone function on the probability of player eventually winning, if it is currently the attack phase.
 def evaluate_attackphase(territories, continents, players, player):
     totalArmies = 0
     myArmies = 0
@@ -32,3 +32,7 @@ def evaluate_attackphase(territories, continents, players, player):
 
 def evaluate_occupyphase(state):
     return 1
+
+# Given the state, estimates some monotone function on the probability of player eventually winning, if it is currently the reinforcement phase.
+def evaluate_reinforcementphase(territories, continents, players, player):
+    return random.random()

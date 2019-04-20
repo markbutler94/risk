@@ -479,7 +479,9 @@ while len(playerList) > 1:
                 initialOccupyingForce = attackDice - lossesAttacker
                 territories[attackingTerritory].armies -= initialOccupyingForce
                 territories[defendingTerritory].armies = initialOccupyingForce
-                occupyingForce = aiCall(p, "occupyTerritory") # verify this is valid/acceptable?
+                occupyingForce = aiCall(p, "occupyTerritory")
+                if shouldVerify:
+                    verify.verifyOccupyTerritory(getState(), occupyingForce)
                 territories[attackingTerritory].armies -= occupyingForce
                 territories[defendingTerritory].armies += occupyingForce
                 capturedTerritory = True
@@ -488,7 +490,7 @@ while len(playerList) > 1:
             if displayMap:
                 updateMap() 
 
-            attackData = aiCall(p, "attackTerritory") # Should probably check that this string is acceptable?
+            attackData = aiCall(p, "attackTerritory")
         
         # Receive card
         if capturedTerritory:

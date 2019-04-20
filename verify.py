@@ -47,5 +47,16 @@ def verifyDefendTerritory(state, defendCount):
         if defendCount > 2:
             throw("Cannot defend with more than 2 armies (" + str(defendCount) + ")")
 
+def verifyOccupyTerritory(state, occupyingForce):
+    if state.attackData:
+        attackFrom, _, _ = state.attackData
+        if not(attackFrom in state.territories):
+            throw("Territory " + attackFrom + " (attacker) does not exist")
+        attackingTerritory = state.territories[attackFrom]
+        if occupyingForce < 0:
+            throw("Cannot occupy with negative armies (" + str(occupyingForce) + ")")
+        if occupyingForce > attackingTerritory.armies - 1:
+            throw("Cannot occupy with " + str(occupyingForce) + " armies from a territory with only " + str(attackingTerritory.armies))
+
 def throw(message):
     raise AssertionError(message)

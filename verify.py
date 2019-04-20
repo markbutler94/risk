@@ -1,17 +1,3 @@
-import os
-import ast
-import shutil
-import math
-import itertools
-import random
-import time
-import logging
-import cPickle as pickle
-import operator
-import argparse
-import copy
-from graphics import *
-
 def verifySelectTerritory(state, t):
     if not(t in state.remainingTerritories):
         throw("Territory " + t + " is not available")

@@ -499,6 +499,8 @@ while len(playerList) > 1:
 
         # Move
         moveData = aiCall(p, "moveArmies") # verify this is valid/acceptable?
+        if shouldVerify:
+            verify.verifyMoveArmies(getState(), p, moveData)
         if moveData != False:
             moveFrom, moveTo, moveCount = moveData
             territories[moveFrom].armies -= moveCount

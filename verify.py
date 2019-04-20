@@ -58,5 +58,24 @@ def verifyOccupyTerritory(state, occupyingForce):
         if occupyingForce > attackingTerritory.armies - 1:
             throw("Cannot occupy with " + str(occupyingForce) + " armies from a territory with only " + str(attackingTerritory.armies))
 
+def verifyMoveArmies(state, p, moveData):
+    if moveData:
+        moveFrom, moveTo, moveCount = moveData
+        if not(moveFrom in state.territories):
+            throw("Territory " + moveFrom + " does not exist")
+        if not(moveTo in state.territories):
+            throw("Territory " + moveTo + " does not exist")
+        movingFromTerritory = state.territories[moveFrom]
+        movingToTerritory = state.territories[moveTo]
+        if movingFromTerritory.player != p:
+            throw("Territory " + moveFrom + " (moving from) does not belong to moving player " + p)
+        if movingToTerritory.player != p:
+            throw("Territory " + moveTo + " (moving to) does not belong to moving player " + p)
+        if moveCount < 0:
+            throw("Cannot move negative armies (" + str(moveCount) + ")")
+        if moveCount > movingFromTerritory.armies - 1:
+            throw("Cannot move with " + str(moveCount) + " armies from a territory with only " + str(movingFromTerritory.armies))
+
+
 def throw(message):
     raise AssertionError(message)
